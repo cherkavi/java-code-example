@@ -1,0 +1,8 @@
+Configuration cfg = new Configuration()
+		.addClass(User.class)
+		.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLInnoDBDialect")
+		.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver")
+		.setProperty("hibernate.connection.url", "jdbc:mysql://localhost/javalobby")
+		.setProperty("hibernate.connection.username", "admin");
+		
+

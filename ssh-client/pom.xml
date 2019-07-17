@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.cherkashyn.vitalii.tools</groupId>
+  <artifactId>ssh-client</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <name>ssh-client</name>
+
+  <dependencies>
+
+    <!--APP 1-->
+    <dependency>
+      <groupId>com.jcabi</groupId>
+      <artifactId>jcabi-ssh</artifactId>
+      <version>1.6</version>
+    </dependency>
+
+
+    <!--APP 2-->
+      <dependency>
+          <groupId>ch.ethz.ganymed</groupId>
+          <artifactId>ganymed-ssh2</artifactId>
+          <version>262</version>
+      </dependency>
+
+      <!--APP 3-->
+      <dependency>
+          <groupId>com.jcraft</groupId>
+          <artifactId>jsch</artifactId>
+          <version>0.1.54</version>
+      </dependency>
+
+
+      <!-- common -->
+      <dependency>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+          <version>2.6</version>
+      </dependency>
+
+  </dependencies>
+</project>

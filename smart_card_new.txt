@@ -1,0 +1,23 @@
+Задействованные технологии:
+EMV Common Personalization Specifications
+	http://www.emvco.com/specifications.aspx?id=155	
+
+??? VSDC Technical Guide to Visa's Applet For GlobalPlatform Cards
+(Visa Smart Debit Card)
+ If you don't have access to vendor specifications, it will be difficult. 
+Unfortunately these are not open and you must get in contact with them 
+(contract, NDA ..).
+
+
+
+Visa VSDC Applet v 2.7.1
+http://www.globalplatform.org/specificationscard.asp
+
+Место, где собрано много информации по SmartCard
+http://www.usasmartcard.com
+http://w3.tue.nl/nl/diensten/stu/internationalisering/exchange_student/services/
+
+Visa Open Platform ( extends Open Platform )
+
+book:
+Java card for e-payment applications

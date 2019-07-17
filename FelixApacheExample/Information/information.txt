@@ -1,0 +1,20 @@
+1. Create folder "bundle" and copy files into:
+	org.apache.felix.bundlerepository-1.2.1.jar
+	org.apache.felix.shell.tui-1.0.2.jar
+	org.apache.felix.shell-1.0.2.jar
+	
+2. copy file bnd-0.0.356.jar into root
+
+3. create helloworld.bnd file ( in root directory) , wich consist next minimum information:
+	#helloworld.bnd
+	Private-Package: felix.example
+	Bundle-Activator: felix.example.HelloWorldActivator
+
+4. then, right-click on *.bnd file -> Make Bundle
+
+5. Create Run configuration, set Main run Class as: org.apache.felix.main.Main
+
+6. ( After Felix is run ) 
+	install file: helloworld.jar
+
+

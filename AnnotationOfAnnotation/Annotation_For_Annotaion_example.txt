@@ -1,0 +1,59 @@
+Пример объявления Annotation for Annotation
+( то есть сначала нужно получить getClass().getAnnotation(), 
+а уже потом на основании данного Annotation#telegrams )
+=============
+	Class with annotation
+=============
+@TelgraphSpec( telegrams = { @TelegramSpec( name=TelegraphConstants.TELEGRAM.NAME_LOGIN_LOGOFF, 
+					    description = "login logout",
+					    arguments = {
+        						 @TelegramArgSpec( name = "userlogin", 
+									   type = String.class ),
+        						 @TelegramArgSpec( name = "action", 
+									   type = String.class )
+    							  } )
+			   } 
+	      )
+public class Logon implements ILogon, Serializable {
+
+---------------------------------------------------------------------------------------------------------
+=============
+	Annotation
+=============
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface TelgraphSpec {
+    public TelegramSpec[] telegrams();
+}
+
+
+---------------------------------------------------------------------------------------------------------
+=============
+	Annotation
+=============
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface TelegramSpec {
+    /**
+     * Telegram name exactly defines both particular configured route and subscribers
+     * @return Telegram name exactly defines both particular configured route and subscribers
+     */
+    public String name();
+
+    /**
+     * Some additional custom explonation of this telegram
+     * @return Some additional custom explonation of this telegram
+     */
+    public String description() default "";
+
+    /**
+     * List of telegram arguments
+     * @return List of telegram arguments
+     */
+    public TelegramArgSpec[] arguments();
+
+}
+
+---------------------------------------------------------------------------------------------------------
+
+

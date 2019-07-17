@@ -1,0 +1,59 @@
+spring:
+  profiles:
+    active: development
+  datasource:
+    initialize: false
+  jpa:
+      database-plataform: org.hibernate.dialect.Oracle10gDialect
+      hibernate:
+        ddl-auto: none
+        naming:
+          physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+  batch:
+    initializer:
+      enabled: false
+
+liquibase:
+  change-log: classpath:/db/changelog/master.xml
+  contexts: ${spring.profiles.active}
+
+---
+spring:
+  profiles: development
+
+datasource:
+  brandserver:
+    url: jdbc:h2:mem:brandserver;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual
+  ccp:
+    url: jdbc:h2:mem:ccp;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual
+
+---
+spring:
+  profiles: integration
+
+datasource:
+  brandserver:
+    url: jdbc:h2:mem:brandserver;MODE=Oracle;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual
+  ccp:
+    url: jdbc:h2:mem:ccp;MODE=Oracle;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual
+

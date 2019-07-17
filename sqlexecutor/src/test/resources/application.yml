@@ -1,0 +1,18 @@
+spring:
+  profiles: local
+
+datasource:
+  brandserver:
+    url: jdbc:oracle:thin:@127.0.0.1:1521/schema-name
+    username: user
+    password: passw
+    driver-class-name: oracle.jdbc.OracleDriver
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual
+  ccp:
+    url: jdbc:h2:mem:ccp;MODE=Oracle;TRACE_LEVEL_SYSTEM_OUT=2;TRACE_LEVEL_FILE=4;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual

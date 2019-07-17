@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping 
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<!--  table per class hierarchy --> 
+    <class name="database.Parent"  table="pr" > 
+        <id name="id" type="integer" column="ID">
+            <generator  class="sequence"/>
+        </id>
+        <property name="name" />
+
+	    <joined-subclass name="database.Boy" table="boy" >
+	    	<key column="ID" />
+	        <property name="boySkills" column="skills" />
+	    </joined-subclass>
+	
+	    <joined-subclass name="database.Girl" table="girl" >
+	    	<key column="ID" />
+	        <property name="girlSkills" column="skills" />
+	    </joined-subclass>
+
+    </class>
+
+    <!-- 
+
+CREATE MEMORY TABLE BOY(ID INTEGER NOT NULL PRIMARY KEY,SKILLS VARCHAR(255))
+CREATE MEMORY TABLE GIRL(ID INTEGER NOT NULL PRIMARY KEY,SKILLS VARCHAR(255))
+CREATE MEMORY TABLE PR(ID INTEGER NOT NULL PRIMARY KEY,NAME VARCHAR(255))
+
+ALTER TABLE BOY ADD CONSTRAINT FK17DCCE1D105B8 FOREIGN KEY(ID) REFERENCES PR(ID)
+ALTER TABLE GIRL ADD CONSTRAINT FK306A9CE1D105B8 FOREIGN KEY(ID) REFERENCES PR(ID)
+
+INSERT INTO BOY VALUES(0,'struglle')
+INSERT INTO GIRL VALUES(1,'nitting')
+
+INSERT INTO PR VALUES(0,'Kolya')
+INSERT INTO PR VALUES(1,'Olga')
+    
+    
+     -->
+    
+</hibernate-mapping>

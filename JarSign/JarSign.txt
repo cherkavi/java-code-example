@@ -1,0 +1,11 @@
+http://www.cs.princeton.edu/introcs/85application/jar/sign.html
+
+генерация хранилища 
+keytool -genkey -alias alias-name -keystore keystore-name
+	
+	keytool -genkey -alias technik_store -keystore technik_store
+	password:technik
+
+подпись Jar файла
+jarsigner -keystore keystore-name -storepass keystore-password -keypass key-password jar-file alias-name
+	jarsigner -keystore technik_store -storepass technik -keypass technik FenomenMonitor.jar technik_store	

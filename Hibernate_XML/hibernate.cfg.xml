@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.url">
+			jdbc:firebirdsql://localhost:3050/d:/temp_hibernate.gdb?sql_dialect=3
+		</property>
+		<property name="hibernate.connection.driver_class">
+			org.firebirdsql.jdbc.FBDriver
+		</property>
+		
+		<property name="hibernate.connection.username">SYSDBA</property>
+		<property name="hibernate.connection.password">masterkey</property>
+		<property name="hibernate.connection.pool_size">1</property>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.FirebirdDialect
+		</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- "Import" the mapping resources here -->
+		<mapping resource="TableOne.xml"/>
+	</session-factory>
+</hibernate-configuration>

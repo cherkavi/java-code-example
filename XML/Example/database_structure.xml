@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DATABASE xmlns:data="unique_data" xmlns:field="unique_field">
+<NAME>battary_shop</NAME>
+<TABLE>
+	<NAME>A_TECH</NAME>
+	<FIELD>
+		<NAME>KOD</NAME>
+		<PRIMARY_KEY>true</PRIMARY_KEY>
+		<TYPE>java.lang.Integer</TYPE>
+		<LENGTH>0</LENGTH>
+		<IS_DATE>false</IS_DATE>
+		<IS_TIMESTAMP>false</IS_TIMESTAMP>
+	</FIELD>
+
+        <FIELD>
+		<NAME>NAME</NAME>
+		<PRIMARY_KEY>false</PRIMARY_KEY>
+		<TYPE>java.lang.String</TYPE>
+		<LENGTH>50</LENGTH>
+		<IS_DATE>false</IS_DATE>
+		<IS_TIMESTAMP>false</IS_TIMESTAMP>
+	</FIELD>
+
+	<FIELD>
+		<NAME>DATE_WRITE</NAME>
+		<PRIMARY_KEY>false</PRIMARY_KEY>
+		<TYPE>java.util.Date</TYPE>
+		<LENGTH>0</LENGTH>
+		<IS_DATE>false</IS_DATE>
+		<IS_TIMESTAMP>true</IS_TIMESTAMP>
+	</FIELD>
+</TABLE>
+</DATABASE>

@@ -1,0 +1,192 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>/WEB-INF/database.properties</value>
+		</property>
+	</bean>
+
+	<!-- Hibernate session factory -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${jdbc.dialect}</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.connection.autocommit">false</prop>
+				<!--  <prop key="hibernate.dialect">com.cherkashyn.vitalii.computer_shop.opencart.service.helper.MySqlHibernateStrategy</prop>  --> 
+			</props>
+		</property>
+
+		<property name="annotatedClasses">
+			<list>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Address</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Affiliate</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.AffiliateTransaction</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.AttributeDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.AttributeDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.AttributeGroupDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.AttributeGroupDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.AttributeGroup</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Attribute</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.BannerImageDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.BannerImageDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.BannerImage</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Banner</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryFilterId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryFilter</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Category</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryPathId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryPath</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryToLayoutId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryToLayout</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryToStoreId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CategoryToStore</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Country</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CouponCategoryId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CouponCategory</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CouponHistory</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Coupon</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CouponProduct</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Currency</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerBanIp</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerFieldId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerField</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerGroupDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerGroupDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerGroup</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerHistory</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerIp</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Customer</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerOnline</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerReward</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomerTransaction</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomFieldDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomFieldDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomField</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomFieldToCustomerGroupId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomFieldToCustomerGroup</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomFieldValueDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomFieldValueDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.CustomFieldValue</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.DownloadDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.DownloadDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Download</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Extension</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.FilterDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.FilterDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.FilterGroupDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.FilterGroupDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.FilterGroup</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Filter</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.GeoZone</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.InformationDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.InformationDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Information</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.InformationToLayoutId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.InformationToLayout</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.InformationToStoreId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.InformationToStore</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Language</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Layout</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.LayoutRoute</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.LengthClassDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.LengthClassDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.LengthClass</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Manufacturer</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ManufacturerToStoreId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ManufacturerToStore</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OptionDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OptionDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Option</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OptionValueDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OptionValueDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OptionValue</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderDownload</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderFieldId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderField</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderFraud</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderHistory</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Order</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderOption</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderProduct</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderStatusId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderStatus</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderTotal</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.OrderVoucher</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductAttributeId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductAttribute</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductDiscount</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductFilterId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductFilter</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductImage</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Product</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductOption</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductOptionValue</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductRelatedId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductRelated</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductReward</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductSpecial</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductToCategoryId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductToCategory</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductToDownloadId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductToDownload</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductToLayoutId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductToLayout</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductToStoreId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ProductToStore</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ReturnActionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ReturnAction</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ReturnHistory</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Return</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ReturnReasonId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ReturnReason</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ReturnStatusId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ReturnStatus</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Review</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Setting</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.StockStatusId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.StockStatus</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Store</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.TaxClass</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.TaxRate</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.TaxRateToCustomerGroupId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.TaxRateToCustomerGroup</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.TaxRule</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.UrlAlias</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.UserGroup</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.User</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.VoucherHistory</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Voucher</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.VoucherThemeDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.VoucherThemeDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.VoucherTheme</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.WeightClassDescriptionId</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.WeightClassDescription</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.WeightClass</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.Zone</value>
+				<value>com.cherkashyn.vitalii.computer_shop.opencart.domain.ZoneToGeoZone</value>
+			</list>
+		</property>
+
+	</bean>
+
+</beans>

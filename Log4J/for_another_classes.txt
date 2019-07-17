@@ -1,0 +1,12 @@
+		Logger.getLogger("org.hibernate.cfg.annotations.Version").setLevel(Level.DEBUG);
+		Logger.getLogger("org.hibernate.cfg.annotations.Version").addAppender(new ConsoleAppender(new PatternLayout()));
+
+PatternLayout: %d{ABSOLUTE} %5p %c{1}:%L - %m%n
+
+
+/** Get the current line number.
+ * @return int - Current line number.
+ */
+public static int getLineNumber() {
+    return Thread.currentThread().getStackTrace()[2].getLineNumber();
+}

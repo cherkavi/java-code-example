@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Information">
+
+  <!-- Use type aliases to avoid typing the full classname every time. -->
+  <typeAlias alias="Information" type="database.Information"/>
+
+<!-- Result maps describe the mapping between the columns returned
+       from a query, and the class properties.  A result map isn't
+       necessary if the columns (or aliases) match to the properties 
+       exactly. -->
+  <resultMap id="InformationResult" class="Information">
+    <result property="id" column="ID"/>
+    <result property="textValue" column="TEXT_VALUE"/>
+    <result property="intValue" column="INT_VALUE"/>
+    <result property="dateValue" column="DATE_VALUE"/>
+  </resultMap>
+
+ <!-- Select with no parameters using the result map for Account class. -->
+  <select id="selectAllInformation" resultMap="InformationResult">
+    select * from INFORMATION
+  </select>
+
+<!-- A simpler select example without the result map.  Note the 
+       aliases to match the properties of the target result class. -->
+  <select id="selectInformationById" parameterClass="int" resultClass="Information">
+    select
+      ID as id,
+      TEXT_VALUE as textValue,
+      INT_VALUE as intValue,
+      DATE_VALUE as dateValue
+    from ACCOUNT
+    where ACC_ID = #id#
+  </select>
+
+<!-- Insert example, using the Account parameter class -->
+  <insert id="insertInformation" parameterClass="Information">
+    insert into INFORMATION (
+      ID,
+      TEXT_VALUE,
+      INT_VALUE,
+      DATE_VALUE
+    )values (
+      #id#, #textValue#, #intValue#, #dateValue#
+    )
+  </insert>
+
+  <!-- Update example, using the Account parameter class -->
+  <update id="updateInformation" parameterClass="Information">
+    update INFORMATION set
+      TEXT_VALUE = #textValue#,
+      INT_VALUE = #intValue#,
+      DATE_VALUE = #dateValue#
+    where
+      ID = #id#
+  </update>
+
+  <!-- Delete example, using an integer as the parameter class -->
+  <delete id="deleteInformationById" parameterClass="int">
+    delete from INFORMATION where ID = #id#
+  </delete>
+
+
+</sqlMap>

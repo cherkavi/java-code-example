@@ -1,0 +1,13 @@
+<userTask activiti:exclusive="true" id="usertask1" name="User Task"  activiti:assignee="Userassignee" activiti:candidateUsers="candidate-user1,candidate-user2" activiti:candidateGroups="candidate-group1,candidate-group2" >
+
+<extensionElements>
+    <activiti:field name="ui-form">
+        <activiti:string>my personal UI form</activiti:string>
+    </activiti:field>
+</extensionElements>
+
+
+
+
+--------------
+<userTask id="usertask1" name="User Task" activiti:candidateGroups="candidate-group1,candidate-group2" activiti:formKey="ui-form-user-task-1">

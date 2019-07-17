@@ -1,0 +1,64 @@
+<html ng-app="url-parser">
+<head>
+		<link rel="stylesheet" type="text/css" href="hourglass.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+		<script>
+			var app=angular.module("url-parser", []);
+			app.controller("searchController", function($scope, $http){
+				$scope.onSearchClick=function(event, url){
+					event.preventDefault(); // avoid href attribute action
+					
+					$scope.inprogress=true;
+					$http.get("service/parser/analyze?url="+encodeURI(url || $scope.searchValue))
+					.then(function(response){
+						$scope.result=response.data;
+						$scope.resultError=null;
+					})
+					.catch(function(response){
+						$scope.result=null;
+						$scope.resultError=response.data;
+					})
+					.finally(function(){
+						$scope.inprogress=false;
+						if(url){
+							$scope.searchValue=url;	
+						}
+					});
+				}
+				
+			});
+		</script>
+
+</head>
+
+<body ng-controller="searchController">
+	<input type="text" value="" size="40" ng-model="searchValue" />
+	<input type="button" value="find" ng-click="onSearchClick($event)" />
+
+	<a ng-click="onSearchClick($event, 'getbootstrap.com/examples/signin/')" href="" >getbootstrap.com/examples/signin/</a>&nbsp;&nbsp;
+	<a ng-click="onSearchClick($event, 'w3c.org')" href="" >w3c.org</a>&nbsp;&nbsp;
+	<a ng-click="onSearchClick($event, 'robokassa.ru')" href="" >robokassa.ru</a>
+	
+	<hr />
+	
+	<!--  positive result -->
+	<div ng-if="!resultError">
+		<table>
+			<tr ng-repeat="item in result">
+				<td>{{item.label}}</td>
+				<td>{{item.value}}</td>
+			</tr>
+		</table>
+	</div>
+
+	<!--  error message -->
+	<div ng-if="!result" style="color:red">
+		{{resultError.message}}
+	</div>
+	
+	<div ng-if="inprogress" class="hourglass" ></div>
+	
+</body>
+</html>

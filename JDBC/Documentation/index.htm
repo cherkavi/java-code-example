@@ -1,0 +1,2242 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251"><meta content="Русские буквы и не только... Статья Сергея Астахова" name="Description">
+<meta content="Сергей Астахов, руссификация, Java, Unicode, кодировка" name="Keywords">
+<title>JUG.RU::Java: Русские буквы и не только...</title><style type="text/css"> h3{ font-family: arial;}
+            body,p,td,form,th{ font-family: arial; font-size:10pt;}
+            p{margin-top:5; margin-bottom:5}</style>
+</head><body topmargin="0" leftmargin="0" bgcolor="white" marginheight="0" marginwidth="0">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td rowspan="2"><img src="index_files/1.gif" height="5" width="5"></td><td rowspan="2" height="43" valign="center" width="134"><a href="http://www.jug.ru/"><img alt="JUG.RU" src="index_files/jug.gif" border="0" height="30" width="135"></a></td><td rowspan="2"><img src="index_files/1.gif" height="5" width="5"></td><td rowspan="2" align="left" valign="bottom"><img src="index_files/1.gif" height="5" width="5"><b>Java: Русские буквы и не только...</b></td><td rowspan="2"><img src="index_files/1.gif" height="5" width="5"></td><td><img src="index_files/1.gif" height="24" width="5"></td><td rowspan="2"><img src="index_files/1.gif" height="5" width="5"></td>
+</tr>
+<tr>
+<td align="center" bgcolor="#cccccc" valign="bottom"></td>
+</tr>
+<tr>
+<td colspan="7" bgcolor="#999999" height="1"><img src="index_files/1.gif" height="5" width="5"></td>
+</tr>
+<tr>
+<td valign="bottom"></td><td align="center" bgcolor="#cccccc" height="100%" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" height="100%">
+<tbody><tr>
+<td align="center" height="100%" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" height="100%">
+<tbody><tr>
+<td align="right"><b><a href="http://www.jug.ru/servlets/index?page=meeting" style="color: black; text-decoration: none;">
+        Встречи
+    </a></b></td><td height="17" width="17"></td>
+</tr>
+<tr>
+<td align="right"><b><a href="http://www.jug.ru/servlets/index?page=about" style="color: black; text-decoration: none;">
+        О нас
+    </a></b></td><td height="17" width="17"></td>
+</tr>
+<tr>
+<td align="right"><b><a href="http://www.jug.ru/servlets/index?page=calendar2009" style="color: black; text-decoration: none;">
+        Календарики
+    </a></b></td><td height="17" width="17"></td>
+</tr>
+<tr>
+<td align="right"><b><a href="http://www.jug.ru/servlets/index?page=job" style="color: black; text-decoration: none;">
+        Работа
+    </a></b></td><td height="17" width="17"></td>
+</tr>
+<tr>
+<td align="right"><b><a href="http://www.jug.ru/servlets/index?page=book" style="color: black; text-decoration: none;">
+        Книги
+    </a></b></td><td height="17" width="17"></td>
+</tr>
+<tr>
+<td align="right"><b><a href="http://www.jug.ru/servlets/index?page=links" style="color: black; text-decoration: none;">
+        Ссылки
+    </a></b></td><td height="17" width="17"></td>
+</tr>
+<tr>
+<td align="right">
+<br>
+<a href="http://community.java.net/jugs/"><img alt="Java User Groups" src="index_files/jug_button.gif" border="0" height="94" width="95"></a>
+<br>
+<br>
+<a href="http://www.java.net/"><img src="index_files/javanet.gif" alt="java.net member" border="0" height="25" width="95"></a>
+<br>
+<br>
+<a href="http://www.elcom.spb.ru/"><img alt="Hosted by Elcom " src="index_files/elcom.gif" border="0" height="43" width="95"></a>
+<br>
+<br>
+</td><td></td>
+</tr>
+<tr height="100%">
+<td height="100%" valign="bottom">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="http://www.yandex.ru/cy?base=0&amp;host=jug.ru"><img alt="Яндекс цитирования" src="index_files/cycounter.gif" border="0" height="31" width="88"></a>
+<br>
+<a href="http://u2953.19.spylog.com/cnt?cid=295319&amp;f=3&amp;p=0"><img alt="SpyLOG" src="index_files/cnt.gif" border="0" height="31" width="88"></a>
+<br>
+<a href="http://top.mail.ru/jump?from=238177"><img alt="Рейтинг@Mail.ru" src="index_files/counter.gif" border="0" height="31" width="88"></a>
+<br>
+<a href="http://top100.rambler.ru/top100/"><img alt="Rambler's Top100" src="index_files/rambler.gif" border="0" height="31" width="88"></a>
+<br>
+<img alt="Rambler's Top100" src="index_files/top100.txt" border="0" height="1" width="1"><img src="index_files/count.gif" border="0" height="1" width="1"></td><td></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="bottom">
+<table width="100">
+<tbody><tr>
+<td align="right" valign="bottom">
+<br>
+<br>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td><td></td><td valign="top" width="610">
+<p align="right">
+Первые версии статьи написаны Сергеем Астаховым
+</p>
+<a name="content"><h3>Содержание:</h3></a>
+<ul>
+  <li><a href="#intro">Введение</a></li>
+  <li><a href="#8bits">8-ми битовые кодировки русских букв</a></li>
+  <li><a href="#files">Файлы и потоки данных</a></li>
+  <li><a href="#db">Базы данных</a></li>
+  <li><a href="#source">Исходники Java-программ</a></li>
+  <li><a href="#javadoc">JavaDoc</a></li>
+  <li><a href="#prop">Файлы properties</a></li>
+  <li><a href="#servlet">Servlet-ы</a></li>
+  <li><a href="#jsp">JSP</a></li>
+  <li><a href="#javamail">JavaMail</a></li>
+  <li><a href="#xml">XML/XSL</a></li>
+  <li><a href="#fop">Генерация PDF при помощи FOP</a></li>
+  <li><a href="#poi">POI</a></li>
+  <li><a href="#jni">JNI</a></li>
+  <li><a href="#gui">GUI (AWT, Swing)</a></li>
+  <li><a href="#bugs">Типичные ошибки, или "куда делась буква Ш?"</a></li>
+  <li><a href="#native2ascii">Об утилите native2ascii</a></li>
+  <li><a href="#recode">О методе перекодировки символов</a></li>
+  <li><a href="#linux">Русификация Java под Linux</a></li>
+</ul>
+
+<hr>
+<a name="intro"><h3><u>Введение</u></h3></a>
+
+<table>
+<tbody><tr>
+<td width="50%"></td>
+<td>
+<p>Некоторые проблемы настолько сложны, что нужно быть очень умным и очень
+хорошо информированным, чтобы не быть уверенным в их решении.</p>
+<p align="right">Лоренс Дж. Питер<br>
+Peter's Almanac</p>
+</td>
+</tr>
+</tbody></table>
+
+<h4>Кодировки</h4>
+
+<p>Когда я&nbsp;только начинал программировать на&nbsp;языке C, первой моей программой
+(не&nbsp;считая HelloWorld) была программа перекодировки текстовых файлов из
+основной кодировки ГОСТ-а (помните такую? :-) в&nbsp;альтернативную. Было это в
+далёком 1991-ом году. С&nbsp;тех пор многое изменилось, но&nbsp;за&nbsp;прошедшие 10&nbsp;лет
+подобные программки свою актуальность, к&nbsp;сожалению, не&nbsp;потеряли. Слишком много
+уже накоплено данных в&nbsp;разнообразных кодировках и&nbsp;слишком много используется
+программ, которые умеют работать только с&nbsp;одной. Для русского языка существует
+не&nbsp;менее десятка различных кодировок, что делает проблему ещё более запутанной.
+</p>
+
+
+<p>Откуда&nbsp;же взялись все эти кодировки и&nbsp;для чего они нужны? Компьютеры по
+своей природе могут работать только с&nbsp;числами. Для того чтобы хранить буквы
+в&nbsp;памяти компьютера надо поставить в&nbsp;соответствие каждой букве некое число
+(примерно такой&nbsp;же принцип использовался и&nbsp;до&nbsp;появления компьютеров —
+вспомните про ту&nbsp;же азбуку Морзе). Причём число желательно поменьше&nbsp;— чем
+меньше двоичных разрядов будет задействовано, тем эффективнее можно будет
+использовать память. Вот это соответствие набора символов и&nbsp;чисел собственно
+и&nbsp;есть кодировка. Желание любой ценой сэкономить память, а&nbsp;так&nbsp;же
+разобщённость разных групп компьютерщиков и&nbsp;привела к&nbsp;нынешнему положению
+дел. Самым распространённым способом кодирования сейчас является использование
+для одного символа одного байта (8&nbsp;бит), что определяет общее кол-во символов в
+256. Набор первых 128&nbsp;символов стандартизован (набор ASCII) и&nbsp;является
+одинаковыми во&nbsp;всех распространённых кодировках (те&nbsp;кодировки, где это не&nbsp;так
+уже практически вышли из&nbsp;употребления). Англицкие буковки и&nbsp;символы пунктуации
+находятся в&nbsp;этом диапазоне, что и&nbsp;определяет их&nbsp;поразительную живучесть в
+компьютерных системах :-). Другие языки находятся не&nbsp;в&nbsp;столь счастливом
+положении&nbsp;— им&nbsp;всем приходится ютиться в&nbsp;оставшихся 128&nbsp;числах.
+</p>
+
+<h4>Unicode</h4>
+
+<p>В конце 80-х многие осознали необходимость создания единого стандарта на
+кодирование символов, что и&nbsp;привело к&nbsp;появлению Unicode.
+<a href="http://www.unicode.org/">Unicode</a>&nbsp;— это попытка раз и&nbsp;навсегда
+зафиксировать конкретное число за&nbsp;конкретным символом. Понятно, что в&nbsp;256
+символов тут не&nbsp;уложишься при всём желании. Довольно долгое время казалось,
+что уж&nbsp;2-х то&nbsp;байт (65536&nbsp;символов) должно хватить.
+Ан&nbsp;нет&nbsp;— <a href="http://www.unicode.org/versions/latest/">сейчас</a>
+определено уже больше 90&nbsp;тысяч символов. Может быть, 4&nbsp;байт (более 4&nbsp;миллиардов символов) и&nbsp;хватит на
+некоторое время… :-)
+</p>
+
+
+
+<p>В набор символов Unicode входят всевозможные буквы со&nbsp;всякими
+чёрточками и&nbsp;припендюльками, греческие, математические, иероглифы,
+символы псевдографики и&nbsp;пр. и&nbsp;пр. В&nbsp;том числе и&nbsp;так любимые
+нами символы кириллицы (диапазон значений 0x0400-0x04FF). Так что
+с&nbsp;этой стороны никакой дискриминации нет.</p>
+
+
+<p>Если вам интересуют конкретные коды символов, для их&nbsp;просмотра
+удобно использовать программу «Таблица символов» из&nbsp;WinNT. Вот,
+например, диапазон кириллицы:
+</p>
+
+<p align="center"><img src="index_files/unicyr.gif"></p>
+
+<p>
+Если у&nbsp;вас другая OS&nbsp;или вас интересует официальное толкование, то&nbsp;полную
+раскладку символов (charts) можно найти на&nbsp;официальном сайте Unicode
+(<a href="http://www.unicode.org/charts/">http://www.unicode.org/charts/</a>).
+</p>
+
+
+
+<h4>Типы char и byte</h4>
+
+<p>В Java для символов выделен отдельный тип данных <code>char</code>
+размером в&nbsp;2&nbsp;байта. Это часто порождает путаницу в&nbsp;умах начинающих (особенно
+если они раньше программировали на&nbsp;других языках, например на&nbsp;C/C++). Дело
+в&nbsp;том, что в&nbsp;большинстве других языков для обработки символов используются
+типы данных размером в&nbsp;1&nbsp;байт. Например, в&nbsp;C/C++ тип <code>char</code> в
+большинстве случаев используется как для обработки символов, так и&nbsp;для
+обработки байтов — там нет разделения. В&nbsp;Java для байтов имеется свой
+тип — тип <code>byte</code>. Таким образом C-ишному <code>char</code>
+соответствует Java-вский <code>byte</code>, а&nbsp;Java-вскому <code>char</code>
+из&nbsp;мира C&nbsp;ближе всего тип <code>wchar_t</code>. Надо чётко разделять понятия
+символов и&nbsp;байтов — иначе непонимание и&nbsp;проблемы гарантированны.
+</p>
+
+<p>Java практически с&nbsp;самого своего рождения использует для кодирования
+символов стандарт Unicode. Библиотечные функции Java ожидают увидеть в
+переменных типа <code>char</code> символы, представленные кодами Unicode.
+В&nbsp;принципе, Вы, конечно, можете запихнуть туда что угодно&nbsp;— цифры есть цифры,
+процессор всё стерпит, но&nbsp;при любой обработке библиотечные функции будут
+действовать исходя из&nbsp;предположения что им&nbsp;передали кодировку Unicode.
+Так что можно спокойно полагать, что у&nbsp;типа <code>char</code> кодировка
+зафиксирована. Но&nbsp;это внутри JVM. Когда данные читаются извне или
+передаются наружу, то&nbsp;они могут быть представлены только одним типом -
+типом <code>byte</code>. Все прочие типы конструируются из&nbsp;байтов в
+зависимости от&nbsp;используемого формата данных. Вот тут то&nbsp;на&nbsp;сцену и&nbsp;выходят
+кодировки&nbsp;— в&nbsp;Java это просто формат данных для передачи символов, который
+используется для формирования данных типа <code>char</code>. Для каждой кодовой
+страницы в&nbsp;библиотеке имеется по&nbsp;2&nbsp;класса перекодировки (ByteToChar и
+CharToByte). Классы эти лежат в&nbsp;пакете <code>sun.io</code>. Если, при
+перекодировке из&nbsp;<code>char</code> в&nbsp;<code>byte</code> не&nbsp;было найдено
+соответствующего символа, он&nbsp;заменяется на&nbsp;символ ?.
+</p>
+
+<p>Кстати, эти файлы кодовых страниц в&nbsp;некоторых ранних версиях JDK 1.1
+содержат ошибки, вызывающие ошибки перекодировок, а&nbsp;то&nbsp;и&nbsp;вообще
+исключения при выполнении. Например, это касается кодировки KOI8_R.
+Лучшее, что можно при этом сделать — сменить версию на&nbsp;более позднюю.
+Судя по&nbsp;Sun-овскому описанию, большинство этих проблем было решено
+в&nbsp;версии JDK 1.1.6.
+
+</p><p>До появления версии JDK 1.4&nbsp;набор доступных кодировок определялся
+только производителем JDK. Начиная с&nbsp;1.4&nbsp;появилось новое API (пакет
+<code>java.nio.charset</code>), при помощи которого можно создать
+собственную кодировку (например, поддержать редко используемую, но&nbsp;жутко
+необходимую именно вам).
+</p>
+
+
+<h4>Класс String</h4>
+
+<p>В большинстве случаев для представления строк в&nbsp;Java используется
+объект типа <code>java.lang.String</code>. Это обычный класс, который
+внутри себя хранит массив символов (<code>char[]</code>), и&nbsp;который содержит
+много полезных методов для манипуляции символами. Самые интересные&nbsp;— это
+конструкторы, имеющие первым параметром массив байтов (<code>byte[]</code>)
+и&nbsp;методы <code>getBytes()</code>. При помощи этих методов Вы&nbsp;можете выполнять
+преобразования из&nbsp;массива байтов в&nbsp;строки и&nbsp;обратно. Для того, чтобы указать
+какую кодировку при этом использовать у&nbsp;этих методов есть строковый параметр,
+который задаёт её&nbsp;имя. Вот, например, как можно выполнить перекодировку
+байтов из&nbsp;КОИ-8&nbsp;в&nbsp;Windows-1251:
+</p>
+
+<blockquote><code></code><pre>// Данные в кодировке КОИ-8
+byte[] koi8Data = ...;
+// Преобразуем из КОИ-8 в Unicode
+String string = new String(koi8Data,"KOI8_R");
+// Преобразуем из Unicode в Windows-1251
+byte[] winData = string.getBytes("Cp1251");
+</pre></blockquote>
+
+<p>Список 8-ми битовых кодировок, доступных в&nbsp;современных JDK и&nbsp;поддерживающих
+русские буквы можно найти ниже, в&nbsp;разделе <a href="#8bit">8-ми битовые
+кодировки русских букв</a>.
+</p>
+
+<p>Так как кодировка&nbsp;— это формат данных для символов, кроме знакомых
+8-ми битовых кодировок в&nbsp;Java также на&nbsp;равных присутствуют и&nbsp;многобайтовые
+кодировки. К&nbsp;таким относятся UTF-8, UTF-16, Unicode и&nbsp;другие. Например вот так
+можно получить байты в&nbsp;формате UnicodeLittleUnmarked (16-ти битовое
+кодирование Unicode, младший байт первый, без признака порядка байтов):
+</p>
+
+
+<blockquote><code></code><pre>// Строка Unicode
+String string = "...";
+// Преобразуем из Unicode в UnicodeLittleUnmarked
+byte[] data = string.getBytes("UnicodeLittleUnmarked");
+</pre></blockquote>
+
+<p>При подобных преобразованиях легко ошибиться&nbsp;— если кодировка байтовых
+данных не&nbsp;соответствуют указанному параметру при преобразовании из
+<code>byte</code> в&nbsp;<code>char</code>, то&nbsp;перекодирование будет выполнено
+неправильно. Иногда после этого можно вытащить правильные символы, но&nbsp;чаще
+всего часть данных будет безвозвратно потеряна.
+</p>
+
+<p>В реальной программе явно указывать кодовую страницу не&nbsp;всегда удобно
+(хотя более надёжно). Для этого была введена кодировка по&nbsp;умолчанию. По
+умолчанию она зависит от&nbsp;системы и&nbsp;её&nbsp;настроек (для русских виндов принята
+кодировка Cp1251), и&nbsp;в&nbsp;старых JDK её&nbsp;можно изменить установкой системного
+свойства <samp>file.encoding</samp>. В&nbsp;JDK 1.3&nbsp;изменение этой настройки
+иногда срабатывает, иногда&nbsp;— нет. Вызвано это следующим: первоначально
+file.encoding ставится по&nbsp;региональным настройкам компьютера. Ссылка на
+кодировку по&nbsp;умолчанию запоминается внутри при первом преобразовании.
+При этом используется file.encoding, но&nbsp;это преобразование происходит ещё до
+использования аргументов запуска JVM (собсно, при их&nbsp;разборе). Вообще-то,
+как утверждают в&nbsp;Sun, это свойство отражает системную кодировку, и&nbsp;она не
+должна изменяться в&nbsp;командной строке (см., например, комментарии к&nbsp;BugID
+<a href="http://developer.java.sun.com/developer/bugParade/bugs/4163515.html">4163515</a>)
+Тем не&nbsp;менее в&nbsp;JDK 1.4&nbsp;Beta 2&nbsp;смена этой настройки опять начала оказывать
+эффект. Что это, сознательное изменение или побочный эффект, который может
+опять исчезнуть&nbsp;— Sun-овцы ясного ответа пока не&nbsp;дали.
+</p>
+
+<p>Эта кодировка используется тогда, когда явно не&nbsp;указанно название страницы.
+Об&nbsp;этом надо всегда помнить&nbsp;— Java не&nbsp;будет пытаться предсказать кодировку
+байтов, которые Вы&nbsp;передаёте для создания строки String (так&nbsp;же она не&nbsp;сможет
+прочитать Ваши мысли по&nbsp;этому поводу :-). Она просто использует текущую
+кодировку по&nbsp;умолчанию. Т.к. эта настройка одна на&nbsp;все преобразования, иногда
+можно наткнуться на&nbsp;неприятности.
+</p>
+
+<p>Для преобразования из&nbsp;байтов в&nbsp;символы и&nbsp;обратно следует пользоваться
+<b>только</b> этими методами. Простое приведение типа использовать в
+большинстве случаев нельзя&nbsp;— кодировка символов при этом не&nbsp;будет учитываться.
+Например, одной из&nbsp;самых распространённых ошибок является чтение данных
+побайтно при помощи метода read() из&nbsp;InputStream, а&nbsp;затем приведение
+полученного значения к&nbsp;типу <code>char</code>:
+</p>
+
+
+<blockquote><code></code><pre>InputStream is = ..;
+
+int b;
+StringBuffer sb = new StringBuffer();
+
+while( (b=is.read())!=-1 ) {
+   sb.append( (char)b );  // так делать нельзя
+  }
+
+String s = sb.toString();
+</pre></blockquote>
+
+<p>Обратите внимание на&nbsp;приведение типа&nbsp;— «<code>(char)b</code>». Значения
+байтов вместо перекодирования просто скопируются в&nbsp;char (диапазон
+значений 0-0xFF, а&nbsp;не&nbsp;тот, где находится кириллица). Такому копированию
+соответствует кодировка ISO-8859-1&nbsp;(которая один в&nbsp;один соответствует
+первым 256&nbsp;значениям Unicode), а&nbsp;значит, можно считать, что этот код
+просто использует её&nbsp;(вместо той, в&nbsp;которой реально закодированы символы
+в&nbsp;оригинальных данных). Если Вы&nbsp;попытаетесь отобразить полученное значение
+— на&nbsp;экране будут или вопросики или кракозяблы. Например, при чтении
+строки «АБВ» в&nbsp;виндовой кодировке может запросто отобразиться что-то вроде
+такого: «&#192;&#193;&#194;». Подобного рода код часто пишут
+программисты на&nbsp;западе&nbsp;— с&nbsp;английскими буквами работает, и&nbsp;ладно.
+Исправить такой код легко&nbsp;— надо просто заменить StringBuffer на
+ByteArrayOutputStream:
+</p>
+
+<blockquote><code></code><pre>InputStream is = ..;
+
+int b;
+ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+while( (b=is.read())!=-1 ) {
+   baos.write( b );
+  }
+
+// Перекодирование байтов в строку с использованием кодировки по умолчанию
+
+String s = baos.toString();
+
+// Если нужна конкретная кодировка - просто укажите её при вызове toString():
+//
+// s = baos.toString("Cp1251");
+</pre></blockquote>
+
+Более подробно о распространённых ошибках смотрите раздел
+<a href="#bugs">Типичные ошибки</a>.
+
+<hr>
+<a name="8bits"><h3><u>8-ми битовые кодировки русских букв</u></h3></a>
+
+<p>Вот основные 8-ми битовые кодировки русских букв, получившие распространение:</p><p>
+
+<table border="1">
+  <tbody><tr><th>Кодировка</th><th>Ареал распространения</th><th>Основное название в Java</th></tr>
+  <tr><td>IBM-866</td><td>MS-DOS, Windows (OEM-кодировка), OS/2</td><td>Cp866</td></tr>
+  <tr><td>Windows-1251</td><td>Windows (Ansi-кодировка)</td><td>Cp1251</td></tr>
+  <tr><td>КОИ-8</td><td>Unix, большинство русскоязычных писем в Internet</td><td>KOI8_R</td></tr>
+  <tr><td>ISO-8859-5</td><td>Unix</td><td>ISO8859_5</td></tr>
+  <tr><td>Macintosh Cyrillic</td><td>Mac</td><td>MacCyrillic</td></tr>
+</tbody></table>
+</p>
+
+<p>Помимо основного названия можно использовать синонимы. Набор их&nbsp;может
+отличаться в&nbsp;разных версиях JDK. Вот список от&nbsp;JDK 1.3.1:
+</p>
+
+<ul>
+ <li>Cp1251:
+  <ul>
+   <li>Windows-1251</li>
+  </ul>
+ </li>
+
+ <li>Cp866:
+  <ul>
+   <li>IBM866</li>
+   <li>IBM-866</li>
+   <li>866</li>
+   <li>CP866</li>
+   <li>CSIBM866</li>
+  </ul>
+ </li>
+
+ <li>KOI8_R:
+  <ul>
+   <li>KOI8-R</li>
+   <li>KOI8</li>
+   <li>CSKOI8R</li>
+  </ul>
+ </li>
+
+ <li>ISO8859_5:
+  <ul>
+   <li>ISO8859-5</li>
+   <li>ISO-8859-5</li>
+   <li>ISO_8859-5</li>
+   <li>ISO_8859-5:1988</li>
+   <li>ISO-IR-144</li>
+   <li>8859_5</li>
+   <li>Cyrillic</li>
+   <li>CSISOLatinCyrillic</li>
+   <li>IBM915</li>
+   <li>IBM-915</li>
+   <li>Cp915</li>
+   <li>915</li>
+  </ul>
+ </li>
+</ul>
+
+<p>
+Причём синонимы, в&nbsp;отличии от&nbsp;основного имени нечувствительны к&nbsp;регистру
+символов — такова особенность реализации.
+</p>
+
+<p>Стоит отметить, что эти кодировки на&nbsp;некоторых JVM могут отсутствовать.
+Например, с&nbsp;сайта Sun можно скачать две разные версии JRE — US&nbsp;и&nbsp;International.
+В&nbsp;US&nbsp;версии присутствует только минимум — ISO-8859-1, ASCII, Cp1252, UTF8,
+UTF16 и&nbsp;несколько вариаций двухбайтового Unicode. Всё прочее есть только в
+International варианте. Иногда из-за этого можно нарваться на&nbsp;грабли с
+запуском программы, даже если ей&nbsp;не&nbsp;нужны русские буквы. Типичная ошибка,
+возникающая при этом:
+</p>
+
+
+<blockquote><code></code><pre>Error occurred during initialization of VM
+ java/lang/ClassNotFoundException: sun/io/ByteToCharCp1251
+</pre></blockquote>
+
+<p>
+Возникает она, как не&nbsp;трудно догадаться, из-за того, что JVM, исходя
+из&nbsp;русских региональных настроек пытается установить кодировку по&nbsp;умолчанию
+в&nbsp;Cp1251, но, т.к. класс поддержки таковой отсутствует в&nbsp;US&nbsp;версии, закономерно
+обламывается.
+</p>
+
+<hr>
+<a name="files"><h3><u>Файлы и потоки данных</u></h3></a>
+
+<p>Так&nbsp;же как и&nbsp;байты концептуально отделены от&nbsp;символов, в&nbsp;Java
+различаются потоки байтов и&nbsp;потоки символов. Работу с&nbsp;байтами
+представляют классы, которые прямо или косвенно наследуют классы
+InputStream или OutputStream (плюс класс-уникум RandomAccessFile).
+Работу с&nbsp;символами представляет сладкая парочка классов Reader/Writer
+(и&nbsp;их&nbsp;наследники, разумеется).
+</p>
+
+<p>Для чтения/записи не&nbsp;преобразованных байтов используются потоки байтов.
+Если известно, что байты представляют собой только символы в&nbsp;некоторой
+кодировке, можно использовать специальные классы-преобразователи
+InputStreamReader и&nbsp;OutputStreamWriter, чтобы получить поток символов
+и&nbsp;работать непосредственно с&nbsp;ним. Обычно это удобно в&nbsp;случае обычных текстовых
+файлов или при работе с&nbsp;многими сетевыми протоколами Internet. Кодировка
+символов при этом указывается в&nbsp;конструкторе класса-преобразователя. Пример:
+</p>
+
+<blockquote><code></code><pre>// Строка Unicode
+String string = "...";
+
+// Записываем строку в текстовый файл в кодировке Cp866
+
+PrintWriter pw = new PrintWriter   // класс с методами записи строк
+  (new OutputStreamWriter          // класс-преобразователь
+     (new FileOutputStream         // класс записи байтов в файл
+        ("file.txt"), "Cp866");
+
+pw.println(string);  // записываем строку в файл
+
+pw.close();
+</pre></blockquote>
+
+<p>Если в&nbsp;потоке могут присутствовать данные в&nbsp;разных кодировках или&nbsp;же
+символы перемешаны с&nbsp;прочими двоичными данными, то&nbsp;лучше читать и&nbsp;записывать
+массивы байтов (byte[]), а&nbsp;для перекодировки использовать уже упомянутые
+методы класса String. Пример:
+</p>
+
+
+<blockquote><code></code><pre>// Строка Unicode
+String string = "...";
+
+// Записываем строку в текстовый файл в двух кодировках (Cp866 и Cp1251)
+
+OutputStream os = new FileOutputStream("file.txt"); // класс записи байтов в файл
+
+// Записываем строку в кодировке Cp866
+
+os.write( string.getBytes("Cp866") );
+
+// Записываем строку в кодировке Cp1251
+
+os.write( string.getBytes("Cp1251") );
+
+os.close();
+</pre></blockquote>
+
+<p>Консоль в&nbsp;Java традиционно представлена потоками, но, к&nbsp;сожалению, не
+символов, а&nbsp;байтов. Дело в&nbsp;том, что потоки символов появились только в
+JDK 1.1&nbsp;(вместе со&nbsp;всем механизмом кодировок), а&nbsp;доступ к&nbsp;консольному
+вводу/выводу проектировался ещё в&nbsp;JDK 1.0, что и&nbsp;привело к&nbsp;появлению уродца
+в&nbsp;виде класса PrintStream. Этот класс используется в&nbsp;переменных System.out
+и&nbsp;System.err, которые собственно и&nbsp;дают доступ к&nbsp;выводу на&nbsp;консоль.
+По&nbsp;всем признакам это поток байтов, но&nbsp;с&nbsp;кучей методов записи строк. Когда Вы
+записываете в&nbsp;него строку, внутри происходит конвертация в&nbsp;байты с
+использованием кодировки по&nbsp;умолчанию, что в&nbsp;случае виндов, как правило,
+неприемлемо&nbsp;— кодировка по&nbsp;умолчанию будет Cp1251&nbsp;(Ansi), а&nbsp;для консольного
+окна обычно нужно использовать Cp866&nbsp;(OEM). Эта ошибка была зарегистрированна
+ещё в&nbsp;97-ом году
+(<a href="http://developer.java.sun.com/developer/bugParade/bugs/4038677.html">4038677</a>)
+но&nbsp;Sun-овцы исправлять её&nbsp;вроде не&nbsp;торопятся. Так как метода установки
+кодировки в&nbsp;PrintStream нет, для решения этой проблемы можно подменить
+стандартный класс на&nbsp;собственный при помощи методов System.setOut() и
+System.setErr(). Вот, например, обычное начало в&nbsp;моих программах:
+</p>
+
+
+
+<blockquote><code></code><pre> ...
+ public static void main(String[] args) {
+  // Установка вывода консольных сообщений в нужной кодировке
+  try {
+     String consoleEnc = System.getProperty("console.encoding","Cp866");
+     System.setOut(new CodepagePrintStream(System.out,consoleEnc) );
+     System.setErr(new CodepagePrintStream(System.err,consoleEnc) );
+  } catch(UnsupportedEncodingException e) {
+     System.out.println("Unable to setup console codepage: " + e);
+  }
+ ...
+</pre></blockquote>
+
+<p>Исходники класса CodepagePrintStream можно найти на&nbsp;данном сайте:
+<a href="http://www.jug.ru/servlets/images/CodepagePrintStream.java">CodepagePrintStream.java</a>.</p>
+
+<p>Если вы&nbsp;сами конструируете формат данных, я&nbsp;рекомендую вам использовать
+одну из&nbsp;многобайтовых кодировок. Удобнее всего обычно формат UTF8&nbsp;— первые
+128&nbsp;значений (ASCII) в&nbsp;нём кодируются одним байтом, что часто может
+значительно уменьшить общий объём данных (не&nbsp;зря эта кодировка принята
+за&nbsp;основу в&nbsp;мире XML). Но&nbsp;у&nbsp;UTF8&nbsp;есть один недостаток
+— кол-во требуемых байтов зависит от&nbsp;кода символов. Там, где это критично
+можно использовать один из&nbsp;двухбайтовых форматов Unicode (UnicodeBig или
+UnicodeLittle).</p>
+
+
+
+<hr>
+<a name="db"><h3><u>Базы данных</u></h3></a>
+
+<p>
+Для того, чтобы прочитать корректно символы из&nbsp;БД, обычно достаточно
+указать JDBC-драйверу на&nbsp;нужную кодировку символов в&nbsp;БД. Как именно&nbsp;— это
+зависит от&nbsp;конкретного драйвера. Сейчас уже многие драйвера поддерживают
+подобную настройку, в&nbsp;отличии от&nbsp;недавнего прошлого. Далее приведены
+несколько известных мне примеров.
+</p>
+
+<h4>Мост JDBC-ODBC</h4>
+
+<p>Это один из&nbsp;самых часто используемых драйверов. Мост из&nbsp;JDK 1.2 и&nbsp;старше
+можно легко настроить на&nbsp;нужную кодировку. Это делается добавлением
+дополнительного свойства <samp>charSet</samp> в&nbsp;набор параметров, передаваемых
+для открытия соединения с&nbsp;базой. По&nbsp;умолчанию используется
+<samp>file.encoding</samp>. Делается это примерно так:
+</p>
+
+
+<blockquote><code></code><pre>// Параметры соединения с базой
+Properties connInfo = new Properties();
+
+connInfo.put("user", username);
+connInfo.put("password", password);
+connInfo.put("charSet", "Cp1251");
+
+// Устанавливаем соединение
+Connection db = DriverManager.getConnection(dataurl, connInfo);
+</pre></blockquote>
+
+
+<h4>Драйвер JDBC-OCI от Oracle 8.0.5 под Linux</h4>
+
+<p>При получении данных из&nbsp;БД, данный драйвер определяет
+«свою» кодировку при помощи переменной окружения NLS_LANG. Если эта
+переменная не&nbsp;найдена, то&nbsp;он&nbsp;считает что кодировка&nbsp;— ISO-8859-1. Весь
+фокус в&nbsp;том, что NLS_LANG должна быть именно переменной окружения
+(устанавливаемой командой set), а&nbsp;не&nbsp;системное свойство Java (типа
+file.encoding). В&nbsp;случае использования драйвера внутри servlet engine
+Apache+Jserv, переменную окружения можно задать в&nbsp;файле jserv.properties:
+</p>
+
+
+<blockquote><code></code><pre>wrapper.env=NLS_LANG=American_America.CL8KOI8R
+</pre></blockquote>
+
+<p>
+Информацию об&nbsp;этом прислал
+<a href="mailto:serge@soi3.mmtel.ru">Сергей Безруков</a>, за&nbsp;что ему
+отдельное спасибо.
+</p>
+
+<h4>Драйвер JDBC-thin от Oracle</h4>
+
+<p>Сей драйвер вроде как не&nbsp;требует особой настройки. По&nbsp;крайней мере в
+документации об&nbsp;этом ни&nbsp;слова. По&nbsp;всей видимости у&nbsp;Oracle в&nbsp;протоколе обмена
+ходит нормальный Unicode, правда за&nbsp;исключением составных типов (типы Object
+и&nbsp;Collection). Если Вы&nbsp;пользуетесь сложными типами, то&nbsp;не&nbsp;забудьте про
+отдельный zip с&nbsp;поддержкой кодировок (с&nbsp;именем типа nls_charset12.zip),
+который скачивается отдельно. В&nbsp;противном случае драйвер будет поддерживать
+только минимум (US7ASCII, WE8DEC, WE8ISO8859P1 и&nbsp;UTF8) и, если БД&nbsp;была
+создана в&nbsp;другой кодировке, то&nbsp;при получении строковых значений из&nbsp;составных
+типов будет сплошной 16-ричный мусор (если включён log у&nbsp;DriverManager, то
+при этом будет видна ругань на&nbsp;неизвестную кодировку).
+</p>
+
+<p>Самая большая проблема, с&nbsp;которой многие сталкиваются&nbsp;— некорректная
+кодировка сообщений об&nbsp;ошибках. Дело в&nbsp;том, что оригинальные драйвера от
+Oracle 8.1.7 и&nbsp;9.0.1&nbsp;содержат некорректно сформированные файлы ресурсов с
+текстами русских сообщений. Драйвера от&nbsp;9.0.2 и&nbsp;9.2.x уже нормальные. Эти
+файлы ресурсов можно довольно легко пропатчить при помощи утилиты
+native2ascii. Готовый скрипт патча можно найти здесь: <a href="http://www.jug.ru/servlets/images/oracle_jdbc_repair.bat">oracle_jdbc_repair.bat</a>.
+Можно
+также поменять текущий язык сессии выполнив команду
+«ALTER SESSION SET NLS_LANGUAGE=English». При этом сообщения станут
+выдаваться
+на&nbsp;английском. Ну&nbsp;а&nbsp;самый правильный путь&nbsp;—
+использовать последние версии
+драйверов от&nbsp;9.2.x, благо что они совместимы со&nbsp;старыми
+версиями Oracle и&nbsp;к&nbsp;тому&nbsp;же содержат исправления других
+ошибок.
+</p>
+
+
+
+<h4>Драйвер JDBC для работы с DBF
+(<a href="http://www.hxtt.net/jdbc/">com.hxtt.sql.dbf.DBFDriver</a>,
+бывший zyh.sql.dbf.DBFDriver)</h4>
+
+<p>Данный драйвер только недавно научился работать с&nbsp;русскими буквами.
+Настройка выполняется немного по&nbsp;разному в&nbsp;зависимости от&nbsp;версии драйвера
+Версии Beta 5.4&nbsp;(от&nbsp;02.04.2002) и&nbsp;более поздние уже нормально воспринимают
+настройку charSet. В&nbsp;версиях Beta 5.2&nbsp;(от&nbsp;30.07.2001) и&nbsp;Beta 5.3&nbsp;(30.11.2001),
+хоть он&nbsp;и&nbsp;сообщает по&nbsp;getPropertyInfo() что он&nbsp;понимает свойство charSet&nbsp;— это
+фикция. Реально&nbsp;же настроить кодировку можно установкой свойства CODEPAGEID.
+Для русских символов там доступны два значения&nbsp;— «66» для Cp866 и&nbsp;«C9» для
+Cp1251. Пример:
+</p>
+
+
+<blockquote><code></code><pre>// Параметры соединения с базой
+Properties connInfo = new Properties();
+
+// Кодировка Cp866
+connInfo.put("charSet", "Cp866");
+connInfo.put("CODEPAGEID", "66");
+
+// Устанавливаем соединение
+Connection db = DriverManager.getConnection("jdbc:DBF:/C:/MyDBFFiles", connInfo);
+</pre></blockquote>
+
+<p>
+Если у&nbsp;Вас DBF-файлы формата FoxPro, то&nbsp;у&nbsp;них своя специфика. Дело в&nbsp;том, что
+FoxPro сохраняет в&nbsp;заголовке файла ID&nbsp;кодовой страницы (байт со&nbsp;смещением 0x1D),
+которая использовалась при создании DBF-ки. При открытии таблицы драйвер использует
+значение из&nbsp;заголовка, а&nbsp;не&nbsp;параметр «CODEPAGEID»
+(параметр в&nbsp;этом случае используется
+только при создании новых таблиц). Соответственно, чтобы всё работало нормально,
+DBF-файл должен быть создан с&nbsp;правильной кодировкой&nbsp;— иначе будут проблемы.
+</p>
+
+
+
+<h4>MySQL (org.gjt.mm.mysql.Driver)</h4>
+
+<p>С этим драйвером тоже всё довольно просто:</p>
+
+<blockquote><code></code><pre>// Параметры соединения с базой
+Properties connInfo = new Properties();
+
+connInfo.put("user",user);
+connInfo.put("password",pass);
+
+connInfo.put("useUnicode","true");
+connInfo.put("characterEncoding","KOI8_R");
+
+Connection conn = DriverManager.getConnection(dbURL, props);
+</pre></blockquote>
+
+<h4>InterBase (interbase.interclient.Driver)</h4>
+
+<p>Для этого драйвера работает параметр <i>charSet</i>:</p>
+
+<blockquote><code></code><pre>// Параметры соединения с базой
+Properties connInfo = new Properties();
+
+connInfo.put("user", username);
+connInfo.put("password", password);
+connInfo.put("charSet", "Cp1251");
+
+// Устанавливаем соединение
+Connection db = DriverManager.getConnection(dataurl, connInfo);
+</pre></blockquote>
+
+<p>
+Однако не&nbsp;забудьте при создании БД&nbsp;и&nbsp;таблиц указать кодировку символов.
+Для русского языка можно использовать значения <i>UNICODE_FSS</i> или <i>WIN1251</i>.
+Пример:
+</p>
+
+<blockquote><code></code><pre>CREATE DATABASE 'E:\ProjectHolding\DataBase\HOLDING.GDB' PAGE_SIZE 4096
+DEFAULT CHARACTER SET UNICODE_FSS;
+
+CREATE TABLE RUSSIAN_WORD
+(
+ "NAME1"  VARCHAR(40) CHARACTER SET UNICODE_FSS NOT NULL,
+ "NAME2"  VARCHAR(40) CHARACTER SET WIN1251 NOT NULL,
+ PRIMARY KEY ("NAME1")
+);
+</pre></blockquote>
+
+<p>
+В&nbsp;версии 2.01&nbsp;InterClient присутствует ошибка&nbsp;— классы ресурсов с&nbsp;сообщениями
+для русского языка там неправильно скомпилированы. Скорей всего разработчики
+просто забыли указать кодировку исходников при компиляции. Есть два пути
+исправления этой ошибки:
+</p>
+
+
+<ul>
+<li>Использовать interclient-core.jar вместо interclient.jar. При этом
+русских ресурсов просто не&nbsp;будет, и&nbsp;автоматом подхватятся английские.</li>
+<li>Перекомпилировать файлы в&nbsp;нормальный Unicode. Разбор class-файлов&nbsp;— дело
+неблагодарное, поэтому лучше воспользоваться JAD-ом. К&nbsp;сожалению JAD, если встречает
+символы из&nbsp;набора ISO-8859-1, выводит их&nbsp;в&nbsp;8-иричной кодировке, так что
+воспользоваться стандартным перекодировщиком native2ascii не&nbsp;удастся&nbsp;— придётся
+написать свой (<a href="http://www.jug.ru/servlets/images/Decode.jar">программа Decode</a>). Если вам не&nbsp;хочется
+заморачиваться с&nbsp;этими проблемами&nbsp;— можете просто взять готовый файл с
+ресурсами (пропатченый jar с&nbsp;драйвером&nbsp;— <a href="http://www.jug.ru/servlets/images/interclient.jar">interclient.jar</a>,
+отдельные классы ресурсов&nbsp;— <a href="http://www.jug.ru/servlets/images/interclient-rus.jar">interclient-rus.jar</a>).
+</li>
+</ul>
+
+<h4>JayBird (org.firebirdsql.jdbc.FBDriver)</h4>
+
+<p>Для этого драйвера указание кодировки отличается от InterClient:</p>
+
+<blockquote><code></code><pre>// Параметры соединения с базой
+Properties connInfo = new Properties();
+
+connInfo.put("user", username);
+connInfo.put("password", password);
+connInfo.put("lc_ctype","WIN1251");
+
+// Устанавливаем соединение
+Connection db = DriverManager.getConnection(dataurl, connInfo);
+</pre></blockquote>
+
+<h4>SAP DB (com.sap.dbtech.jdbc.DriverSapDB)</h4>
+
+<p>
+Для этого драйвера можно включить использование Unicode задав параметр <i>unicode</i> в&nbsp;<i>true</i>.
+В&nbsp;противном случае будет использованна жёстко зашитая ISO-8859-1, с&nbsp;вытекающими
+отсюда осточертевшими «??????». Кроме того существует доработанная напильником версия
+(<a href="http://waine.euro.ru/sapdbc/sapdbc.zip">sapdbc.zip</a>), которая позволяет
+задавать параметр <i>charSet</i>.
+</p>
+
+
+<h4>DataSource (javax.sql.DataSource)</h4>
+
+<p>Если получение соединение производится через использование DataSource,
+то&nbsp;поддержку настройки используемой кодировки должна содержать конкретная
+реализация, которая регистрируется в&nbsp;JNDI. Для примера можно взять реализацию
+от&nbsp;InterClient (interbase.interclient.DataSource). В&nbsp;этом классе есть метод
+<code>setCharSet()</code>, используя который можно указать необходимую кодировку. Пример:
+</p>
+
+<blockquote><code></code><pre>interbase.interclient.DataSource dataSource = new interbase.interclient.DataSource();
+dataSource.setServerName("pongo");
+dataSource.setDatabaseName("/databases/employee.gdb");
+dataSource.setCharSet("Cp1251");
+
+javax.naming.Context context = new javax.naming.InitialContext();
+context.bind("jdbc/EmployeeDB", dataSource);
+</pre></blockquote>
+
+<p>Другой пример&nbsp;— реализация от&nbsp;DBF-драйвера (com.hxtt.sql.HxttDataSource):</p>
+
+<blockquote><code></code><pre>Properties prop=new Properties();
+prop.setProperty("urlPrefix","jdbc:DBF:");
+prop.setProperty("user","aaaaa");
+prop.setProperty("password","vvvvccc");
+prop.setProperty("database","dbffiles");//Change it to yourdbfdir
+
+prop.setProperty("charSet","Cp866");
+
+DataSource dataSource=new com.hxtt.sql.HxttDataSource(prop);
+
+context.bind(name, dataSource);
+</pre></blockquote>
+
+<p>Но даже настроив JDBC-драйвер на&nbsp;нужную кодировку в&nbsp;некоторых случаях
+можно нарваться на&nbsp;неприятности. Например, при попытке использования новых
+замечательных скролируемых курсоров стандарта JDBC 2&nbsp;в&nbsp;мосте JDBC-ODBC из
+JDK 1.3.x довольно быстро можно обнаружить, что русские буквы там просто
+не&nbsp;работают (метод <code>updateString()</code>).
+</p>
+
+<p>С этой ошибкой связанна небольшая история. Когда я&nbsp;впервые её&nbsp;обнаружил
+(под JDK 1.3&nbsp;rc2), я&nbsp;зарегистрил её&nbsp;на&nbsp;BugParade
+(<a href="http://developer.java.sun.com/developer/bugParade/bugs/4335564.html">4335564</a>).
+Когда вышла первая бета JDK 1.3.1, эту ошибку пометили как пофиксеную.
+Обрадованный, я&nbsp;скачал эту бету, запустил тест&nbsp;— не&nbsp;работает. Написал
+Sun-овцам об&nbsp;этом&nbsp;— в&nbsp;ответ мне написали, что фикс будет включён в&nbsp;последующие
+релизы. Ну&nbsp;ладно, подумал я, подождём. Время шло, вышел релиз 1.3.1, а
+потом и&nbsp;бета 1.4. Наконец я&nbsp;нашёл время проверить&nbsp;— опять не&nbsp;работает.
+Мать, мать, мать…&nbsp;— привычно откликнулось эхо. После гневного письма в&nbsp;Sun
+они завели новую ошибку
+(<a href="http://developer.java.sun.com/developer/bugParade/bugs/4486195.html">4486195</a>),
+которую отдали на&nbsp;растерзание индийскому филиалу. Индусы пошаманили над кодом,
+и&nbsp;заявили, что в&nbsp;1.4&nbsp;beta3&nbsp;всё исправлено. Скачал я&nbsp;эту версию, запустил под ним
+тестовый пример, вот результат -
+<a href="http://developer.java.sun.com/developer/bugParade/bugs/4546083.html">4546083</a>.
+Как оказалось, та&nbsp;beta3, которую раздают на&nbsp;сайте (build 84) это не&nbsp;та&nbsp;beta3, куда был включён
+окончательный фикс (build 87). Теперь обещают, что исправление войдёт в&nbsp;1.4&nbsp;rc1…
+В&nbsp;общем, вы&nbsp;понимаете :-)
+</p>
+
+
+
+<hr>
+<a name="source"><h3><u>Русские буквы в исходниках Java-программ</u></h3></a>
+
+<p>Как уже упоминалось, при выполнении программы используется
+Unicode. Исходные&nbsp;же файлы пишутся в&nbsp;обычных редакторах. Я
+пользуюсь Far-ом, у&nbsp;вас, наверняка есть свой любимый редактор.
+Эти редакторы сохраняют файлы в&nbsp;8-битовом формате, а&nbsp;значит,
+что к&nbsp;этим файлам также применимы рассуждения, аналогичные
+приведённым выше. Разные версии компиляторов немного по
+разному выполняют преобразование символов. В&nbsp;ранних версиях JDK 1.1.x
+используется настройка <samp>file.encoding</samp>, которую
+можно поменять при помощи нестандартной опции -J.
+В&nbsp;более новых (как сообщил <a href="mailto:den@mkb.mari.ru">Денис Кокарев</a>&nbsp;— начиная с&nbsp;1.1.4)
+был введён дополнительный параметр -encoding, при помощи которого можно указать
+используемую кодировку. В&nbsp;скомпилированных классах строки представлены
+в&nbsp;виде Unicode (точнее в&nbsp;модифицированном варианте формата UTF8), так
+что самое интересное происходит при компиляции. Поэтому, самое
+главное&nbsp;— выяснить, в&nbsp;какой кодировке у&nbsp;Вас исходники и&nbsp;указать правильное
+значение при компиляции. По&nbsp;умолчанию будет использован всё тот&nbsp;же пресловутый
+<samp>file.encoding</samp>. Пример вызова компилятора:
+</p>
+
+
+
+<blockquote><samp>javac -encoding=KOI8_R ...</samp></blockquote>
+
+<p>Кроме использования этой настройки есть ещё один метод -
+указывать буквы в&nbsp;формате <code>\uXXXX</code>, где указывается код
+символа. Этот метод работает со&nbsp;всеми версиями, а&nbsp;для
+получения этих кодов можно использовать стандартную утилиту
+<a href="#native2ascii">native2ascii</a>.
+</p>
+
+<p>Если вы&nbsp;пользуетесь каким-либо IDE, то&nbsp;у&nbsp;него могут быть свои глюки.
+Зачастую эти IDE пользуются для чтения/сохранения исходников кодировку по
+умолчанию&nbsp;— так что обращайте внимание на&nbsp;региональные настройки своей ОС.
+Кроме этого могут быть и&nbsp;явные ошибки&nbsp;— например довольно неплохая IDE-шка
+<a href="http://www.omnicore.com/">CodeGuide</a> плохо переваривает заглавную
+русскую букву «Т». Встроенный анализатор кода принимает эту букву за&nbsp;двойную
+кавычку, что приводит к&nbsp;тому, что корректный код воспринимается как ошибочный.
+Бороться с&nbsp;этим можно (заменой буквы «Т» на&nbsp;её&nbsp;код <code>\u0422</code>), но&nbsp;неприятно.
+Судя по&nbsp;всему где-то внутри парсера применяется явное преобразование символов
+в&nbsp;байты (типа: <code>byte b&nbsp;= (byte)c</code>), поэтому вместо кода 0x0422&nbsp;(код
+буквы «Т») получается код 0&#215;22&nbsp;(код двойной кавычки).
+</p>
+
+<p>Если Вы&nbsp;используете для компиляции не&nbsp;стандартный javac, а&nbsp;другой
+компилятор&nbsp;— обратите внимание на&nbsp;то, как он&nbsp;выполняет преобразование символов.
+Например, некоторые версии IBM-овского компилятора jikes не&nbsp;понимают,
+что бывают кодировки, отличные от&nbsp;ISO-8859-1&nbsp;:-). Существуют версии,
+пропатченые на&nbsp;этот счёт, но&nbsp;часто там тоже зашивается некоторая кодировка -
+нет такого удобства, как в&nbsp;javac.
+</p>
+
+<hr>
+<a name="javadoc"><h3><u>JavaDoc</u></h3></a>
+
+<p>Для генерации HTML-документации по&nbsp;исходникам используется утилита
+javadoc, входящая в&nbsp;стандартную поставку JDK. Для указания кодировок у&nbsp;неё есть
+аж&nbsp;3&nbsp;параметра:
+</p>
+
+<ul>
+<li>
+-encoding&nbsp;— эта настройка задаёт кодировку исходников.
+По&nbsp;умолчанию используется file.encoding.
+</li>
+<li>
+-docencoding&nbsp;— эта настройка задаёт кодировку генерируемых HTML-файлов.
+По&nbsp;умолчанию используется file.encoding.
+</li>
+<li>
+-charset&nbsp;— эта настройка задаёт кодировку, которая будет записываться в
+заголовки генерируемых HTML-файлов (&lt;meta http-equiv="Content-Type"
+content="text/html; charset=…"&gt;). Очевидно, что она должна совпадать
+с&nbsp;предыдущей настройкой. Если данная настройка опущена, то&nbsp;тег meta
+добавляться не&nbsp;будет.
+</li>
+</ul>
+
+
+
+<hr>
+<a name="prop"><h3><u>Русские буквы в файлах properties</u></h3></a>
+
+<p>Для чтения файлов properties используются методы загрузки ресурсов,
+которые работают специфичным образом. Собственно для чтения используется
+метод Properties.load, который не&nbsp;использует <samp>file.encoding</samp>
+(там в&nbsp;исходниках жёстко указана кодировка ISO-8859-1), поэтому единственный
+способ указать русские буквы&nbsp;— использовать формат <code>\uXXXX</code> и&nbsp;утилиту
+<a href="#native2ascii">native2ascii</a>.
+</p>
+
+<p>Метод Properties.save работает по&nbsp;разному в&nbsp;версиях JDK 1.1 и&nbsp;1.2. В
+версиях 1.1&nbsp;он&nbsp;просто отбрасывал старший байт, поэтому правильно работал
+только с&nbsp;англицкими буквами. В&nbsp;1.2&nbsp;делается обратное преобразование в
+<code>\uXXXX</code>, так что он&nbsp;работает зеркально к&nbsp;методу load.
+</p>
+
+<p>Если файлы properties у&nbsp;вас загружаются не&nbsp;как ресурсы, а&nbsp;как обычные файлы
+конфигурации, и&nbsp;вас не&nbsp;устраивает такое поведение&nbsp;— выход один, написать
+собственный загрузчик.
+</p>
+
+<hr>
+<a name="servlet"><h3><u>Русские буквы в Servlet-ах.</u></h3></a>
+
+<p>Для чего эти самые Servlet-ы нужны, я&nbsp;думаю, вы&nbsp;в&nbsp;курсе. Если нет -
+то&nbsp;лучше сначала прочитать документацию. Здесь&nbsp;же рассказывается только об
+особенностях работы с&nbsp;русскими буквами.
+</p>
+
+<p>Так в&nbsp;чём&nbsp;же особенности? Когда Servlet посылает ответ клиенту, есть два
+способа послать этот ответ&nbsp;— через OutputStream (метод getOutputStream()) или
+через PrintWriter (метод getWriter()). В&nbsp;первом случае Вы&nbsp;записываете массивы
+байтов, поэтому применимы вышеописанные методы записи в&nbsp;потоки. В&nbsp;случае&nbsp;же
+PrintWriter, он&nbsp;использует установленную кодировку. В&nbsp;любом случае необходимо
+правильно указать используемую кодировку при вызове метода setContentType(),
+для того, чтобы было правильное преобразование символов на&nbsp;стороне сервера.
+Это указание должно быть сделано перед вызовом getWriter() или перед первой
+записью в&nbsp;OutputStream. Пример:
+</p>
+
+<blockquote><code></code><pre>public void doPost(HttpServletRequest request,HttpServletResponse response)
+  throws ServletException, IOException {
+ // Установка кодировки ответа
+ // Учтите, что некоторые engine не допускают
+ // наличие пробела между ';' и 'charset'
+ response.setContentType("text/html;charset=Windows-1251");
+
+ PrintWriter out = response.getWriter();
+
+ // Отладочный вывод названия кодировки для проверки
+ out.println( "Encoding: " + response.getCharacterEncoding() );
+ ...
+ out.close();
+}
+</pre></blockquote>
+
+<p>
+Это по&nbsp;поводу отдачи ответов клиенту. Со&nbsp;входными параметрами,
+к&nbsp;сожалению не&nbsp;так просто. Входные параметры кодируются броузером
+побайтно в&nbsp;соответствии с&nbsp;MIME-типом <code>application/x-www-form-urlencoded</code>.
+Как рассказал <a href="mailto:Alexey_Mendelev@net-burg.com">Алексей Менделев</a>
+русские буквы броузеры кодируют, используя текущую установленную кодировку.
+Ну&nbsp;и, разумеется, ничего о&nbsp;ней не&nbsp;сообщают. Соответственно, например, в&nbsp;JSDK
+версий от&nbsp;2.0&nbsp;до&nbsp;2.2 это никак не&nbsp;проверяется, а&nbsp;то, что за&nbsp;кодировка будет
+использована для преобразования&nbsp;— зависит от&nbsp;используемого engine. Начиная со
+спецификации 2.3&nbsp;появилась возможность устанавливать кодировку для
+javax.servlet.ServletRequest&nbsp;— метод <code>setCharacterEncoding()</code>. Эту спецификацию
+уже поддерживают последние версии <a href="http://www.caucho.com/">Resin</a> и
+<a href="http://jakarta.apache.org/tomcat/">Tomcat</a>.
+</p>
+
+<p>Таким образом, если вам повезло, и&nbsp;у&nbsp;вас стоит сервер с&nbsp;поддержкой
+Servlet 2.3, то&nbsp;всё довольно просто:
+</p>
+
+
+
+<blockquote><code></code><pre>public void doPost(HttpServletRequest request,HttpServletResponse response)
+  throws ServletException, IOException {
+ // Кодировка сообщений
+ request.setCharacterEncoding("Cp1251");
+
+ String value = request.getParameter("value");
+ ...
+</pre></blockquote>
+
+<p>
+В&nbsp;применении метода <code>request.setCharacterEncoding()</code> есть одна существенная
+тонкость&nbsp;— он&nbsp;должен быть применен <b>до</b>&nbsp;первого обращения к&nbsp;запросу за
+данными (например <code>request.getParameter()</code>). Если Вы&nbsp;используете фильтры,
+которые обрабатывают запрос до&nbsp;того как он&nbsp;приходит в&nbsp;сервлет, есть ненулевая
+вероятность того, что в&nbsp;одном из&nbsp;фильтров может произойти чтение какого-нибудь
+параметра из&nbsp;запроса (например для авторизации) и
+<code>request.setCharacterEncoding()</code> в&nbsp;сервлете не&nbsp;сработает.
+</p>
+
+<p>Потому идеологически более правильно написать фильтр, устанавливающий
+кодировку запроса. При этом он&nbsp;должен стоять первым в&nbsp;цепочке фильтров в
+web.xml.
+</p>
+
+<p>Пример такого фильтра:</p>
+
+<blockquote><code></code><pre>import java.io.*;
+import java.util.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class CharsetFilter implements Filter {
+ // кодировка
+ private String encoding;
+
+ public void init(FilterConfig config) throws ServletException {
+  // читаем из конфигурации
+  encoding = config.getInitParameter("requestEncoding");
+
+  // если не установлена - устанавливаем Cp1251
+  if( encoding==null ) encoding="Cp1251";
+ }
+
+ public void doFilter(ServletRequest request, ServletResponse response,
+        FilterChain next) throws IOException, ServletException {
+  request.setCharacterEncoding(encoding);
+  next.doFilter(request, response);
+ }
+
+ public void destroy(){}
+}
+</pre></blockquote>
+
+<p>И его конфигурации в web.xml:</p>
+
+<blockquote><code></code><pre>&lt;!--CharsetFilter start--&gt;
+
+  &lt;filter&gt;
+    &lt;filter-name&gt;Charset Filter&lt;/filter-name&gt;
+    &lt;filter-class&gt;CharsetFilter&lt;/filter-class&gt;
+      &lt;init-param&gt;
+        &lt;param-name&gt;requestEncoding&lt;/param-name&gt;
+        &lt;param-value&gt;Cp1251&lt;/param-value&gt;
+      &lt;/init-param&gt;
+  &lt;/filter&gt;
+
+  &lt;filter-mapping&gt;
+    &lt;filter-name&gt;Charset Filter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+  &lt;/filter-mapping&gt;
+
+ &lt;!--CharsetFilter end--&gt;
+</pre></blockquote>
+
+<p>Если&nbsp;же вам не&nbsp;повезло, и&nbsp;у&nbsp;вас более старая версия&nbsp;— для достижения
+результата придётся поизвращаться:</p>
+
+<ul>
+<li>
+<p>Оригинальный способ работы с&nbsp;кодировками предлагает Russian Apache -
+<a href="http://apache.lexa.ru:8101/internals.html">здесь</a> расписано,
+как именно.
+
+
+</p></li><li>
+<p><a href="http://servlets.chat.ru/">Своё</a> решение проблемы так&nbsp;же
+предложил Вячеслав Педак.
+
+
+</p></li><li>
+<p>Ну а&nbsp;самый простейший вариант извлечь таки символы&nbsp;— передавать в
+комплекте параметров имя кодировки (или, если вы&nbsp;уверены в&nbsp;текущей кодировке
+броузера, использовать предопределённую кодировку) и&nbsp;использовать метод
+перекодировки символов:
+
+  </p><blockquote><code></code><pre>  public void doPost(HttpServletRequest request,HttpServletResponse response)
+    throws ServletException, IOException {
+   // Кодировка сообщений, использованная engine
+   // Некоторые используют ISO-8859-1, некоторые кодировку
+   // по умолчанию - единообразия тут нет
+   String requestEnc = "ISO-8859-1";
+
+   // Кодировка, установленная в броузере
+   String clientEnc = request.getParameter("charset");
+
+   if( clientEnc==null ) clientEnc="Cp1251";
+
+   // Получение параметра
+   String value = request.getParameter("value");
+
+   //
+   if( value!=null )
+      value = new String(value.getBytes(requestEnc),clientEnc);
+   ...
+  </pre></blockquote>
+ </li>
+</ul>
+
+<hr>
+<a name="jsp"><h3><u>JSP</u></h3></a>
+
+<p>Технология JSP (Java Server Pages) очень похожа на&nbsp;сервлеты. По&nbsp;сути дела
+сервер, при запросе в&nbsp;первый раз на&nbsp;лету генерит из&nbsp;jsp-страниц код сервлета,
+компилирует его и&nbsp;запускает его как обычный сервлет. Поэтому у&nbsp;JSP возникают
+схожие проблемы при работе с&nbsp;русскими буквами. Однако решаются они немного
+по&nbsp;другому. Есть три места где могут возникнуть трудности&nbsp;— русские буквы
+внутри самой jsp-страницы, в&nbsp;ответе клиенту и&nbsp;в&nbsp;запросе от&nbsp;клиента. Первые
+два решаются заданием в&nbsp;начале страницы тега page:
+</p>
+
+
+<blockquote><code></code><pre>&lt;%@page contentType="text/html;charset=Windows-1251" %&gt;
+</pre></blockquote>
+
+<p>
+Увидев эту директиву сервер понимает, что страница записана в&nbsp;указанной
+кодировке, и&nbsp;что в&nbsp;сгенерённый код надо добавить вызов
+<code>response.setContentType()</code> с&nbsp;указанным contentType. Если сервер поддерживает
+спецификацию Servlet 2.3, то&nbsp;он&nbsp;также добавит и&nbsp;вызов
+<code>request.setCharacterEncoding()</code> с&nbsp;нужной кодировкой, таким образом автоматом
+решая и&nbsp;третью проблему. Для более старых серверов для раскодирования
+параметров в&nbsp;запросе клиента надо применять ухищрения, аналогичные описанным
+в&nbsp;разделе по&nbsp;сервлетам.
+</p>
+
+<p>Для примера, для того, чтобы настроить JSP-форум
+<a href="http://www.jivesoftware.com/">Jive</a> для работы с&nbsp;русскими буквами
+надо откорректировать следующие файлы:
+</p>
+
+<blockquote><code></code><pre>/jive/header.jsp
+/jive/admin/header.jsp
+</pre></blockquote>
+
+<p>В них надо в&nbsp;начало добавить строчку:</p>
+
+<blockquote><code></code><pre>&lt;%@page contentType="text/html;charset=UTF-8" %&gt;
+</pre></blockquote>
+
+<p>
+Вместо UTF-8&nbsp;можно использовать любую кодировку, поддерживающую русские буквы
+— всё зависит от&nbsp;вкусов и&nbsp;предпочтений. Информацию об&nbsp;этом прислал
+<a href="mailto:alexey@offshorecode.com">Алексей Епишкин</a>, за&nbsp;что ему
+отдельное спасибо.
+</p>
+
+<p>В некоторых серверах встречаются баги, связанные с&nbsp;русскими буквами в&nbsp;JSP.
+Например, сервер Orion не&nbsp;любит русскую букву «Т»&nbsp;— он&nbsp;вместо неё в
+сгенерённый сервлет подставляет символ кавычки. Там во&nbsp;внутренностях есть
+примерно такой код:</p>
+
+
+<blockquote><code></code><pre>...
+switch( charstring.c1(i) )
+...
+public final char c1(int i)
+{
+ if(i &lt; 0 || i &gt;= length)
+    throw new StringIndexOutOfBoundsException(i);
+ else
+    return (char)(data[offset + i] &amp; 0xff);
+</pre></blockquote>
+
+<p><code>data</code>&nbsp;— это массив типа <code>char[]</code>. Как видно, ошибка тут тривиальна&nbsp;— разработчик
+почему-то был уверен что символы с&nbsp;кодами больше 255&nbsp;— это ошибка природы. :-)
+</p>
+
+<hr>
+<a name="javamail"><h3><u>JavaMail</u></h3></a>
+
+<p>Пакет JavaMail предназначен для работы с электронными письмами. При помощи
+этого пакета Вы можете отправлять и принимать письма через различные протоколы.
+Разные протоколы по разному обрабатывают национальные символы. Самые
+распространённые на данный момент протоколы Internet основаны на старом
+стандарте RFC-822. Согласно этому стандарту в служебных полях (заголовках)
+писем разрешено посылать только символы кодировки ASCII, т.е. только латинские
+буквы (первые 128 символов Unicode). Очевидно, что это неудобно, т.к. часто
+очень хочется писать, например в поле Subject (тема письма) или в полях
+From/To (имя и адрес отправителя/получателя) русский текст. Для того, чтобы
+решить эту проблему был придуман стандарт кодирования MIME (RFC 2047). Он
+позволяет в некоторых полях заголовка (не во всех) использовать национальные
+символы при помощи специального кодирования (Base64 или QuotedPrintable).</p>
+
+<p>Для представления писем в JavaMail используется класс javax.mail.Message.
+Это абстрактный класс, реальное же поведение определяется наследниками. Методы,
+определённые в нём работают только с обычными Java-строками (String). Для
+протоколов Internet обычно используется наследник
+javax.mail.internet.MimeMessage, который помимо базовых методов добавляет
+методы, в которых можно дополнительно указывать кодировку, которую следует
+использовать для писем. Для кодирования используется вспомогательный класс
+javax.mail.internet.MimeUtility. Класс MimeMessage обычно сам обращается к нему
+для кодирования/раскодирования заголовков, но, если Вы напрямую обращаетесь
+к заголовкам (методы getHeader()/setHeader()/addHeader()), то для их
+кодирования/раскодирования Вам придётся обращаться к методам MimeUtility
+самому.</p>
+
+<p>Если Вы не указываете кодировку письма, то будет использована кодировка по
+умолчанию - обычно используется file.encoding, но её можно перекрыть
+специальной системной настройкой "mail.mime.charset". Это разумно, т.к. часто
+кодировка по умолчанию в системе отличается от стандартной кодировки Internet.
+Для русскоязычных писем в Internet стандартом де-факто стала кодировка КОИ-8.
+Вы, конечно, можете указать и другую, но шанс, что принимающая сторона не
+сможет прочитать такое письмо очень велик.</p>
+
+<p>Надо учитывать также, что в JavaMail различаются два стандарта наименования
+кодировок - стандарт MIME и стандарт Java. Для большинства кодировок имена MIME
+уже поддерживаются в Java при помощи механизма синонимов. Например, для
+кодировки "Cp1251" (название Java) существует синоним "Windows-1251" (название
+MIME). Для тех кодировок, для которых такие синонимы отсутствуют, они
+поддерживаются внутри JavaMail. Для этого загружается файл javamail.charset.map
+из подкаталога "/META-INF" из того jar-файла, откуда был загружен пакет
+JavaMail. Для указания кодировки при вызове методов JavaMail следует
+использовать только MIME-имена, в противном случае получатель не сможет
+распознать использованную кодировку (если только на другом конце не тоже Java
+:-).</p>
+
+<p>Вот простой пример отправки письма при помощи JavaMail:</p>
+
+<blockquote><code></code><pre>import java.util.Properties;
+
+import javax.mail.Session;
+import javax.mail.Message;
+import javax.mail.Transport;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.InternetAddress;
+
+public class MailTest {
+ static final String ENCODING = "koi8-r";
+ static final String FROM = "myaccount@mydomail.ru";
+ static final String TO = "myaccount@mydomail.ru";
+
+ public static void main(String args[]) throws Exception {
+  Properties mailProps = new Properties();
+
+  mailProps.put("mail.store.protocol","pop3");
+  mailProps.put("mail.transport.protocol","smtp");
+  mailProps.put("mail.user","myaccount");
+
+  mailProps.put("mail.pop3.host","mail.mydomail.ru");
+  mailProps.put("mail.smtp.host","mail.mydomail.ru");
+
+  Session session = Session.getDefaultInstance(mailProps);
+
+  MimeMessage message = new MimeMessage(session);
+  message.setFrom(new InternetAddress(FROM));
+  message.setRecipient(Message.RecipientType.TO,
+        new InternetAddress(TO));
+
+  message.setSubject("Тестовое письмо",ENCODING);
+  message.setText("Текст тестового письма",ENCODING);
+
+  Transport.send(message);
+ }
+}
+</pre></blockquote>
+
+<hr>
+<a name="xml"><h3><u>XML/XSL</u></h3></a>
+
+<p>При разработке формата XML особое внимание уделялось поддержке различных
+кодировок символов. Для указания того, какая кодировка была использована
+используется заголовок XML-документа. Пример:</p>
+
+<blockquote><code></code><pre>&lt;?xml version="1.0" encoding="Windows-1251"?&gt;
+</pre></blockquote>
+
+<p>Если кодировка указана не была, то по умолчанию предполагается кодировка UTF-8.
+На XML-парсер возложена обязанность корректно прочитать заголовок и
+использовать соответствующую кодировку для получения Unicode-символов. Разные
+парсеры могут поддерживать разные наборы кодировок, но UTF-8 обязаны
+поддерживать все. Здесь также, как и в случае с JavaMail наименования
+кодировок, описанные в стандарте XML могут расходится с наименованиями,
+принятыми в Java. Разные парсеры по разному выходят из положения. Crimson
+просто использует некоторое кол-во дополнительных синонимов, а в остальном
+полагается на синонимы кодировок из Java. Xerces же по умолчанию использует
+внутреннюю таблицу (класс org.apache.xerces.readers.MIME2Java), а если не
+находит там кодировку, то бросает исключение о неподдерживаемой кодировке.
+В Xerces версии 1.4.0 русских кодировок там всего две - KOI8-R и ISO-8859-5.
+Однако это поведение по умолчанию можно изменить при помощи разрешения у
+парсера специального feature
+"http://apache.org/xml/features/allow-java-encodings". Если этот feature
+разрешён (при помощи метода setFeature()), то парсер после поиска в таблице
+будет пытаться использовать стандартный Java-вский механизм и соответственно
+Java-вский набор кодировок. В случае использования интерфейса SAX сделать это
+можно таким, например, образом (при использовании JAXP):</p>
+
+<blockquote><code></code><pre>SAXParserFactory parserFactory = SAXParserFactory.newInstance();
+
+SAXParser parser = parserFactory.newSAXParser();
+parser.getXMLReader().setFeature(
+        "http://apache.org/xml/features/allow-java-encodings",true);
+</pre></blockquote>
+
+<p>Для DOM, к сожалению, подобного механизма feature-ов не предусмотрено,
+но можно вместо JAXP для создания DOM напрямую использовать класс
+org.apache.xerces.parsers.DOMParser, у которого уже есть метод setFeature().</p>
+
+<p>Если же Xerces используется не напрямую, а посредством другого пакета,
+то необходимо настроить этот пакет дабы он сам выставлял этот feature.
+Если же такой возможности не предусмотрено, то остаётся только один выход
+- править ручками. Для этого можно или подправить список кодировок в
+классе org.apache.xerces.readers.MIME2Java или установить указанный
+feature как true по умолчанию.</p>
+
+<p>Для чтения документа XML из потока данных обычно используется класс
+org.xml.sax.InputSource. Собственно сам поток может быть представлен или в виде
+байтового потока (java.io.InputStream) или в виде потока символов
+(java.io.Reader). Соответственно ответственность за корректное распознавание
+кодировки возлагается или на парсер или на того, кто создаёт объект Reader.
+У класса InputSource есть так же метод setEncoding(), при помощи которого
+можно явно задать кодировку в случае использования потока байтов.</p>
+
+<p>Работает это всё таким образом:
+
+</p><ul>
+ <li>
+  Если был задан поток символов (Reader), то он будет использован для чтения
+  данных. Кодировка, установленная методом setEncoding() при этом игнорируется,
+  как игнорируется и кодировка, указанная в заголовке XML-документа.
+ </li>
+ <li>
+  Если вместо потока символов был задан поток байтов (InputStream), то
+  используется он. Если установлена кодировка методом setEncoding(), то
+  используется она, а если нет - то парсер использует кодировку, указанную
+  в заголовке XML-документа.
+ </li>
+</ul>
+
+<p>Если при чтении заголовка XML-документа обнаруживается расхождение между
+заданной кодировкой и кодировкой из заголовка, то парсеры могут поступать по
+разному. Crimson, например, при этом выдаёт предупреждение, а Xerces молча
+пропускает.</p>
+
+<p>С чтением XML-документов мы разобрались, теперь перейдём к их созданию.
+Единого стандарта на создание документов, в отличии от чтения, пока нет.
+Предполагается, что, следующая версия рекомендаций комитета W3C будет включать
+в себя и создание документов, но пока что создатели парсеров делают кто во что
+горазд.
+</p>
+
+<p>В случае с Crimson сохранить созданный документ DOM можно при помощи метода
+write() у класса org.apache.crimson.tree.XmlDocument. В качестве аргумента
+можно передать или поток символов (Writer) или поток байтов (OutputStream).
+Вместе с потоком можно передать и необходимую кодировку. Если использован
+поток байтов, а кодировка указана не была, то используется UTF-8. Если
+использован поток символов вместе с именем кодировки, то имя используется
+только для записи в заголовок документа. Если Writer передан без кодировки,
+то делается проверка - если это экземляр OutputStreamWriter, то для выяснения
+что писать в заголовок зовётся его метод getEncoding(). Если же это другой
+Writer, то кодировка в заголовок записана не будет, что по стандарту означает
+кодировку UTF-8. Пример:</p>
+
+<blockquote><code></code><pre>XmlDocument doc = ...;
+
+OutputStream os = ...;
+
+doc.write(os,"Windows-1251");
+</pre></blockquote>
+
+<p>В Xerces для создания документов используются классы из пакета
+org.apache.xml.serialize. Собственно для записи используется класс
+XMLSerializer, а для настройки выходного формата - класс OutputFormat.
+В конструкторе XMLSerializer можно передавать как потоки байтов, так и потоки
+символов. В случае потоков символов используемая кодировка должна совпадать с
+заданной в OutputFormat. Важно не забыть задать используемую кодировку в
+OutputFormat - в противном случае русские буквы будут представлены в виде
+кодов, типа такого: "&amp;#x410;&amp;#x411;&amp;#x412;" для символов "АБВ".
+Пример:</p>
+
+<blockquote><code></code><pre>OutputStream os = ...;
+
+OutputFormat format = new OutputFormat( Method.XML, "Windows-1251", true )
+
+XMLSerializer serializer = new XMLSerializer(os,format);
+
+serializer.serialize(doc);
+</pre></blockquote>
+
+<h4>Castor XML</h4>
+
+<p>Пакет <a href="http://castor.exolab.org/">Castor</a> предназначен для решения
+проблем долговременного хранения объектов. В числе прочего он содержит в себе
+подсистему Castor XML, которая по сути дела является надстройкой над
+XML-парсером и позволяет автоматизировать чтение и запись XML-файлов.
+Castor XML по умолчанию использует парсер Xerces, поэтому проблемы
+Xerces перекочёвывают и сюда. В документации к Castor в примерах используются
+потоки символов (Reader и Writer), а это может привести к рассогласованности
+между используемой в потоке кодировки и реальной кодировки XML-файла. Как уже
+говорилось выше, чтобы прочитать при помощи Xerces XML-файл в произвольной
+кодировке нужно, во первых, использовать потоки байтов, а во вторых, установить
+специальный feature. К счастью эта возможность предусмотрена в Castor. Для
+этого нужно скопировать файл castor.properties (взять его можно из каталога
+org\exolab\castor в файле castor-0.9.3-xml.jar) в подкаталог lib в JRE, и
+установить там переменную <b>org.exolab.castor.sax.features</b>. Пример:
+</p>
+
+<blockquote><code></code><pre># Comma separated list of SAX 2 features that should be enabled
+# for the default parser.
+#
+#org.exolab.castor.features=
+org.exolab.castor.sax.features=http://apache.org/xml/features/allow-java-encodings
+</pre></blockquote>
+
+<p>
+Стоит отметить, что по умолчанию там стоит переменная
+<b>org.exolab.castor.features</b>, но это, очевидно, опечатка - если посмотреть
+в исходники, то там анализируется <b>org.exolab.castor.sax.features</b>
+(это справедливо для Castor версии 0.9.3 от 03.07.2001). Пример чтения
+с использованием потоков байтов:
+</p>
+
+<blockquote><code></code><pre>public static Object load(Class cls, String mappingFile, InputStream is)
+ throws Exception {
+ Mapping mapping = loadMapping(cls,mappingFile);
+
+ Unmarshaller unmarshaller = new Unmarshaller(cls);
+ unmarshaller.setMapping(mapping);
+
+ return unmarshaller.unmarshal(new InputSource(is));
+}
+</pre></blockquote>
+
+<p>Для создания XML-файлов необходимо правильно указать формат для Xerces.
+Пример:</p>
+
+<blockquote><code></code><pre>public static void save(Object obj, String mappingFile,
+        OutputStream os, String encoding) throws Exception {
+ Mapping mapping = loadMapping(obj.getClass(),mappingFile);
+
+ try {
+    XMLSerializer serializer = new XMLSerializer(os,
+            new OutputFormat( Method.XML, encoding, true ));
+
+    Marshaller marshaller = new Marshaller(serializer);
+    marshaller.setMapping(mapping);
+
+    marshaller.marshal(obj);
+ }
+ finally { os.flush(); }
+}
+</pre></blockquote>
+
+Для загрузки файлов маппинга в этих примерах можно использовать такой код:
+
+<blockquote><code></code><pre>private static Mapping loadMapping(Class cls,String mappingFile)
+ throws Exception {
+ ClassLoader loader = cls.getClassLoader();
+
+ Mapping mapping = new Mapping(loader);
+ mapping.loadMapping(
+        new InputSource(loader.getResourceAsStream(mappingFile)) );
+
+ return mapping;
+}
+</pre></blockquote>
+
+<h4>XSL</h4>
+
+<p>Спецификация <a href="http://www.w3.org/TR/1999/REC-xslt-19991116">XSL</a>
+описывает стандарт на преобразование XML-документов. Когда при помощи XSL
+выполняется преобразование из одного XML-документа в другой, особых причин
+для беспокойства нет - и тот и другой являются Unicode-документами, поэтому
+нет преобразований из символов в байты и обратно, могущих повлиять на результат.
+Другое дело, когда выполняется преобразование из XML в HTML или вообще в
+текстовый файл. Формат выходного файла задаётся настройкой тега
+<a href="http://www.citforum.ru/internet/xslt/xslt16.shtml">xsl:output</a>,
+в котором можно задать используемую кодировку. Пример:
+</p>
+
+<blockquote><code></code><pre>&lt;xsl:output encoding="Windows-1251" method='html' indent='yes'/&gt;
+</pre></blockquote>
+
+<p>
+Если XSLT-процессор не знает указанной кодировки, то он должен или выдать ошибку
+или использовать UTF-8 (или UTF-16). Если формируется HTML, то XSLT-процессор
+должен добавить тег meta, в котором будет указана реально использованная
+кодировка:
+</p>
+
+<blockquote><code></code><pre>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+</pre></blockquote>
+
+Всё бы хорошо, но некоторые XSLT-процессоры не поддерживают данный тег
+(по спецификации они и не обязаны). В частности пакет
+<a href="http://xml.apache.org/cocoon/">Cocoon</a> его не поддерживает, т.к.
+<a href="http://xml.apache.org/cocoon/faqs.html#faq-xsloutput">по словам</a>
+разработчиков он противоречит внутренней архитектуре этого пакета. Вместо этого
+там поддерживается указание выходного формата при помощи инструкции
+препроцессора cocoon-format. Пример вставки этой инструкции в XSL:
+
+<blockquote><code></code><pre>&lt;xsl:processing-instruction name="cocoon-format"&gt;
+  type="text/html"
+&lt;/xsl:processing-instruction&gt;
+</pre></blockquote>
+
+Таким образом можно динамически менять выходной формат. Если это не требуется, то можно
+записать инструкцию и статически (в исходном XML-документе):
+
+<blockquote><code></code><pre>&lt;?cocoon-format type="text/html"?&gt;
+</pre></blockquote>
+
+Собственно используемая кодировка настраивается для каждого формата отдельно в файле
+cocoon.properties.
+
+<p>Новая версия <a href="http://xml.apache.org/cocoon2/">Cocoon 2.0</a> кроме
+управления кодировками позволяет сделать в плане локализации уже гараздо
+больше. Подробности Вы можете узнать на их
+<a href="http://xml.apache.org/cocoon2/i18n.html">сайте</a>.
+
+</p><p>В случае использования JAXP для генерации выходного потока (пакет javax.xml.transform)
+кроме использования тега xsl:output можно использовать методы setOutputProperty объекта
+Transformer. Пример сохранения документа в нужной кодировке:
+
+</p><blockquote><code></code><pre>TransformerFactory trFactory = TransformerFactory.newInstance();
+Transformer transformer = trFactory.newTransformer();
+
+transformer.setOutputProperty(OutputKeys.DOCTYPE_PUBLIC, docPublic);
+transformer.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, docSystem);
+
+transformer.setOutputProperty( OutputKeys.INDENT, "yes" );
+transformer.setOutputProperty( OutputKeys.ENCODING, encoding );
+
+OutputStream os = ...;
+
+StreamResult result = new StreamResult( os );
+
+transformer.transform( source, result );
+</pre></blockquote>
+
+<p>Тут есть один подводный камень - реализация Transformer должна поддерживать
+нужную кодировку. Xalan из состава JDK 1.4.0_x и 1.4.1_x поддерживает только две
+русские кодировки - KOI8-R и ISO-8859-5. Если хочется использовать Windows-1251,
+то можно воспользоваться механизмом endorsed:</p>
+
+<ol>
+ <li>Создаёте каталог %JAVA_HOME%\jre\lib\endorsed</li>
+ <li>Копируете туда jar с пропатченым классом: <a href="http://www.jug.ru/servlets/images/XalanRusChars.jar">XalanRusChars.jar</a></li>
+</ol>
+
+<p>В JDK 1.4.2 Beta включена новая версия Xalan, которая вроде как уже поддерживает
+кодировку 1251.</p>
+
+<hr>
+<a name="fop"><h3><u>Генерация PDF при помощи FOP</u></h3></a>
+
+<p>Стандартом де-факто для генерации PDF в Java-программах является применение к XML-документу
+преобразования XSL-FO при помощи библиотеки <a href="http://xmlgraphics.apache.org/fop/">FOP</a>.
+К сожалению, чтобы увидеть в PDF-файле русские буквы, в него необходимо добавить embedded font.</p>
+
+Например, скопируем файл arial.ttf из системного каталога Windows папку C:\fop\fonts. Теперь
+нужно сгенерировать описание шрифта при помощи команды
+<blockquote><code></code><pre>java -cp build\fop.jar;lib\avalon-framework.jar;lib\xml-apis.jar;
+         lib\xercesImpl.jar;lib\xalan.jar
+           org.apache.fop.fonts.apps.TTFReader [options]
+             fonts\arial.ttf fonts\arial.xml
+</pre></blockquote>
+
+К сожалению, русские буквы будут видны только при специфической кодировке, из-за которой
+не будет работать копирование текста из PDF через буфер даже для латинских букв. Чтобы
+работало копирование через буфер, нужно задать опцию <b>-enc ansi</b>, но тогда можно забыть
+о русских буквах. Подробнее об этом можно почитать в
+<a href="http://xmlgraphics.apache.org/fop/0.20.5/fonts.html#truetype-metrics">родной документации</a>.
+
+
+Далее нужно добавить описание шрифта в <b>conf\userconfig.xml</b>:
+
+<blockquote><code></code><pre>&lt;font metrics-file="C:\fop\conf\fonts\arial.xml" kerning="yes"
+   embed-file="C:\fop\conf\fonts\arial.ttf"&gt;
+  &lt;font-triplet name="Arial" style="normal" weight="normal"/&gt;
+&lt;/font&gt;
+</pre></blockquote>
+
+<hr>
+<a name="poi"><h3><u>POI</u></h3></a>
+
+<p>Пакет <a href="http://jakarta.apache.org/poi/">Jakarta POI</a> предназначен для
+работы с документами Microsoft Office. Пока что более-менее работающей там является только
+поддержка файлов MS Excel (xls). Особой сложности в работе с русским языком нет,
+но надо учитывать нюанс, что для работы с ячекой используется класс
+org.apache.poi.hssf.usermodel.Cell, у которого есть метод setEncoding(short encoding),
+однако вместо привычных "Cp1255" и "Cp866", необходимо исользовать константы
+ENCODING_COMPRESSED_UNICODE (0) и ENCODING_UTF_16 (1). По умолчанию включен
+первый режим, а для нормальной работы с русским языком необходимо использовать
+ENCODING_UTF_16. Причем что самое важное, эту установку необходимо выполнять для каждой,
+создаваемой ячейки. Пример кода:
+</p>
+
+<blockquote><code></code><pre>HSSFWorkbook wb = new HSSFWorkbook();
+HSSFSheet sheet = wb.createSheet("Sheet1");
+HSSFRow row = sheet.createRow( (short)0 );
+
+for( int i = 0; i &lt; 10; i++ ) {
+   HSSFCell cell = row.createCell( (short)i );
+   cell.setEncoding( (short)cell.ENCODING_UTF_16 );
+   cell.setCellValue("Тест русского языка");
+  }
+</pre></blockquote>
+
+<p>
+Создать лист с названием содержащим русские символы, к сожалению, не удаётся.
+
+Данное описание прислал
+<a href="mailto:slavay@i.com.ua">Вячеслав Яковенко</a>, за что ему отдельное
+спасибо.
+</p>
+
+<hr>
+<a name="jni"><h3><u>JNI</u></h3></a>
+
+<p>JNI (Java Native Interface) - это стандарт по взаимодействию с C/C++-ным
+кодом. Как и следовало ожидать, на этом водоразделе тоже происходит
+столкновение байтов и символов. Большинство C/C++-ных программ
+пишется без учёта Unicode, многие программисты даже не знают о нём. Я сам,
+за 7 лет писательства на C/C++, пока не начал писать на Java, про Unicode
+знал только по наслышке. Большинство строковых операций в C/C++ сделаны для
+8-битового сишного типа char. В принципе, есть некоторые подвижки в этом
+направлении, в частности для Windows NT можно откомпилировать код,
+который будет взаимодействовать с Unicode-вариантами Win32 API, но,
+к сожалению, этого часто недостаточно.</p>
+
+<p>Таким образом главная задача - получить тип char* из типа jstring
+(JNI-шное отображение String) и наоборот. Практически во всех описаниях и
+примерах JNI для этого используется пара функций
+GetStringUTFChars()/ReleaseStringUTFChars(). Коварные буржуины и здесь
+приготовили засаду - эти функции формируют массив байтов по стандарту UTF,
+который соответствует ожидаемому только для ASCII-символов (первых 128
+значений). Русские буквы опять в пролёте. Сишные строки char* очень хорошо
+ложатся на Java-овский тип <code>byte[]</code>, но при этом возникает загвоздка в виде
+ноль-символа. Его нужно добавлять при преобразовании byte[]-&gt;char* и учитывать
+при обратном преобразовании. Пример:</p>
+
+<blockquote><code></code><pre>public void action(String msg) throws java.io.IOException {
+ int res = nAction( msg );
+ if( res!=0 ) throw new java.io.IOException( nGetErrorString(res) );
+}
+
+private native int nAction(String msg);
+private native String nGetErrorString(int error);
+
+...
+
+jbyteArray getStringBytes(JNIEnv *env, jstring str)
+{
+ if( !str ) return NULL;
+
+ jmethodID getBytes = env-&gt;GetMethodID(env-&gt;GetObjectClass(str),"getBytes","()[B");
+
+ jbyteArray buf = (jbyteArray)env-&gt;CallObjectMethod(str,getBytes);
+
+ if( !buf ) return NULL;
+
+ // Добавляем ноль-символ
+ jsize len = env-&gt;GetArrayLength(buf);
+
+ jbyteArray nbuf = env-&gt;NewByteArray(len+1);
+
+ if( len!=0 )
+   {
+    jbyte *cbuf = env-&gt;GetByteArrayElements(buf,NULL);
+
+    env-&gt;SetByteArrayRegion(nbuf,0,len,cbuf);
+
+    env-&gt;ReleaseByteArrayElements(buf,cbuf,JNI_ABORT);
+   }
+
+ env-&gt;DeleteLocalRef(buf);
+
+ return nbuf;
+}
+
+
+JNIEXPORT jint JNICALL Java_Test_nAction
+  (JNIEnv *env, jobject obj, jstring msg)
+{
+ jbyteArray bmsg = getStringBytes(env,msg);
+ if( !bmsg ) return -1;
+
+ jbyte *cmsg = env-&gt;GetByteArrayElements(bmsg,NULL);
+
+ printf(cmsg);
+
+ jint res = do_something(cmsg);
+
+ env-&gt;ReleaseByteArrayElements(bmsg,cmsg,JNI_ABORT);
+
+ return res;
+}
+
+jstring newString(JNIEnv *env, jbyteArray jbuf, int len)
+{
+ jclass stringClass = env-&gt;FindClass("java/lang/String");
+ if( !stringClass ) return NULL;
+
+ jmethodID init = env-&gt;GetMethodID(stringClass,"&lt;init&gt;","([BII)V");
+ if( !init ) return NULL;
+
+ return (jstring)env-&gt;NewObject(stringClass,init,jbuf,0,len);
+}
+
+jstring newString(JNIEnv *env, const char *buf)
+{
+ if( !buf ) return NULL;
+
+ int bufLen = strlen(buf);
+
+ if( bufLen==0 )
+   {
+    return env-&gt;NewString( (const jchar *)L"", 0 );
+   }
+
+ jbyteArray jbuf = env-&gt;NewByteArray(bufLen);
+ if( !jbuf ) return NULL;
+
+ env-&gt;SetByteArrayRegion(jbuf,0,bufLen,(jbyte*)buf);
+
+ jstring jstr = newString(env,jbuf,bufLen);
+
+ env-&gt;DeleteLocalRef(jbuf);
+
+ return jstr;
+}
+
+JNIEXPORT jstring JNICALL Java_Test_nGetErrorString
+  (JNIEnv *env, jobject obj, jint error)
+{
+ char cmsg[256];
+ memset(cmsg,0,sizeof(cmsg));
+
+ get_error_string( error,cmsg,sizeof(cmsg) );
+
+ return newString(env,cmsg);
+}
+</pre></blockquote>
+
+<p>Тут используется преобразование символов по умолчанию, что вполне естественно
+при взаимодействиях с системным API. Если же вам необходима определённая
+кодовая страница, соответственно нужно добавить её название.</p>
+
+<hr>
+<a name="gui"><h3><u>GUI (AWT, Swing)</u></h3></a>
+
+<p>Многие связывают неправильный вывод русских букв с неправильной установкой
+шрифта. На самом деле в Java всё сложнее и редко действительно связанно со
+шрифтами.</p>
+
+<p>Где же действительно лежат наибольшие подводные камни? В основном это
+связанно с неправильной перекодировкой символов. Часть этих проблем и методы
+их решения описаны выше. Если у Вас все преобразования выполняются корректно,
+и для вывода используется шрифт Unicode, то есть очень большой шанс, что Ваша
+программа будет работать правильно.</p>
+
+<p>Если проблемы всё же остались, тут нужно выяснить, где они возникают.
+Попробуйте запустить приложение под разными JVM, под разными платформами,
+на разных броузерах. Пример достаточно универсального алгоритма поиска
+проблем предложен ниже, в разделе <a href="#bugs">Типичные ошибки</a>.</p>
+
+<p>Если программа не работает нигде - значит проблема только в ней и в Ваших
+руках. Внимательно перечитайте всё, что было написано выше, и ищите. Если же
+проблема проявляется только в конкретном окружении - значит дело, возможно в
+настройках. Где именно - зависит от того, какой графической библиотекой Вы
+пользуетесь. Если AWT - помочь может правильная настройка файла
+font.properties.ru. Пример корректного файла можно взять из Java 2. Если у
+вас нет этой версии, можете скачать здесь:
+<a href="http://www.jug.ru/servlets/images/font.properties.ru">для Windows</a>,
+<a href="http://www.jug.ru/servlets/images/linux/font.properties.ru">для Linux</a> (см. также
+<a href="#linux">раздел по Linux</a> ниже). Этот файл задаёт
+используемые шрифты и кодовые страницы. Если у Вас установлена русская
+версия OS - просто добавьте этот файл туда, где лежит файл font.properties.
+Если же это англицкая версия, то нужно, или переписать этот файл вместо
+font.properties или дополнительно сменить текущие региональные настройки на
+русские. Иногда может сработать настройка <samp>-Duser.language=ru</samp>,
+но чаще - нет. Тут примерно те же проблемы, что и с file.encoding -
+сработает или нет, зависит от JDK (см. ошибку за номером
+<a href="http://developer.java.sun.com/developer/bugParade/bugs/4152725.html">4152725</a>).</p>
+
+<p>Если кроме русских букв вам также надо выводить, к примеру, греческие, то
+обычно достаточно просто правильно указать их кода. Работает всё это примерно
+таким способом:</p>
+
+<p>По умолчанию в AWT и Swing используются виртуальные шрифты, настраиваемые в
+font.properties.ru (dialog, dialoginput и т.д.). Эти шрифты виртуальные и
+при выводе, в зависимости от кода выводимого символа используется один из
+реальных шрифтов. Например, вот эти строчки:</p>
+
+<blockquote><code></code><pre>dialog.0=Arial,RUSSIAN_CHARSET
+dialog.1=WingDings,SYMBOL_CHARSET,NEED_CONVERTED
+dialog.2=Symbol,SYMBOL_CHARSET,NEED_CONVERTED
+</pre></blockquote>
+
+<p>задают, что виртуальный шрифт dialog обычного начертания состоит из 3-х
+шрифтов (Arial, WingDings и Symbol). Далее, вот эти строчки:</p>
+
+<blockquote><code></code><pre>fontcharset.dialog.0=sun.io.CharToByteCp1251
+fontcharset.dialog.1=sun.awt.windows.CharToByteWingDings
+fontcharset.dialog.2=sun.awt.CharToByteSymbol
+</pre></blockquote>
+
+<p>
+задают, какие классы нужно использовать для перекодирования из Unicode в
+кодировку данного шрифта. При выводе символов сначала ищется, в каком
+шрифте определены выводимые символы. Это определяется тем, какие символы
+может конвертировать указанные классы. Есть так же дополнительная настройка
+(exclusion), которая явно задаёт диапазоны символов, которые неприменимы
+для данного шрифта. Например, вот эта строка
+</p>
+
+<blockquote><code></code><pre>exclusion.dialog.0=0100-0400,0460-ffff
+</pre></blockquote>
+
+<p>задаёт, что при выводе символов с кодами от 0100 до 0400 и от 0460 до ffff
+шрифт 0 (Arial) использовать не следует. Эта строка нужна, в основном, для
+оптимизации.
+</p>
+
+<p>Таким образом, при выводе греческих символов шрифт 0 (Arial) не подходит
+по exclusion, шрифт 1 (WingDings) не подходит, т.к. в таблице перекодировки
+CharToByteWingDings они отсутствуют поэтому используется шрифт 2 (Symbol),
+в котором есть греческие символы.
+</p>
+
+<p>С библиотекой Swing всё проще - в ней всё рисуется через
+подсистему Java2D. Надписи в стандартных диалогах (JOptionPane,
+JFileChooser, JColorChooser) переделать на русский очень просто -
+достаточно лишь создать несколько файлов ресурсов. Я это уже проделал,
+так что можете просто взять готовый <a href="http://www.jug.ru/servlets/images/swing_ru.jar">файл</a>
+и добавить его в lib\ext или в CLASSPATH. Единственная проблема, с
+которой я столкнулся - в версиях JDK начиная с 1.2 rc1 и по 1.3 beta,
+русские буквы не выводятся под Win9x при использовании стандартных шрифтов
+(Arial, Courier New, Times New Roman, etc.) из-за ошибки в Java2D. Ошибка
+весьма своеобразна - со стандартными шрифтами изображения букв отображаются не
+в соответствии с кодами Unicode, а по таблице Cp1251 (кодировка Ansi). Эта
+ошибка зарегистрирована в BugParade под номером
+<a href="http://developer.java.sun.com/developer/bugParade/bugs/4192443.html">4192443</a>.
+По умолчанию в Swing используются шрифты, задаваемые в файле
+font.properties.ru, так что достаточно заменить их другими - и
+русские буквы появляются. К сожалению, набор рабочих шрифтов небольшой -
+это шрифты Tahoma, Tahoma Bold и два набора шрифтов из дистрибутива
+JDK - Lucida Sans * и Lucida Typewriter *
+(<a href="http://www.jug.ru/servlets/images/font.properties.ru.4.10">пример файла font.properties.ru</a>).
+Чем эти шрифты отличаются от стандартных - мне непонятно.</p>
+
+<p>Начиная с версии 1.3rc1 эта проблема уже исправлена, так что нужно просто
+обновить JDK. JDK 1.2 уже сильно устарел, так что я не рекомендую им
+пользоваться. Так же надо учесть, что с оригинальной версией Win95
+поставляются шрифты, не поддерживающие Unicode - в этой ситуации можно
+просто скопировать шрифты из Win98 или WinNT.</p>
+
+<hr>
+<a name="bugs"><h3><u>Типичные ошибки, или "куда делась буква Ш?"</u></h3></a>
+
+<h4>Буква Ш.</h4>
+
+<p>Этот вопрос ("куда делась буква Ш?") довольно часто возникает у начинающих
+программистов на Java. Давайте разберёмся, куда же она действительно чаще всего
+девается. :-)</p>
+
+<p>Вот типичная программа а-ля HelloWorld:
+
+</p><blockquote><code></code><pre>public class Test
+{
+ public static void main(String[] args)
+ {
+  System.out.println("ЙЦУКЕНГШЩЗХЪ");
+ }
+}
+</pre></blockquote>
+
+<p>в Far-е сохраняем данный код в файл Test.java, компиляем...</p>
+
+<blockquote><code></code><pre>C:\&gt;javac Test.java
+
+</pre></blockquote>
+
+<p>и запускаем...</p>
+
+<blockquote><code></code><pre>C:\&gt;java Test
+ЙЦУКЕНГ?ЩЗХЪ
+</pre></blockquote>
+
+Что же произошло? Куда делась буква Ш? Весь фокус здесь в том, что произошла
+взаимокомпенсация двух ошибок. Текстовый редактор в Far по умолчанию создаёт
+файл в DOS-кодировке (Cp866). Компилятор же javac для чтения исходника
+использует file.encoding (если не указано иное ключиком -encoding). А в среде
+Windows с русскими региональными настройками кодировкой по умолчанию является
+Cp1251. Это первая ошибка. В результате, в скомпилированном файле Test.class
+символы имеют неверные кода. Вторая ошибка состоит в том, что для вывода
+используется стандартный PrintStream, который тоже использует настройку из
+file.encoding, однако консольное окно в Windows отображает символы, используя
+кодировку DOS. Если бы кодировка Cp1251 была взаимоодназначной, то потери
+данных бы не было. Но символ Ш в Cp866 имеет код 152, который в Cp1251 не
+определён, и поэтому отображается на Unicode-символ 0xFFFD. Когда происходит
+обратное преобразование из char в byte, вместо него подставляется символ '?'.
+<p></p>
+
+<p>На аналогичную компенсацию можно нарваться, если прочитать символы из
+текстового файла при помощи java.io.FileReader, а затем вывести их
+на экран через System.out.println(). Если файл был записан в кодировке Cp866,
+то вывод будет идти верно, за исключением опять же буквы Ш.
+</p>
+
+<h4>Прямая конверсия byte&lt;-&gt;char.</h4>
+
+<p>Эта ошибка является любимой у зарубежных программистов на Java. Она
+довольно подробно рассмотрена в начале описания. Если Вы когда-нибудь будете
+смотреть чужие исходники, то всегда обращайте внимание на явную конверсию
+типов - (byte) или (char). Довольно часто в таких местах закопаны грабли.
+</p>
+
+<h4>Алгоритм поиска проблем с русскими буквами</h4>
+
+<p>Если вы не представляете себе где в вашей программе может происходить потеря
+русских букв, то можно попробовать следующий тест. Любую программу можно
+рассматривать как обработчик входных данных. Русские буквы - это такие же
+данные, они проходят в общем случае три стадии обработки: они откуда-то
+читаются в память программы (вход), обрабатываются внутри программы и
+выводятся пользователю (выход). Для того, чтобы определить место проблем,
+надо попробовать вместо данных зашить в исходник такую тестовую строку:
+"АБВ\u0410\u0411\u0412", и попробовать её вывести. После этого смотрите, что
+у вас вывелось:
+</p>
+
+<ul>
+ <li>
+  Если вы увидите "АБВАБВ", значит компиляция исходников и вывод у
+  Вас работают правильно.
+ </li>
+ <li>
+  Если вы увидите "???АБВ" (или любые другие символы кроме "АБВ" на месте
+  первых трёх букв), значит вывод работает правильно, но вот компиляция
+  исходников происходит неверно - скорей всего не указан ключик -encoding.
+ </li>
+ <li>
+  Если вы увидите "??????" (или любые другие символы кроме "АБВ" на месте
+  второй тройки букв), значит вывод у вас работает неверно.
+ </li>
+</ul>
+
+<p>
+Настроив вывод и компиляцию уже можно легко разобраться и со входом.
+После настройки всей цепочки проблемы должны исчезнуть.
+</p>
+
+<hr>
+<a name="native2ascii"><h3><u>Об утилите native2ascii</u></h3></a>
+
+<p>Эта утилита входит в состав Sun JDK и предназначена для
+преобразования исходных текстов к ASCII-виду. Она читает входной файл,
+используя указанную кодировку, а на выходе записывает символы в формате "\uXXXX".
+Если указать ключик -reverse, то выполняется обратная конвертация. Эта
+программа очень полезна для конвертации файлов ресурсов (.properties) или для
+обработки исходников, если Вы предполагаете, что они могут компиляться на
+компьютерах с отличными от русских региональными настройками.
+
+</p><p>Если запустить программу без параметров, она работает со стандартным
+входом (stdin), а не выводит подсказку по ключам, как остальные утилиты.
+Это приводит к тому, что многие и не догадываются о необходимости
+указания параметров (кроме, может быть, тех, кто нашёл в себе силы
+и мужество заглянуть таки в документацию :-). Между тем этой утилите
+для правильной работы необходимо, как минимум, указать используемую
+кодировку (ключик -encoding). Если этого не сделать, то будет
+использована кодировка по умолчанию (<samp>file.encoding</samp>),
+что может несколько расходится с ожидаемой. В результате, получив
+неверные кода букв (из-за неверной кодировки) можно потратить весьма
+много времени на поиск ошибок в абсолютно верном коде.
+
+</p><hr>
+<a name="recode"><h3><u>О методе перекодировки символов</u></h3></a>
+
+<p>Этот метод многие используют неправильно, наверное, не совсем
+понимая его суть и ограничения. Он предназначен для восстановления
+верных кодов букв, если они были неверно проинтерпретированы.
+Суть метода проста: из полученных неверных символов, используя
+соответствующую кодовую страницу, восстанавливается исходный массив
+байтов. Затем из этого массива байтов, используя уже корректную
+страницу, получаются нормальные кода символов. Пример:
+
+</p><blockquote><code></code><pre>String res = new String( src.getBytes("ISO-8859-1"), "Cp1251" );
+</pre></blockquote>
+
+Проблем в использовании этого приёма может быть несколько. Например,
+для восстановления используется неверная страница, или же она может
+измениться в некоторых ситуациях. Другая проблема может быть в том,
+что некоторые страницы выполняют неоднозначное преобразование
+byte &lt;-&gt; char. Смотрите, например, описание ошибки за номером
+<a href="http://developer.java.sun.com/developer/bugParade/bugs/4296969.html">4296969</a>.
+
+<p>Поэтому пользоваться этим методом стоит только в самом крайнем случае,
+когда уже ничто другое не помогает, и Вы чётко себе представляете, где именно
+происходит неверное преобразование символов.
+
+
+</p><hr>
+<a name="linux"><h3><u>Руссификация Java под Linux</u></h3></a>
+
+<p>Скажу сразу - я с Linux не работаю, а приведённая здесь информация
+получена от читателей данного описания. Если Вы найдёте неточность или
+захотите дополнить - напишите мне.
+
+</p><p>При кириллизации JVM в Linux существует две параллельных проблемы:
+</p><ol>
+ <li>Проблема вывода кириллицы в GUI-компонентах</li>
+ <li>Проблема ввода кириллицы с клавиатуры (в X11)</li>
+</ol>
+
+<p>Проблему вывода можно решить таким способом
+(данный алгоритм прислал <a href="mailto:dalth@icc.surw.ucsnet.ru">Artemy E. Kapitula</a>):
+
+</p><ol>
+ <li>Установить в X11 нормальные шрифты ttf из Windows NT/200. Я бы
+рекомендовал Arial, Times New Roman, Courier New, Verdana и Tahoma - причем
+подключать их лучше не через сервер шрифтов, а как каталог с файлами.</li>
+
+ <li>Добавить следующий файл <a href="http://www.jug.ru/servlets/linux/font.properties.ru">font.properties.ru</a>
+в каталог $JAVA_HOME/jre/lib</li>
+</ol>
+
+<p>Проблема ввода решается примерно таким способом
+(данный алгоритм прислал <a href="mailto:mike@form.in.krs.ru">Михаил Иванов</a>):
+
+</p><p>Настройка ввода русских букв в следующей конфигурации:
+</p><ul>
+ <li>Mandrake Linux 7.1</li>
+ <li>XFree86 3.3.6</li>
+ <li>IBM Java 1.3.0 (релизная)</li>
+</ul>
+
+<p>Проблема:
+
+</p><p>IBM Java 1.3 не дает вводить русские буквы (видны как крокозябры) при
+том что на лейблах и в менюхах их видно.
+
+</p><p>Причина:
+
+</p><p>использование XIM ( -&gt; xkb) в AWT. (это не есть плохо само по себе,
+просто с такими штуками нужно обращаться осторожно + некоторые прилады
+xkb не любят).
+
+</p><p>Решение:
+
+</p><p>Настроить xkb (и локаль (xkb без локали НЕ РАБОТАЕТ))
+
+</p><p>Процедура:
+
+</p><ol>
+ <li>выставляется локаль (где-нибудь типа в /etc/profile или в ~/.bash_profile)
+<blockquote><pre>export LANG=ru_RU.KOI8-R
+export LC_ALL=ru_RU.KOI8-R
+</pre></blockquote>
+ </li>
+
+ <li>правится (если это еще не сделано) /etc/X11/XF86Config. В секции
+Keyboard должно быть примерно следующее:
+
+<blockquote><pre>XkbKeycodes     "xfree86"
+XkbTypes        "default"
+XkbCompat       "default"
+XkbSymbols      "ru"
+XkbGeometry     "pc"
+XkbRules        "xfree86"
+XkbModel        "pc101"
+XkbLayout       "ru"
+XkbOptions "grp:shift_toggle"  # переключение 2-мя шифтами
+#XkbOptions "grp:caps_toggle"  # переключение caps-lock'ом
+</pre></blockquote>
+
+примечание: такая настройка xkb не совместима с xrus (и ему подобными
+типа kikbd) а посему с ними придется распрощаться.
+ </li>
+
+ <li>перезапускаются X-ы. Нужно проверить чтобы все работало (типа русские
+буковки в терминале и приложениях)</li>
+
+ <li><a href="http://www.jug.ru/servlets/linux/font.properties.ru">font.properties.ru</a> -&gt; $JAVA_HOME/jre/lib</li>
+
+ <li>fonts.dir -&gt; $JAVA_HOME/jre/lib/fonts</li>
+
+ <li>cd $JAVA_HOME/jre/lib/fonts; rm fonts.scale; ln -s fonts.dir fonts.scale</li>
+</ol>
+
+Теперь русские буквы должны вводиться и выводиться в свинге без
+проблем.
+
+<p>Как Вы можете заметить, в описании приводились ссылки на различные файлы font.properties.ru
+для Linux. Отличаются они тем, какие шрифты будут использованы по умолчанию в AWT и Swing.
+Соответственно вам нужно выбрать один и пользоваться им.
+</p><ul>
+  <li>Linux/font.properties.ru - шрифты Cronyx cyrillic (koi8-r)</li>
+  <li>LinuxWinFonts/font.properties.ru - шрифты от Windows</li>
+  <li>LinuxIBM13/font.properties.ru - шрифты Lucida из JDK</li>
+</ul>
+
+<hr>
+
+Дополнения и замечания присылайте на <a href="mailto:yasha@telamon.ru?subject=JavaRUS">yasha@telamon.ru</a>.
+<!--
+<p>Если вы просто хотите задать вопрос, который остался нераскрытым, можете задать его на
+<a href="http://www.java.spb.ru/servlets/index?page=forum&name=rus&count=20">форуме</a>
+</p>-->
+</td><td></td><td align="center" valign="top">
+<table bgcolor="#cccccc" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td height="17" width="17">&nbsp;</td><td align="left"><b><a href="http://www.jug.ru/servlets/index?page=sponsor" style="color: black; text-decoration: none;">
+        Спонсоры
+    </a></b></td>
+</tr>
+</tbody></table>
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td align="center">
+<br>
+<small>Наш спонсор:</small></td>
+</tr>
+<tr>
+<td><img src="index_files/1.gif" height="10" width="1"></td>
+</tr>
+<tr>
+<td align="center"><a href="http://job.reksoft.ru/"><img alt="Reksoft" src="index_files/reksoft.jpg" border="0" height="23" width="100"></a></td>
+</tr>
+<tr>
+<td><img src="index_files/1.gif" height="10" width="1"></td>
+</tr>
+<tr>
+<td align="center"><a href="http://job.reksoft.ru/"><small>Reksoft</small></a>
+<br>&nbsp;
+                </td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<a href="http://www.books.ru/shop/books/30436?partner=yasha"><img alt="Рефакторинг" src="index_files/refactoring.jpg" border="0" height="110" width="75"></a>
+<br>
+<br>
+<a href="mailto:yasha@telamon.ru?subject=JUG.RU">пишите</a>
+<br>
+<br>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7152459756813916";
+google_ad_width = 120;
+google_ad_height = 240;
+google_ad_format = "120x240_as";
+google_ad_channel ="";
+//--></script></td><td></td>
+</tr>
+</tbody></table>
+</body></html>

@@ -1,0 +1,89 @@
+Running Another Program from Java
+Java may be used to execute another program and display its output (via a [BufferedReader]). Here is the code:
+
+ 
+-------BEGIN CODE-------
+    import java.io.*;
+    import java.util.ArrayList;
+
+    public class ExecDemo
+    {
+        static public String[] runCommand(String cmd) throws
+IOException
+        {  // The actual procedure for process execution:
+runCommand(String cmd);
+
+            ArrayList list = new ArrayList(); // Create a list for
+storing output.
+
+            Process proc = Runtime.getRuntime().exec(cmd); // Execute
+a command and get its process handle
+
+            InputStream istr = proc.getInputStream(); // Get the
+handle for the processes [InputStream]
+            BufferedReader br = new BufferedReader(new
+InputStreamReader(istr));
+            // Create a [BufferedReader] and specify it reads from an
+input stream.
+
+            String str; // Temporary String variable
+            while ((str = br.readLine()) != null) list.add(str);
+            // Read to Temp Variable, Check for [null] then Add to
+(ArrayList)list
+
+            try { proc.waitFor(); } // Wait for process to terminate
+and catch any Exceptions.
+            catch (InterruptedException e)
+ System.err.println("Process was interrupted"); }
+
+            // Note: proc.exitValue() returns the exit value. (Use if
+required)
+
+            br.close(); // Done.
+
+            return (String[])list.toArray(new String[0]); // Convert
+the list to a string and return
+        }
+
+        public static void main(String args[]) throws IOException //
+Actual execution starts here
+        {
+            try
+            {
+                String outlist[] = runCommand(args[0]); // Run and get
+the output.
+                for (int i = 0; i < outlist.length; i++)
+System.out.println(outlist[i]);
+                // Print the output to screen character by character.
+                // Safe and not very inefficient.
+            }
+            catch (IOException e) { System.err.println(e); }
+        }
+    }
+------- END CODE -------
+
+The comments basically expain the code but briefly:
+
+ 
+String[] runCommand(String cmd) is used to run the program:
+
+An [InputStream] is created and "hooked" to the runCommand-ed programs output stream. A [BufferedReader] then reads the output and saves it to a list of strings.
+
+After all the output has been read, [waitFor] is called to wait on the program to terminate. [exitValue] may be called if desired to get the programs return value. This may be used to execute programs on a server and display the output. In that case, one usually would have to convert this to an applet (for use with the web) and it would be better to replace
+
+ 
+	runCommand(args[0]);
+
+with an arbitrary command like:
+
+ 
+	runCommand("ls -a -l"); or runCommand("dir"); 
+
+(depending on OS and purpose) to prevent misuse. (Imagine runCommand("rm .")
+
+Of course the programs you run have to be in the search path (JDK 1.2.2), but a safer approach would be to use an arbitrary path and filename like:
+
+ 
+	runCommand("/usr/bin/diskspace");
+
+Note that the programs that are being run may not be as portable between systems as the Java App. 

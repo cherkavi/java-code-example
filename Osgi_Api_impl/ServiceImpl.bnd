@@ -1,0 +1,4 @@
+Private-Package:com.api_impl
+Import-Package:com.api,org.osgi.framework
+Bundle-Activator:com.api_impl.MessageActivator
+

@@ -1,0 +1,6 @@
+Bundle-Name: Module A
+Bundle-Description: Module A
+Bundle-Vendor: me
+Bundle-Version: 1.0.0
+Bundle-Activator: module.a.Activator
+Import-Package: org.osgi.framework

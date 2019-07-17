@@ -1,0 +1,76 @@
+/** class for Ordering Focus*/
+@SuppressWarnings({"serial","unchecked"})
+class FocusOrder extends ContainerOrderFocusTraversalPolicy{
+    
+	ArrayList<Component> component_list=new ArrayList();
+    public Component getLastComponent(Container container_with_element){
+        if(component_list.size()>0){
+            return component_list.get(component_list.size()-1);
+        }else{
+            return null;
+        }
+    }
+    
+    public Component getFirstComponent(Container container_with_element){
+        if(component_list.size()>0){
+            return component_list.get(0);
+        }else{
+            return null;
+        }
+    }
+    
+    public Component getDefaultComponent(Container container_with_element){
+        
+        if(component_list.size()>0){
+            return component_list.get(0);
+        }else{
+            return null;
+        }
+    }
+    
+    public Component getComponentAfter(Container container_with_element,Component current_component){
+        int position=this.component_list.indexOf(current_component);
+        if(position>=0){
+            if(position<(this.component_list.size()-1)){
+                // return next element
+                return this.component_list.get(position+1);
+            }else{
+                // return first element
+                return this.getFirstComponent(container_with_element);
+            }
+        }else{
+            return this.getDefaultComponent(container_with_element);
+        }
+    }
+    public Component getComponentBefore(Container container_with_element,Component current_component){
+        int position=this.component_list.indexOf(current_component);
+        if(position>=0){
+            if(position>0){
+                // return next element
+                return this.component_list.get(position-1);
+            }else{
+                // return last element
+                return this.getLastComponent(container_with_element);
+            }
+        }else{
+            return this.getDefaultComponent(container_with_element);
+        }
+    }
+    protected boolean accept(Component component){
+        return (this.component_list.indexOf(component)>=0);
+    }
+    // ------------------
+    /** for adding component into focus circuit */
+    public void add_component(Component component){
+        this.component_list.add(component);
+    }
+    /** for removing component from focus circuit */
+    public boolean remove_component(Component component){
+        return this.component_list.remove(component);
+    }
+    /** for delete all component from focus circuit */
+    public void clear(){
+        this.component_list.clear();
+    }
+    
+}

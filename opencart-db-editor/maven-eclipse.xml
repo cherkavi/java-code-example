@@ -1,0 +1,8 @@
+<project default="copy-resources">
+  <target name="init"/>
+  <target name="copy-resources" depends="init">
+    <copy todir="target/classes/test/sql" filtering="false">
+      <fileset dir="src/test/resources" includes="*.sql" excludes="**/*.java"/>
+    </copy>
+  </target>
+</project>

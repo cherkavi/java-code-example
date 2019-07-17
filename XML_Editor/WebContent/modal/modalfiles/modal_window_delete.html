@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function function_modal_delete_commit(){
+			parent.set_modal_window_delete_commit(true);
+			parent.modal_window_delete.hide();
+		}
+		function function_modal_delete_rollback(){
+			parent.set_modal_window_delete_commit(false);
+			parent.modal_window_delete.hide();
+		}
+	</script>
+	<table>
+		<tr>
+			<b>Are you sure to <br> Delete ?</b>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" onclick="function_modal_delete_commit()" value="Yes">
+			</td>
+			<td>
+				<input type="button" onclick="function_modal_delete_rollback()" value="No">
+			</td>
+		</tr>
+		
+	</table>
+</body>
+</html>

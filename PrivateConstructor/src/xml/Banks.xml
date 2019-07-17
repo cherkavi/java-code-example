@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VC_BANKS_FEATURES>
+
+	<general>
+		<RU>Банки</RU>
+		<UA>Банки</UA>
+		<US>Banks</US></general>
+	<ADR_LINE1>
+		<ua>Адреса</ua>
+		<ru>Адрес</ru>
+		<us>Address</us></ADR_LINE1>
+	<cd_nsmep>
+		<ua>Код учасника НСМЕП</ua>
+		<ru>Код учасника НСМЭП</ru>
+		<us>NSMEP code</us></cd_nsmep>
+	<commision_bank>
+		<ua>Комісія з банку</ua>
+		<ru>Комиссия банка</ru>
+		<us>Bank commision</us></commision_bank>
+	<contact_prs_bank>
+		<ua>Контактна особа</ua>
+		<ru>Контактное лицо</ru>
+		<us>Contact  person</us></contact_prs_bank>
+	<corresp_account>
+		<ua>Кореспондентський рахунок</ua>
+		<ru>Корреспондентский счет</ru>
+		<us>Corresp. account</us></corresp_account>
+	<corresp_place>
+		<ua>Знаходження коресп. рахунку</ua>
+		<ru>Размещение корресп. счета</ru>
+		<us>Corresp. place</us></corresp_place>
+	<NAME_COUNTRY>
+		<ua>Країна</ua>
+		<ru>Страна</ru>
+		<us>Country</us></NAME_COUNTRY>
+	<desc_bank>
+		<ua>Опис банку</ua>
+		<ru>Описание банка</ru>
+		<us>Bank describe</us></desc_bank>
+	<filtr_bank>
+		<ua>Фільтр по банкам</ua>
+		<ru>Фильтр по банкам</ru>
+		<us>Banks filter</us></filtr_bank>
+	<ID_BANK_BRANCH>
+		<ua>ІД</ua>
+		<ru>ИД</ru>
+		<us>ID</us></ID_BANK_BRANCH>
+	<is_calc_bank_tsl>
+		<ua>Ознака розрах. банку</ua>
+		<ru>Признак расчетного банка</ru>
+		<us>Account bank sign</us></is_calc_bank_tsl>
+	<IS_FINANCE_ACQUIRER_TSL>
+		<ua>Фінансовий еквайєр</ua>
+		<ru>Финансовый эквайер</ru>
+		<us>Financial acquirer</us></IS_FINANCE_ACQUIRER_TSL>
+	<IS_ISSUER_TSL>
+		<ua>Емітент</ua>
+		<ru>Эмитент</ru>
+		<us>Issuer</us></IS_ISSUER_TSL>
+	<IS_TECHNICAL_ACQUIRER_TSL>
+		<ua>Технічний еквайєр</ua>
+		<ru>Технический эквайер</ru>
+		<us>Technical acquirer</us></IS_TECHNICAL_ACQUIRER_TSL>
+	<mfo_bank>
+		<ua>МФО</ua>
+		<ru>МФО</ru>
+		<us>MFO</us></mfo_bank>
+	<name_bank>
+		<ua>Назва</ua>
+		<ru>Название</ru>
+		<us>Name</us></name_bank>
+	<okpo_bank>
+		<ua>ОКПО </ua>
+		<ru>ОКПО </ru>
+		<us>OKPO</us></okpo_bank>
+	<NAME_BANK_ALT>
+		<ua>Скороч.назва</ua>
+		<ru>Сокращ.название</ru>
+		<us>Short name</us></NAME_BANK_ALT>
+	<tax_licence_date>
+		<ua>Дата видачі свідоцтва ПП</ua>
+		<ru>Дата выдачи свидетельства ПН</ru>
+		<us>Date PT</us></tax_licence_date>
+	<tax_licence_number>
+		<ua>№ свідоцтва податків</ua>
+		<ru>№ свидетельства ПН</ru>
+		<us>№ PT</us>
+			</tax_licence_number>
+	<tel_bank>
+		<ua>Контактний телефон</ua>
+		<ru>Контактный телефон</ru>
+		<us>Contact phone</us></tel_bank>
+	<t_features>
+		<ua>Інформація про банк</ua>
+		<ru>Информация о банке</ru>
+		<us>Bank information</us></t_features>
+	<t_jur_accts>
+		<ua>Банківські рахунки</ua>
+		<ru>Банковские счета</ru>
+		<us>Bank's accounts</us></t_jur_accts>
+	<t_terminals>
+		<ua>Термінали</ua>
+		<ru>Терминалы</ru>
+		<us>Terminals</us></t_terminals>
+	<LAB_ADD_BANK>
+		<ua>Добавити новий банк</ua>
+		<ru>Добавить новый банк</ru>
+		<us>Add new bank</us>	
+	</LAB_ADD_BANK>	
+	<LAB_EDIT_BANK>
+		<ua>Редагувати банк</ua>
+		<ru>Редактировать банк</ru>
+		<us>Edit bank</us>	
+	</LAB_EDIT_BANK>
+	<NUMBER_BANK_ACCOUNT>
+		<ua>№ рахунку</ua>
+		<ru>№ счета</ru>
+		<us>Account #</us></NUMBER_BANK_ACCOUNT>
+	<name_currency>
+		<ua>Валюта</ua>
+		<ru>Валюта</ru>
+		<us>Currency</us></name_currency>
+	<name_account_type>
+		<ua>Тип рахунку</ua>
+		<ru>Тип счета</ru>
+		<us>Account type</us></name_account_type>
+	<sname_jur_prs>
+		<ua>Юридична особа</ua>
+		<ru>Юридическое лицо</ru>
+		<us>Juridic name</us></sname_jur_prs>
+	<acc_date_begin>
+		<ua>Відкриття</ua>
+		<ru>Открыт</ru>
+		<us>Open</us></acc_date_begin>
+	<acc_date_end>
+		<ua>Закриття</ua>
+		<ru>Закрыт</ru>
+		<us>Closed</us></acc_date_end>
+	<id_term>
+		<ua>ID терміналу</ua>
+		<ru>ID терминала</ru>
+		<us>terminal ID</us></id_term>
+	<NAME_DEVICE_TYPE>
+		<ru>Тип терминаа</ru>
+		<us>Terminal type</us>
+		<ua>Тип терміналу</ua></NAME_DEVICE_TYPE>
+	<name_term_status>
+		<ua>Статус</ua>
+		<ru>Статус</ru>
+		<us>Status</us></name_term_status>
+	<ADR_FULL>
+		<ua>Адреса</ua>
+		<ru>Адрес</ru>
+		<us>Address</us></ADR_FULL>
+	<term_date_begin>
+		<ua>Встановлено</ua>
+		<ru>Встановлен</ru>
+		<us>Located</us></term_date_begin>
+	<term_date_end>
+		<ua>Вилучено</ua>
+		<ru>Изъят</ru>
+		<us>Removed</us></term_date_end>
+	<contract_number>
+		<ru>№ договора</ru>
+		<ua>№ договору</ua>
+		<us>№ договора</us></contract_number>
+	<contract_date>
+		<ru>Дата договора</ru>
+		<ua>Дата договору</ua>
+		<us>Дата договора</us></contract_date>
+	<contract_desc>
+		<ru>Описание договора</ru>
+		<ua>Опис договору</ua>
+		<us>Описание договора</us></contract_desc>
+	<cd_bank_unit_type>
+		<ru>Тип учреждения</ru>
+		<ua>Тип установи</ua>
+		<us>Тип учреждения</us></cd_bank_unit_type>
+	<id_bank>
+		<ru>Банк</ru>
+		<ua>Банк</ua>
+		<us>Bank</us></id_bank>
+	<name_bank_unit_type>
+		<ru>Тип учреждения</ru>
+		<ua>Тип установи</ua>
+		<us>Тип учреждения</us></name_bank_unit_type>
+	<t_comissions>
+		<ru>Комиссии</ru>
+		<ua>Комісії</ua>
+		<us>Комиссии</us></t_comissions>
+	<h_add_comission>
+		<ru>Добавить банковскую комиссию</ru>
+		<ua>Додати банківську комісію</ua>
+		<us>Добавить банковскую комиссию</us></h_add_comission>
+	<cd_issuer_in_telgr_hex>
+		<RU>Код в телеграммах (HEX)</RU>
+		<UA>Код в телеграмах (HEX)</UA>
+		<US>Код в телеграммах (HEX)</US></cd_issuer_in_telgr_hex>
+	<rep_bon_count>
+		<RU>Количество бонусов:</RU>
+		<UA>Кількість бонусів:</UA>
+		<US>Bonuses count:</US></rep_bon_count>
+	<rep_acc_bon_sum>
+		<RU>накопленных:</RU>
+		<UA>накопичених:</UA>
+		<US>накопленных:</US></rep_acc_bon_sum>
+	<rep_cur_bon_sum>
+		<RU>используемых:</RU>
+		<UA>у використанні:</UA>
+		<US>используемых:</US></rep_cur_bon_sum>
+	<rep_term_count>
+		<RU>Количество терминалов:</RU>
+		<UA>Кількість терміналів:</UA>
+		<US>Terminals count:</US></rep_term_count>
+	<rep_card_count>
+		<RU>Количество карт:</RU>
+		<UA>Кількість карт:</UA>
+		<US>Cards count:</US></rep_card_count>
+	<IS_RESIDENT>
+		<RU>Резидент?</RU>
+		<UA>Резидент?</UA>
+		<US>Is resident?</US></IS_RESIDENT>
+	<IS_RESIDENT_TSL>
+		<RU>Резидент?</RU>
+		<UA>Резидент?</UA>
+		<US>Is resident?</US></IS_RESIDENT_TSL>
+	<t_bk_accounts>
+		<RU>Бух.счета</RU>
+		<UA>Бух.рахунки</UA>
+		<US>BK accounts</US></t_bk_accounts></VC_BANKS_FEATURES>

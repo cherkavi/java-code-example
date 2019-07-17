@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db_loader>
+	<!-- Connection to DataBase -->
+	<connector>
+		<!-- URL for connect to DataBase -->
+		<url>jdbc:mysql://localhost:3306/test</url>
+		<!-- Database login -->
+		<login>root</login>
+		<!--  Database password -->
+		<password></password>
+	</connector>
+	
+	<file path="test_loader.xls" type="xls">
+		<sheet name="table_one" table_name="test_table" start_row="1" >
+			<column number="0" table_field="id" />
+			<column number="1" table_field="name" />
+			<column number="2" table_field="description" />
+		</sheet>		
+	</file>
+</db_loader>

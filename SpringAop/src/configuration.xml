@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+ 
+<beans>
+	<!--  target for service -->
+    <bean id="greetingServiceTarget" class="com.test.GreetingServiceImpl">
+        <property name="greeting">
+            <value>Buenos Dias!</value>
+        </property>
+    </bean>
+    
+    <!--  Advice  -->
+    <bean id="simpleAdvice" class="com.aop.ServiceInterceptor" />
+
+	<!-- pointcut for advice -->
+						<!-- may be ommited -->
+					    <bean id="pointcutAdvisor" 
+					    	  class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+					        <property name="mappedName">
+					            <value>say*</value> <!-- sayGr* -->
+					        </property>
+					        <property name="advice">
+					            <ref bean="simpleAdvice" />
+					        </property>
+					    </bean>
+						<!-- may be ommited -->
+
+    
+    <!-- proxy factory bean -->
+    <bean id="greetingService" class="org.springframework.aop.framework.ProxyFactoryBean">
+    	<!--  interface for creating   -->
+        <property name="proxyInterfaces">
+            <value>com.test.GreetingService</value>
+        </property>
+
+		<!-- interceptors  -->
+        <property name="interceptorNames">
+            <list>
+            	<!--  <value>simpleAdvice</value>  -->
+                <value>pointcutAdvisor</value>
+            </list>
+        </property>
+        
+        <!--  target of the service -->
+        <property name="target">
+            <ref bean="greetingServiceTarget" />
+        </property>
+    </bean>
+            
+</beans>

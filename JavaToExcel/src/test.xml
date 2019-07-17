@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE java2excel PUBLIC
+"-//epere4/DTD Java2Excel mapping file//EN"
+"http://java2excel.sourceforge.net/dtd/java2excel-mapping.dtd">
+<java2excel>
+<header>
+nothing for now
+</header>
+<body>
+<properties>
+<property name="text">
+<description>
+This is a text property.
+</description>
+</property>
+<property name="integerNumber" />
+<property name="date" />
+<property name="calendar" />
+<property name="boolValue" />
+<property name="internal.integerNumber" />
+</properties>
+</body>
+</java2excel>

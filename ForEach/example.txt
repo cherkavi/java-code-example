@@ -1,0 +1,7 @@
+java.util.ArrayList<String> list=new java.util.ArrayList<String>();
+list.add("one");
+list.add("two");
+list.add("three");
+for(String value:list){
+	System.out.println(":  "+value);
+}

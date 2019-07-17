@@ -1,0 +1,13 @@
+/*	public void convertToSigned(){
+	    byte[] bytes =new byte[]{(byte)255,(byte)255,5}; 
+	    int length = bytes.length;
+	    for (int step = 0; step < length; step++){
+	        int byteValue = new Integer(bytes[step]).intValue( );
+	        if (byteValue < 0 ){
+	            byteValue = bytes[step] & 0x80;
+	            byteValue += bytes[step] & 0x7F;
+	        }
+	        System.out.println("original: "+bytes[step]+"   converted:"+byteValue);
+	    }
+	}
+*/	

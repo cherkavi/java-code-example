@@ -1,0 +1,12 @@
+# build tool
+.gradle/
+gradle/
+
+# IDE
+.idea
+out
+*.iml
+
+
+# JDK
+build/

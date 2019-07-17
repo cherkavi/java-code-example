@@ -1,0 +1,47 @@
+user manager
+sshd shell application
+
+
+user has next properties:
+- name
+- surname
+- login
+- password
+- group to belong to
+- process assign to
+
+Accessible functions
+
+group
+        group-add: add group
+        group-by-id: group by id
+        group-by-name: group by name
+        group-list: list of groups
+        group-update: update group 
+
+process
+        process-add: add process
+        process-by-id: process by id
+        process-by-name: process by name
+        process-list: list of processes
+        process-update: update process 
+
+user
+        user-add: add user
+        user-add-group: add group to user, assign group to user
+        user-add-process: add process to user, assign process to user
+        user-by-group: list of users by group 
+        user-by-id: user by id
+        user-by-login: user by Login
+        user-by-name: user by Name
+        user-by-surname: user by Surname
+        user-list: list of all users
+        user-remove-group: remove group from user, unassign group from user
+        user-remove-process: remove process from user, unassign process from user
+        user-update: update user 
+
+---
+mvn hibernate3:hbm2ddl
+https://coderwall.com/p/khkznq/you-can-generate-a-database-schema-from-your-hibernate-mappings-using-maven
+
+---

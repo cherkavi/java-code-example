@@ -1,0 +1,1 @@
+groovy -cp ojdbc6-11.2.0.3.0.jar jdbc_connection.groovy 

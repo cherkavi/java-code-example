@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+    "http://getahead.org/dwr/dwr20.dtd">
+
+<dwr>
+	<allow>
+    	<!--  объявление объекта и доступных функций -->
+    	<create creator="new" javascript="ExchangeVisual">
+      		<param name="class" value="bc.data_terminal.editor.transfer.ExchangeVisual"/>
+      		<include method="sendXmlToServer" />
+    	</create>
+    	<create creator="new" javascript="ExchangeFields">
+      		<param name="class" value="bc.data_terminal.editor.transfer.ExchangeFields"/>
+      		<include method="sendXmlToServer" />
+    	</create>
+    	
+    	<create creator="new" javascript="ExchangeFieldsPattern">
+      		<param name="class" value="bc.data_terminal.editor.transfer.ExchangeFieldsPattern"/>
+      		<include method="sendXmlToServer" />
+    	</create>
+
+    	<create creator="new" javascript="ExchangeTerminalTask">
+      		<param name="class" value="bc.data_terminal.editor.transfer.ExchangeTerminalTask"/>
+      		<include method="sendXmlToServer" />
+    	</create>
+    	
+    	<!--  обязательный параметр, который говорит о том что нужно преобразовывать объекты Java<=>JavaScript -->
+    	<convert converter="bean" match="bc.data_terminal.editor.transfer.Data"/>
+	</allow>
+</dwr>

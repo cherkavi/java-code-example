@@ -1,0 +1,9 @@
+Проблема, при трансформировании объекта XML в поток, нужно задавать Charset,
+для этого нужно использовать следующий прием:
+
+	javax.xml.transform.Transformer.Transformer transformer=TransformerFactory.newInstance().newTransformer();
+
+	//transformer.setOutputProperty(OutputKeys.ENCODING, "WINDOWS-1251");
+	Properties outputProperties=new Properties();
+	outputProperties.setProperty(javax.xml.transform.OutputKeys.ENCODING, "WINDOWS-1251");
+	transformer.setOutputProperties(outputProperties);

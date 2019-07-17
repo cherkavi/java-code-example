@@ -1,0 +1,578 @@
+11:55:12,211 DEBUG Sender:353 - нет элементов 
+11:55:12,211 DEBUG Sender:389 - close port
+11:55:12,211 DEBUG TcpHeartBeat:40 - start heart beat
+11:55:12,211 DEBUG TcpHeartBeat:46 - attempt to send HeartBeatData into port:20102
+11:55:12,227 ERROR ComPort:158 - start
+11:55:12,227 DEBUG TcpPortListener:43 - Listener Data for write to SerialPort started: (20101)
+11:55:12,227 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:12,227 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:12,711 DEBUG TcpPortListener:49 - Data exists
+11:55:12,711 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:12,711 DEBUG TcpPortListener:89 - notify data listener:
+11:55:12,711 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:12,711 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:12,711 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:12,727 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:12,727 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:12,727 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:13,086 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:13,086 DEBUG Sender:389 - close port
+11:55:13,086 DEBUG Sender:350 - есть элементы для отправки
+11:55:13,086 DEBUG Sender:372 - отправить данные
+11:55:13,086 DEBUG Sender:375 - открыть порт
+11:55:13,086 DEBUG Sender:379 - послать данные
+11:55:13,086 DEBUG Sender:353 - нет элементов 
+11:55:13,086 DEBUG Sender:389 - close port
+11:55:13,493 DEBUG TcpPortListener:49 - Data exists
+11:55:13,493 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:13,493 DEBUG TcpPortListener:89 - notify data listener:
+11:55:13,493 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:13,493 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:13,493 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:13,508 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:13,508 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:13,508 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:13,868 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:13,868 DEBUG Sender:389 - close port
+11:55:13,868 DEBUG Sender:350 - есть элементы для отправки
+11:55:13,868 DEBUG Sender:372 - отправить данные
+11:55:13,868 DEBUG Sender:375 - открыть порт
+11:55:13,868 DEBUG Sender:379 - послать данные
+11:55:13,868 DEBUG Sender:353 - нет элементов 
+11:55:13,868 DEBUG Sender:389 - close port
+11:55:14,274 DEBUG TcpPortListener:49 - Data exists
+11:55:14,274 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:14,274 DEBUG TcpPortListener:89 - notify data listener:
+11:55:14,274 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:14,274 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:14,274 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:14,289 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:14,305 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:14,305 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:14,664 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:14,664 DEBUG Sender:389 - close port
+11:55:14,664 DEBUG Sender:350 - есть элементы для отправки
+11:55:14,664 DEBUG Sender:372 - отправить данные
+11:55:14,664 DEBUG Sender:375 - открыть порт
+11:55:14,664 DEBUG Sender:379 - послать данные
+11:55:14,664 DEBUG Sender:353 - нет элементов 
+11:55:14,664 DEBUG Sender:389 - close port
+11:55:15,071 DEBUG TcpPortListener:49 - Data exists
+11:55:15,071 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:15,071 DEBUG TcpPortListener:89 - notify data listener:
+11:55:15,071 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:15,071 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:15,071 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:15,086 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:15,086 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:15,086 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:15,461 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:15,461 DEBUG Sender:389 - close port
+11:55:15,461 DEBUG Sender:350 - есть элементы для отправки
+11:55:15,461 DEBUG Sender:372 - отправить данные
+11:55:15,461 DEBUG Sender:375 - открыть порт
+11:55:15,461 DEBUG Sender:379 - послать данные
+11:55:15,461 DEBUG Sender:353 - нет элементов 
+11:55:15,461 DEBUG Sender:389 - close port
+11:55:15,868 DEBUG TcpPortListener:49 - Data exists
+11:55:15,868 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:15,868 DEBUG TcpPortListener:89 - notify data listener:
+11:55:15,868 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:15,868 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:15,868 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:15,883 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:15,883 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:15,883 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:16,211 DEBUG TcpHeartBeat:46 - attempt to send HeartBeatData into port:20102
+11:55:16,258 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:16,258 DEBUG Sender:389 - close port
+11:55:16,258 DEBUG Sender:350 - есть элементы для отправки
+11:55:16,258 DEBUG Sender:372 - отправить данные
+11:55:16,258 DEBUG Sender:375 - открыть порт
+11:55:16,258 DEBUG Sender:379 - послать данные
+11:55:16,258 DEBUG Sender:353 - нет элементов 
+11:55:16,258 DEBUG Sender:389 - close port
+11:55:16,664 DEBUG TcpPortListener:49 - Data exists
+11:55:16,664 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:16,664 DEBUG TcpPortListener:89 - notify data listener:
+11:55:16,664 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:16,664 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:16,664 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:16,680 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:16,680 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:16,680 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:17,039 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:17,039 DEBUG Sender:389 - close port
+11:55:17,039 DEBUG Sender:350 - есть элементы для отправки
+11:55:17,039 DEBUG Sender:372 - отправить данные
+11:55:17,039 DEBUG Sender:375 - открыть порт
+11:55:17,039 DEBUG Sender:379 - послать данные
+11:55:17,039 DEBUG Sender:353 - нет элементов 
+11:55:17,039 DEBUG Sender:389 - close port
+11:55:17,446 DEBUG TcpPortListener:49 - Data exists
+11:55:17,446 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:17,446 DEBUG TcpPortListener:89 - notify data listener:
+11:55:17,446 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:17,446 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:17,446 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:17,461 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:17,461 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:17,461 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:17,836 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:17,836 DEBUG Sender:389 - close port
+11:55:17,836 DEBUG Sender:350 - есть элементы для отправки
+11:55:17,836 DEBUG Sender:372 - отправить данные
+11:55:17,836 DEBUG Sender:375 - открыть порт
+11:55:17,852 DEBUG Sender:379 - послать данные
+11:55:17,852 DEBUG Sender:353 - нет элементов 
+11:55:17,852 DEBUG Sender:389 - close port
+11:55:18,243 DEBUG TcpPortListener:49 - Data exists
+11:55:18,243 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:18,243 DEBUG TcpPortListener:89 - notify data listener:
+11:55:18,243 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:18,243 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:18,243 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:18,258 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:18,258 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:18,258 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:18,618 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:18,618 DEBUG Sender:389 - close port
+11:55:18,618 DEBUG Sender:350 - есть элементы для отправки
+11:55:18,618 DEBUG Sender:372 - отправить данные
+11:55:18,618 DEBUG Sender:375 - открыть порт
+11:55:18,618 DEBUG Sender:379 - послать данные
+11:55:18,618 DEBUG Sender:353 - нет элементов 
+11:55:18,618 DEBUG Sender:389 - close port
+11:55:19,024 DEBUG TcpPortListener:49 - Data exists
+11:55:19,024 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:19,024 DEBUG TcpPortListener:89 - notify data listener:
+11:55:19,024 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:19,024 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:19,024 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:19,039 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:19,039 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:19,039 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:19,399 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:19,399 DEBUG Sender:389 - close port
+11:55:19,399 DEBUG Sender:350 - есть элементы для отправки
+11:55:19,399 DEBUG Sender:372 - отправить данные
+11:55:19,399 DEBUG Sender:375 - открыть порт
+11:55:19,399 DEBUG Sender:379 - послать данные
+11:55:19,399 DEBUG Sender:353 - нет элементов 
+11:55:19,399 DEBUG Sender:389 - close port
+11:55:19,805 DEBUG TcpPortListener:49 - Data exists
+11:55:19,805 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:19,805 DEBUG TcpPortListener:89 - notify data listener:
+11:55:19,805 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:19,805 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:19,805 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:19,821 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:19,821 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:19,821 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:20,180 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:20,180 DEBUG Sender:389 - close port
+11:55:20,180 DEBUG Sender:350 - есть элементы для отправки
+11:55:20,180 DEBUG Sender:372 - отправить данные
+11:55:20,180 DEBUG Sender:375 - открыть порт
+11:55:20,180 DEBUG Sender:379 - послать данные
+11:55:20,180 DEBUG Sender:353 - нет элементов 
+11:55:20,180 DEBUG Sender:389 - close port
+11:55:20,211 DEBUG TcpHeartBeat:46 - attempt to send HeartBeatData into port:20102
+11:55:20,571 DEBUG TcpPortListener:49 - Data exists
+11:55:20,571 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:20,571 DEBUG TcpPortListener:89 - notify data listener:
+11:55:20,571 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:20,571 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:20,571 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:20,586 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:20,586 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:20,586 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:20,946 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:20,946 DEBUG Sender:389 - close port
+11:55:20,946 DEBUG Sender:350 - есть элементы для отправки
+11:55:20,946 DEBUG Sender:372 - отправить данные
+11:55:20,946 DEBUG Sender:375 - открыть порт
+11:55:20,946 DEBUG Sender:379 - послать данные
+11:55:20,946 DEBUG Sender:353 - нет элементов 
+11:55:20,946 DEBUG Sender:389 - close port
+11:55:21,352 DEBUG TcpPortListener:49 - Data exists
+11:55:21,352 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:21,352 DEBUG TcpPortListener:89 - notify data listener:
+11:55:21,352 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:21,352 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:21,352 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:21,368 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:21,368 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:21,368 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:21,743 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:21,743 DEBUG Sender:389 - close port
+11:55:21,743 DEBUG Sender:350 - есть элементы для отправки
+11:55:21,743 DEBUG Sender:372 - отправить данные
+11:55:21,743 DEBUG Sender:375 - открыть порт
+11:55:21,743 DEBUG Sender:379 - послать данные
+11:55:21,743 DEBUG Sender:353 - нет элементов 
+11:55:21,743 DEBUG Sender:389 - close port
+11:55:22,149 DEBUG TcpPortListener:49 - Data exists
+11:55:22,149 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:22,149 DEBUG TcpPortListener:89 - notify data listener:
+11:55:22,149 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:22,149 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:22,149 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:22,164 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:22,164 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:22,164 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:22,524 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:22,524 DEBUG Sender:389 - close port
+11:55:22,524 DEBUG Sender:350 - есть элементы для отправки
+11:55:22,524 DEBUG Sender:372 - отправить данные
+11:55:22,524 DEBUG Sender:375 - открыть порт
+11:55:22,524 DEBUG Sender:379 - послать данные
+11:55:22,524 DEBUG Sender:353 - нет элементов 
+11:55:22,524 DEBUG Sender:389 - close port
+11:55:22,930 DEBUG TcpPortListener:49 - Data exists
+11:55:22,930 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:22,930 DEBUG TcpPortListener:89 - notify data listener:
+11:55:22,930 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:22,930 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:22,930 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:22,946 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:22,946 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:22,946 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:23,305 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:23,305 DEBUG Sender:389 - close port
+11:55:23,305 DEBUG Sender:350 - есть элементы для отправки
+11:55:23,305 DEBUG Sender:372 - отправить данные
+11:55:23,305 DEBUG Sender:375 - открыть порт
+11:55:23,305 DEBUG Sender:379 - послать данные
+11:55:23,305 DEBUG Sender:353 - нет элементов 
+11:55:23,305 DEBUG Sender:389 - close port
+11:55:23,711 DEBUG TcpPortListener:49 - Data exists
+11:55:23,711 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:23,711 DEBUG TcpPortListener:89 - notify data listener:
+11:55:23,711 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:23,711 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:23,711 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:23,727 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:23,727 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:23,727 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:24,086 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:24,086 DEBUG Sender:389 - close port
+11:55:24,086 DEBUG Sender:350 - есть элементы для отправки
+11:55:24,086 DEBUG Sender:372 - отправить данные
+11:55:24,086 DEBUG Sender:375 - открыть порт
+11:55:24,086 DEBUG Sender:379 - послать данные
+11:55:24,086 DEBUG Sender:353 - нет элементов 
+11:55:24,086 DEBUG Sender:389 - close port
+11:55:24,211 DEBUG TcpHeartBeat:46 - attempt to send HeartBeatData into port:20102
+11:55:24,493 DEBUG TcpPortListener:49 - Data exists
+11:55:24,493 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:24,493 DEBUG TcpPortListener:89 - notify data listener:
+11:55:24,493 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:24,493 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:24,493 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:24,508 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:24,508 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:24,508 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:24,868 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:24,868 DEBUG Sender:389 - close port
+11:55:24,868 DEBUG Sender:350 - есть элементы для отправки
+11:55:24,868 DEBUG Sender:372 - отправить данные
+11:55:24,868 DEBUG Sender:375 - открыть порт
+11:55:24,868 DEBUG Sender:379 - послать данные
+11:55:24,868 DEBUG Sender:353 - нет элементов 
+11:55:24,868 DEBUG Sender:389 - close port
+11:55:25,274 DEBUG TcpPortListener:49 - Data exists
+11:55:25,274 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:25,274 DEBUG TcpPortListener:89 - notify data listener:
+11:55:25,274 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:25,274 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:25,274 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:25,289 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:25,289 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:25,289 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:25,649 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:25,649 DEBUG Sender:389 - close port
+11:55:25,649 DEBUG Sender:350 - есть элементы для отправки
+11:55:25,649 DEBUG Sender:372 - отправить данные
+11:55:25,649 DEBUG Sender:375 - открыть порт
+11:55:25,649 DEBUG Sender:379 - послать данные
+11:55:25,649 DEBUG Sender:353 - нет элементов 
+11:55:25,649 DEBUG Sender:389 - close port
+11:55:26,055 DEBUG TcpPortListener:49 - Data exists
+11:55:26,055 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:26,055 DEBUG TcpPortListener:89 - notify data listener:
+11:55:26,055 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:26,055 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:26,055 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:26,071 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:26,071 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:26,071 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:26,446 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:26,446 DEBUG Sender:389 - close port
+11:55:26,446 DEBUG Sender:350 - есть элементы для отправки
+11:55:26,446 DEBUG Sender:372 - отправить данные
+11:55:26,446 DEBUG Sender:375 - открыть порт
+11:55:26,446 DEBUG Sender:379 - послать данные
+11:55:26,446 DEBUG Sender:353 - нет элементов 
+11:55:26,446 DEBUG Sender:389 - close port
+11:55:26,852 DEBUG TcpPortListener:49 - Data exists
+11:55:26,852 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:26,852 DEBUG TcpPortListener:89 - notify data listener:
+11:55:26,852 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:26,852 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:26,852 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:26,868 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:26,868 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:26,868 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:27,243 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:27,243 DEBUG Sender:389 - close port
+11:55:27,243 DEBUG Sender:350 - есть элементы для отправки
+11:55:27,243 DEBUG Sender:372 - отправить данные
+11:55:27,243 DEBUG Sender:375 - открыть порт
+11:55:27,243 DEBUG Sender:379 - послать данные
+11:55:27,243 DEBUG Sender:353 - нет элементов 
+11:55:27,243 DEBUG Sender:389 - close port
+11:55:27,649 DEBUG TcpPortListener:49 - Data exists
+11:55:27,649 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:27,649 DEBUG TcpPortListener:89 - notify data listener:
+11:55:27,649 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:27,649 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:27,649 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:27,664 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:27,664 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:27,664 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:28,039 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:28,039 DEBUG Sender:389 - close port
+11:55:28,039 DEBUG Sender:350 - есть элементы для отправки
+11:55:28,039 DEBUG Sender:372 - отправить данные
+11:55:28,039 DEBUG Sender:375 - открыть порт
+11:55:28,039 DEBUG Sender:379 - послать данные
+11:55:28,039 DEBUG Sender:353 - нет элементов 
+11:55:28,039 DEBUG Sender:389 - close port
+11:55:28,211 DEBUG TcpHeartBeat:46 - attempt to send HeartBeatData into port:20102
+11:55:28,446 DEBUG TcpPortListener:49 - Data exists
+11:55:28,446 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:28,446 DEBUG TcpPortListener:89 - notify data listener:
+11:55:28,446 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:28,446 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:28,446 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:28,477 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:28,477 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:28,477 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:28,836 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:28,836 DEBUG Sender:389 - close port
+11:55:28,836 DEBUG Sender:350 - есть элементы для отправки
+11:55:28,836 DEBUG Sender:372 - отправить данные
+11:55:28,836 DEBUG Sender:375 - открыть порт
+11:55:28,836 DEBUG Sender:379 - послать данные
+11:55:28,836 DEBUG Sender:353 - нет элементов 
+11:55:28,836 DEBUG Sender:389 - close port
+11:55:29,243 DEBUG TcpPortListener:49 - Data exists
+11:55:29,243 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:29,243 DEBUG TcpPortListener:89 - notify data listener:
+11:55:29,243 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:29,243 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:29,243 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:29,274 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:29,274 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:29,274 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:29,618 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:29,618 DEBUG Sender:389 - close port
+11:55:29,618 DEBUG Sender:350 - есть элементы для отправки
+11:55:29,618 DEBUG Sender:372 - отправить данные
+11:55:29,618 DEBUG Sender:375 - открыть порт
+11:55:29,618 DEBUG Sender:379 - послать данные
+11:55:29,618 DEBUG Sender:353 - нет элементов 
+11:55:29,618 DEBUG Sender:389 - close port
+11:55:30,024 DEBUG TcpPortListener:49 - Data exists
+11:55:30,024 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:30,024 DEBUG TcpPortListener:89 - notify data listener:
+11:55:30,024 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:30,024 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:30,024 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:30,055 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:30,055 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:30,055 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:30,414 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:30,414 DEBUG Sender:389 - close port
+11:55:30,414 DEBUG Sender:350 - есть элементы для отправки
+11:55:30,414 DEBUG Sender:372 - отправить данные
+11:55:30,414 DEBUG Sender:375 - открыть порт
+11:55:30,430 DEBUG Sender:379 - послать данные
+11:55:30,430 DEBUG Sender:353 - нет элементов 
+11:55:30,430 DEBUG Sender:389 - close port
+11:55:30,821 DEBUG TcpPortListener:49 - Data exists
+11:55:30,821 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:30,821 DEBUG TcpPortListener:89 - notify data listener:
+11:55:30,821 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:30,821 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:30,821 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:30,852 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:30,852 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:30,852 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:31,211 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:31,211 DEBUG Sender:389 - close port
+11:55:31,211 DEBUG Sender:350 - есть элементы для отправки
+11:55:31,211 DEBUG Sender:372 - отправить данные
+11:55:31,211 DEBUG Sender:375 - открыть порт
+11:55:31,211 DEBUG Sender:379 - послать данные
+11:55:31,211 DEBUG Sender:353 - нет элементов 
+11:55:31,211 DEBUG Sender:389 - close port
+11:55:31,618 DEBUG TcpPortListener:49 - Data exists
+11:55:31,618 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:31,618 DEBUG TcpPortListener:89 - notify data listener:
+11:55:31,618 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:31,618 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:31,618 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:31,633 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:31,633 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:31,633 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:31,993 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:31,993 DEBUG Sender:389 - close port
+11:55:31,993 DEBUG Sender:350 - есть элементы для отправки
+11:55:31,993 DEBUG Sender:372 - отправить данные
+11:55:31,993 DEBUG Sender:375 - открыть порт
+11:55:31,993 DEBUG Sender:379 - послать данные
+11:55:31,993 DEBUG Sender:353 - нет элементов 
+11:55:31,993 DEBUG Sender:389 - close port
+11:55:32,227 DEBUG TcpHeartBeat:46 - attempt to send HeartBeatData into port:20102
+11:55:32,399 DEBUG TcpPortListener:49 - Data exists
+11:55:32,399 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:32,399 DEBUG TcpPortListener:89 - notify data listener:
+11:55:32,399 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:32,399 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:32,399 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:32,414 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:32,414 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:32,414 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:32,774 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:32,774 DEBUG Sender:389 - close port
+11:55:32,774 DEBUG Sender:350 - есть элементы для отправки
+11:55:32,774 DEBUG Sender:372 - отправить данные
+11:55:32,789 DEBUG Sender:375 - открыть порт
+11:55:32,789 DEBUG Sender:379 - послать данные
+11:55:32,789 DEBUG Sender:353 - нет элементов 
+11:55:32,789 DEBUG Sender:389 - close port
+11:55:33,180 DEBUG TcpPortListener:49 - Data exists
+11:55:33,180 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:33,180 DEBUG TcpPortListener:89 - notify data listener:
+11:55:33,180 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:33,180 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:33,180 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:33,196 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:33,196 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:33,196 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:33,571 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:33,571 DEBUG Sender:389 - close port
+11:55:33,571 DEBUG Sender:350 - есть элементы для отправки
+11:55:33,571 DEBUG Sender:372 - отправить данные
+11:55:33,571 DEBUG Sender:375 - открыть порт
+11:55:33,571 DEBUG Sender:379 - послать данные
+11:55:33,571 DEBUG Sender:353 - нет элементов 
+11:55:33,571 DEBUG Sender:389 - close port
+11:55:33,977 DEBUG TcpPortListener:49 - Data exists
+11:55:33,977 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:33,977 DEBUG TcpPortListener:89 - notify data listener:
+11:55:33,977 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:33,977 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:33,977 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:34,008 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:34,008 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:34,008 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:34,352 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:34,352 DEBUG Sender:389 - close port
+11:55:34,352 DEBUG Sender:350 - есть элементы для отправки
+11:55:34,352 DEBUG Sender:372 - отправить данные
+11:55:34,352 DEBUG Sender:375 - открыть порт
+11:55:34,352 DEBUG Sender:379 - послать данные
+11:55:34,352 DEBUG Sender:353 - нет элементов 
+11:55:34,352 DEBUG Sender:389 - close port
+11:55:34,758 DEBUG TcpPortListener:49 - Data exists
+11:55:34,758 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:34,758 DEBUG TcpPortListener:89 - notify data listener:
+11:55:34,758 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:34,758 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:34,758 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:34,774 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:34,774 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:34,774 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:35,149 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:35,149 DEBUG Sender:389 - close port
+11:55:35,149 DEBUG Sender:350 - есть элементы для отправки
+11:55:35,149 DEBUG Sender:372 - отправить данные
+11:55:35,149 DEBUG Sender:375 - открыть порт
+11:55:35,149 DEBUG Sender:379 - послать данные
+11:55:35,149 DEBUG Sender:353 - нет элементов 
+11:55:35,149 DEBUG Sender:389 - close port
+11:55:35,555 DEBUG TcpPortListener:49 - Data exists
+11:55:35,555 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:35,555 DEBUG TcpPortListener:89 - notify data listener:
+11:55:35,555 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:35,555 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:35,555 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:35,586 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:35,586 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:35,586 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:35,930 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:35,930 DEBUG Sender:389 - close port
+11:55:35,930 DEBUG Sender:350 - есть элементы для отправки
+11:55:35,930 DEBUG Sender:372 - отправить данные
+11:55:35,930 DEBUG Sender:375 - открыть порт
+11:55:35,930 DEBUG Sender:379 - послать данные
+11:55:35,930 DEBUG Sender:353 - нет элементов 
+11:55:35,930 DEBUG Sender:389 - close port
+11:55:36,227 DEBUG TcpHeartBeat:46 - attempt to send HeartBeatData into port:20102
+11:55:36,336 DEBUG TcpPortListener:49 - Data exists
+11:55:36,336 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:36,336 DEBUG TcpPortListener:89 - notify data listener:
+11:55:36,336 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:36,336 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:36,336 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:36,352 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:36,352 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:36,352 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:36,711 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:36,711 DEBUG Sender:389 - close port
+11:55:36,711 DEBUG Sender:350 - есть элементы для отправки
+11:55:36,711 DEBUG Sender:372 - отправить данные
+11:55:36,711 DEBUG Sender:375 - открыть порт
+11:55:36,711 DEBUG Sender:379 - послать данные
+11:55:36,711 DEBUG Sender:353 - нет элементов 
+11:55:36,711 DEBUG Sender:389 - close port
+11:55:37,118 DEBUG TcpPortListener:49 - Data exists
+11:55:37,118 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:37,118 DEBUG TcpPortListener:89 - notify data listener:
+11:55:37,118 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:37,118 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:37,118 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:37,133 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:37,133 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:37,133 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:37,508 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:37,508 DEBUG Sender:389 - close port
+11:55:37,508 DEBUG Sender:350 - есть элементы для отправки
+11:55:37,508 DEBUG Sender:372 - отправить данные
+11:55:37,508 DEBUG Sender:375 - открыть порт
+11:55:37,508 DEBUG Sender:379 - послать данные
+11:55:37,508 DEBUG Sender:353 - нет элементов 
+11:55:37,508 DEBUG Sender:389 - close port
+11:55:37,899 DEBUG TcpPortListener:49 - Data exists
+11:55:37,899 DEBUG TcpPortListener:59 - Notify Data:17
+11:55:37,899 DEBUG TcpPortListener:89 - notify data listener:
+11:55:37,899 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:37,899 DEBUG Notifyer:135 - получить первый пакет для отправки
+11:55:37,899 DEBUG Notifyer:145 - есть данные для отправки - оповестить всех слушателей:17
+11:55:37,930 DEBUG ComPort:268 - данные записаны в порт: 17
+11:55:37,930 DEBUG Notifyer:133 - Проверить очередь на наличие данных 
+11:55:37,930 DEBUG Notifyer:138 - нет данных - заснуть
+11:55:38,305 DEBUG ComPort:228 - serialEvent send to reader object
+11:55:38,305 DEBUG Sender:389 - close port
+11:55:38,305 DEBUG Sender:350 - есть элементы для отправки
+11:55:38,305 DEBUG Sender:372 - отправить данные
+11:55:38,305 DEBUG Sender:375 - открыть порт
+11:55:38,305 DEBUG Sender:379 - послать данные
+11:55:38,305 DEBUG Sender:353 - нет элементов 
+11:55:38,305 DEBUG Sender:389 - close port
+11:55:40,227 DEBUG TcpHeartBeat:46 - attempt to send HeartBeatData into port:20102
+11:55:41,180 ERROR TcpHeartBeat:55 - TcpHeartBeat pulse Exception:Connection refused: connect
+11:55:41,180 ERROR TcpHeartBeat:56 - ComPort will be closed, System.Exit

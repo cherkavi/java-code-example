@@ -1,0 +1,49 @@
+<html>
+<head>
+</head>
+<body>
+	ƒанный пакет служит дл€ передачи в JMX описани€ дл€ различных элементов
+	<table>
+		<tr>
+			<th>class name</th>
+			<th>source element</th>
+			<th>description</th>
+		</tr>
+		<tr>
+			<td>AMbeanAttribute</td>
+			<td>get/set method</td>
+			<td>данна€ аннтоци€ предназначена дл€ аттрибута ( может быть использована либо в get либо в set методе )</td>
+		</tr>
+		<tr>
+			<td>AMbeanAttributeSkip</td>
+			<td>get/set method</td>
+			<td>данна€ аннтоци€ предназначена не парсинга метода как аттрибута </td>
+		</tr>
+		<tr>
+			<td>AMbeanOperation</td>
+			<td>method</td>
+			<td>данна€ аннтоци€ предназначена дл€ метода, который может быть вызван удаленно (Operation Description)</td>
+		</tr>
+		<tr>
+			<td>AMbeanOperationSkip</td>
+			<td>method</td>
+			<td>данна€ аннтоци€ предназначена дл€ методов, которые не нужно передавать дл€ управлени€ в JMX (аналог transient дл€ полей при сериализации ) </td>
+		</tr>
+		<tr>
+			<td>AMbeanOperationParameter</td>
+			<td>parameter</td>
+			<td>данна€ аннтоци€ предназначена дл€ параметров метода (Operation parameter)</td>
+		</tr>
+		<tr>
+			<td>AMBeanNotification</td>
+			<td>method</td>
+			<td>for add description to MBeanNotification</td>
+		</tr>
+		<tr>
+			<td>AMBeanNotificationSkip</td>
+			<td>method</td>
+			<td>for extract this method from notification </td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+Thrift:
+	1 - download 
+		http://thrift.apache.org/download/ 
+		
+	2 - build the library 
+		thrift-0.8.0/lib/java ant
+		
+	3 - create the file with description of service ( description.thrift ):
+	
+# time.thrift
+namespace java com.cherkashyn.vitaliy.thrift.exchange
+typedef i64 Timestamp
+service TimeServer {
+   Timestamp time()
+}
+
+	4 - wine thrift.exe --gen java message.thrift
+
+	5 - copy generated to project
+	
+	6 - create the client, create the server
+	
+	7 - start the server, start the client

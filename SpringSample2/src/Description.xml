@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+   	   xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+> <!--  Главный тег, говорящий о том, чтот тут будет происходить маппинг бинов-->
+    <bean id="helloBean" class="domain.HelloBean">   <!-- Обьявление первого бина. 
+Присваеваем id (произвольно, это то как его будем потом вызывать) 
+и указываем где он находится, т.е. пишем полный путь к классу-->
+        <property name="helloService"> <!--  инъектим   helloService   через  helloService  интерфейс-->
+            <ref bean="helloService"/>
+        </property>
+        <property name="byeService">
+            <ref bean="byeService"/>
+        </property>
+    </bean>
+    <bean id="helloService" class="serviceImpl.HelloServiceImpl"/>   <!--  обьявление 2-го  бина  -->
+    <bean id="byeService" class="serviceImpl.ByeServiceImpl"/>   <!--  обьявление  3-го бина --> 
+</beans>

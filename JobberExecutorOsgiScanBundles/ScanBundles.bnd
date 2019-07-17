@@ -1,0 +1,13 @@
+Bundle-Name: Scan files and install/start or uninstall it
+Import-Package: org.osgi.framework
+Bundle-Activator: bonpay.osgi.scan_bundles.ScanBundlesActivator
+Private-Package: bonpay.osgi.scan_bundles
+Include-Resource: lib
+Bundle-ClassPath: ., log4j-1.2.15.jar
+DynamicImport-Package: org.apache.log4j.*, javax.jms.*, javax.mail.*, com.test.*, \
+					   com.sun.jdmk.comm.*, javax.management.*, \
+					   javax.naming.*, javax.swing.*, javax.xml.*, \
+					   org.w3c.dom.*, org.xml.sax.* 
+
+
+

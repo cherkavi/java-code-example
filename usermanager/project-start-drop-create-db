@@ -1,0 +1,1 @@
+java -jar -Dspring.datasource.initialization-mode=always target/usermanager-0.0.1-SNAPSHOT.jar

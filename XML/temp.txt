@@ -1,0 +1,20 @@
+document_builder_factory = Packages.javax.xml.parsers.DocumentBuilderFactory.newInstance();  
+document_builder = document_builder_factory.newDocumentBuilder();  
+// Create document  
+doc = document_builder.newDocument(); // Doc is an object  
+// Create and append a processing instruction  
+var processing_instruction = doc.createProcessingInstruction("xml-stylesheet", "type=\"text/css\" href=\"http://www.domain.tld/style.css\" media=\"all\"");  
+doc.appendChild(processing_instruction);  
+// Create root element and append to document  
+root_element = doc.createElement("root");  
+doc.appendChild(root_element);  
+// Insert a comment in front of the root element  
+comment = doc.createComment("I am a comment");  
+doc.insertBefore(comment, root_element);  
+// Create a child element ("child1") of the root element  
+child_element1 = doc.createElement("child1");  
+root_element.appendChild(child_element1);  
+// Create an attribute for child element1  
+child_element1.setAttribute("attr", "value");  
+// Add a text node to child_element1  
+child_element1.appendChild(doc.createTextNode("Child 1"));  

@@ -1,0 +1,4 @@
+ //getToolkit().getSystemClipboard().setContents(new StringSelection(return_value.toString()),null);
+
+
+ //  this.setText((String)(getToolkit().getSystemClipboard().getContents(this)).getTransferData(DataFlavor.stringFlavor));

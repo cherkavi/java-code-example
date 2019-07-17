@@ -1,0 +1,99 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<p>
+		Данный проект предназначен для сохранения файлов XML, сгенерированных SVN <br /> 
+		<small>( пример получения фала XML из SVN: <b>svn log -r17760:17766 -v --xml >> svn_log.xml</b>)</small>, <br />
+		в базу данных 	
+		</p>
+		<p>
+			Пример аргументов для запуска данного приложения: <br />
+			<ul>
+				<li>
+					<b title="файл, сгенерированный из SVN (svn log -v --xml)" >-svn_xml_file</b> /tmp/temp/svn_log.xml
+				</li>
+				<li>
+					<b title="полный URL к базе данных" >-db_url</b> "jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS_LIST =(LOAD_BALANCE=OFF)(FAILOVER=ON)(ADDRESS = (PROTOCOL = TCP)(HOST = 10.91.57.225)(PORT = 1521))(ADDRESS = (PROTOCOL = TCP)(HOST = 10.91.57.227)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = rtn7uadg.world)(FAILOVER_MODE=(TYPE=SESSION)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))" 
+				</li>
+				<li>
+					<b title="логин к базе данных для указанного поользователя ">-db_login</b> xxxxx
+				</li>
+				<li>
+					<b title="пароль к базе данных для указанного пользователя">-db_password</b> yyyyy
+				</li>
+				<li>
+					<b title="уровень логгирования, может быть: trace, debug, info, warn, error">-log_level</b> error
+				</li>
+			</ul>
+		</p>
+		<p>
+			Таблицы в базе данных для сохранения:
+			<table border="1">
+				<thead>
+					<tr>
+						<th colspan="2" align="center">SVN_LOG_ENTRY</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><b>ID</b></td>
+						<td>unique identifier</td>
+					</tr>
+					<tr>
+						<td><b>REVISION</b></td>
+						<td>svn revision </td>
+					</tr>
+					<tr>
+						<td><b>AUTHOR</b></td>
+						<td>author of SVN revision</td>
+					</tr>
+					<tr>
+						<td><b>DATE_WRITE</b></td>
+						<td>time of commit</td>
+					</tr>
+					<tr>
+						<td><b>MESSAGE</b></td>
+						<td>comment of commit</td>
+					</tr>
+					<tr>
+						<td><b>TASK</b></td>
+						<td>number of Task from JIRA</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			
+			<table border="1">
+				<thead>
+					<tr>
+						<th colspan="2" align="center">SVN_LOG_ENTRY_FILE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><b>ID</b></td>
+						<td>unique identifier</td>
+					</tr>
+					<tr>
+						<td><b>ID_SVN_LOG_ENTRY</b></td>
+						<td>reference to SVN_LOG_ENTRY </td>
+					</tr>
+					<tr>
+						<td><b>KIND</b></td>
+						<td>attribute of element</td>
+					</tr>
+					<tr>
+						<td><b>ACTION</b></td>
+						<td>Modified, Append, Delete - type of file manipulation</td>
+					</tr>
+					<tr>
+						<td><b>SVN_PATH</b></td>
+						<td>path to file in SVN</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</p>		
+	</body>
+</html>

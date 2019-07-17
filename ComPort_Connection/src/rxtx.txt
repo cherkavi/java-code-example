@@ -1,0 +1,23 @@
+1. Install RxTx library into system
+
+copy rxtxSerial.dll to [JDK-directory]\jre\bin\rxtxSerial.dll
+copy RXTXcomm.jar to [JDK-directory]\jre\lib\ext\RXTXcomm.jar
+
+
+2. Install Forest
+   2.1 unpack apache forrest
+   2.2 set FORREST_HOME=D:\java_lib\ApacheForest\apache-forrest-0.8 
+   2.3 run %forrest_home%/appendcp.bat
+			 forrest.bat
+			 setpwdvar.bat
+   2.4 correct jamod-src/build.xml
+	  <import file="${env.FORREST_HOME}/forrest.build.xml"/>
+	  to 
+	  <import file="${env.FORREST_HOME}/main/forrest.build.xml"/>
+
+3. Recompile  JAMOD:
+   3.1 build.properties
+  	  #build.serial.gnu=false
+	  build.serial.gnu=true
+   3.2 ant build.xml
+

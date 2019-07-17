@@ -1,0 +1,93 @@
+<h3>How to execute:</h3>
+<p>
+   <ul>
+	<li>mvn clean intstall</li>
+	<li>mvn jetty:run</li>
+
+	<li>
+		<a href="http://localhost:8080/url-parser/index.html" target="_blank">http://localhost:8080/url-parser/index.html</a>
+		<br />
+		<a href="http://localhost:8080/url-parser/index-angular.html" target="_blank">http://localhost:8080/url-parser/index-angular.html</a>
+	</li>
+    </ul>
+</p>
+
+<h3>Find solution</h3>
+<ul>
+	<li>without UI part (server will form UI part) 
+		<ul>
+			<li>servlet/JSP approach</li>
+			<li class="em">UI framework: JSF, Spring MVC (Boot) , Wicket, GWT, Vaadin ... </li>
+		</ul>
+	</li>
+	<li>UI exists (standalone project, AJAX based app) 
+		<ul>
+			<li class="em">use JS libraries (read data from server, show answer)</li>
+			<li class="em">use framework AngularJS, EmberJS, BackboneJS, ... </li>
+		</ul>
+	</li>
+</ul>
+
+
+<fieldset>
+	<legend><h3>BackEnd</h3></legend>
+steps:
+<ol>
+	<li class="done">empty maven project</li>
+	<li class="done">empty WEB project </li>
+	<li class="done">find library for parsing</li>
+	<li class="done">parser logic</li>
+	<li class="done">create service</li>
+	<li class="done">clarify Transfer Object and logic between levels </li>
+	<li class="done">REST level of application</li>
+</ol>
+</fieldset>
+<br />
+
+<fieldset>
+	<legend><h3>UI</h3></legend>
+<ol>
+	<li class="done">create empty project</li>
+	<li class="done">read data from server</li>
+	<li class="done">positive answer form</li>
+	<li class="done">error form</li>
+	<li class="done">testing</li>
+	<li class="done">instruction</li>
+</ol>
+</fieldset>
+
+<style>
+.em {
+	color:red;
+}
+.done{
+	text-decoration:line-through;
+}
+</style>
+
+
+<hr />
+environment questions
+<dl>
+	<dt>- can I use Bower ?</dt>
+	<dd>no</dd>
+</dl>
+<dl>
+	<dt>- can I use Spring Boot ?/dt>
+	<dd>no</dd>
+</dl>
+<dl>
+	<dt>- which version of Java do we have</dt>
+	<dd>at least 1.6</dd>
+</dl>
+
+<dl>
+	<dt>- which version of tomcat do we have</dt>
+	<dd>at least 6</dd>
+</dl>
+
+<dl>
+	<dt>- can I start Jetty on port 8085 ( or another one )</dt>
+	<dd>use as parameter</dd>
+</dl>
+	

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="database.TableOne"
+           table="TableOne">
+        <id name="kod"
+            column="KOD"
+	    type="integer">
+            <generator class="native"/>
+        </id>
+        <property name="field_string" column="FIELD_STRING" type="string" />
+        <property name="field_double" column="FIELD_DOUBLE" type="numeric" />
+        <property name="field_date" column="FIELD_DATE" type="date" />
+        <property name="field_timestamp" column="FIELD_TIMESTAMP" type="timestamp" />
+	
+    </class>
+</hibernate-mapping>

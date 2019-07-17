@@ -1,0 +1,15 @@
+try{
+
+rs = stmt.executeQuery(query); // <------------ "OutOfMemory" Errors are thrown here
+
+   }
+   catch(java.lang.OutOfMemoryError t )
+   {
+     System.out.println("OutOfMemoryError: " + t );
+     System.out.println("freeMemory: " + runtime.freeMemory() );
+     rs = stmt.executeQuery(query); // <------------ this call works
+    }
+                       System.out.println("id: " + alert.id);
+    System.gc() ;
+    count =1;
+  }

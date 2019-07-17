@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration>
+
+	<jdbc>
+		<class>test_class</class>
+		<url>test_url</url>
+		<login>test_login</login>
+		<password>test_password</password>
+	</jdbc>
+
+	<query>
+		<sql>
+		<![CDATA[test select]]>
+		</sql>
+	</query>
+
+	<output>
+		<path>test_path</path>
+	</output>
+
+</configuration>

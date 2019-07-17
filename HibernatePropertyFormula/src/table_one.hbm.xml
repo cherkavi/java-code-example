@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="mapping.TableOne" table="table_one">
+	
+  		<id name="id" type="int" column="ID" >
+  			<generator class="assigned"/>
+ 		</id>
+ 		
+ 		<property name="id_table_two">
+ 			<column name="id_table_two"/>
+ 		</property>
+ 		
+ 		<property name="name">
+ 			<column name="name"/>
+ 		</property>
+	
+		<property name="description">
+			<formula>( select table_two.description from table_two where table_two.id=id_table_two )</formula>
+		</property>  
+		
+		<!-- valid variant - property.formula 
+			<property name="description">
+				<formula>( select table_two.description from table_two where table_two.id=id_table_two )</formula>
+			</property>  
+		-->
+
+  		
+  		 <!-- 
+  		 // not working 
+  		<join table="table_two" >
+  			<key  />
+  			<property name="description">
+  				<column name="description" />
+  			</property>
+  		</join>
+
+  		 // not working 
+ 		<joined-subclass name="mapping.TableOneInnerJoinTableTwo" 
+ 						 table="table_two" 
+ 						 extends="mapping.TableOne"
+ 						 >
+ 			<key column="id" />
+ 			<property name="description" column="description" type="string" />
+ 		</joined-subclass>
+
+  		 // not working 
+  		<discriminator column="id_table_two" type="int"  /> 
+ 		<subclass name="mapping.TableOneInnerJoinTableTwo" discriminator-value="1">
+	 			<key column="id" />
+	 			<property name="description" column="description" type="string" />
+  		 	<join table="table_two" >
+ 			</join>
+ 		</subclass>
+		 -->
+	</class>
+</hibernate-mapping>

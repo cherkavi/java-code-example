@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="WINDOWS-1251"?>
+<?xml-stylesheet type='text/xsl' href='em.xsl'?>
+<not_visible_element>
+	<title>заголовок для примера</title>
+	<data description="информация для данного проекта">
+		<main_information>
+			this is main information
+		</main_information>
+		<add_information>
+			this is additional information
+		</add_information>
+	</data>
+</not_visible_element>

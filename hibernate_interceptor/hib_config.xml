@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"
+
+>
+<!--  
+"http://www.hibernate.org/dtd/hibernate-configuration-4.0.dtd"
+ -->
+<hibernate-configuration>
+<session-factory>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/test</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.connection.password">1</property>
+  <property name="hibernate.connection.pool_size">10</property>
+  <property name="show_sql">true</property>
+  <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+<!--  
+   <property name="hibernate.ejb.event.post-update">hibernate_replacer.listeners.UserSaveOrUpdateListener</property>
+-->
+  <!--  <property name="hibernate.hbm2ddl.auto">update</property> -->
+  <!-- Mapping files -->
+  <!-- 
+  <mapping resource="d:\eclipse_workspace\HibernateReplacer\users.hbm.xml"/>
+	<event type="pre-update">
+            <listener class="hibernate_replacer.listeners.UserSaveOrUpdateListener"  />
+        </event>	 
+
+	 -->
+   <listener class="hibernate_replacer.listeners.UserSaveOrUpdateListener" type="pre-update" />
+<!-- 
+<property name="hibernate.ejb.event.post-insert"  value="org.hibernate.envers.event.EnversPostInsertEventListenerImpl"/>
+
+<property name="hibernate.ejb.event.post-update" value="org.hibernate.envers.event.EnversPostUpdateEventListenerImpl"/>
+
+<property name="hibernate.ejb.event.post-delete" value="org.hibernate.envers.event.EnversPostDeleteEventListenerImpl"/>
+    -->
+</session-factory>
+
+
+</hibernate-configuration>

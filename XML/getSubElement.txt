@@ -1,0 +1,18 @@
+	/** получить подэлемент из корневого элемента на основании XPath пути
+	 * @param parentElement - родительский элемент 
+	 * @param path - путь XPath
+	 * @return - найденный Element или null
+	 */
+	private static Element getSubElement(Node parentElement, String path){
+		try{
+			XPath xpath=XPathFactory.newInstance().newXPath();
+			Object returnValue=xpath.evaluate(path, parentElement,XPathConstants.NODE);
+			if(returnValue instanceof Element){
+				return (Element)returnValue;
+			}else{
+				return null;
+			}
+		}catch(Exception ex){
+			return null;
+		}
+	}

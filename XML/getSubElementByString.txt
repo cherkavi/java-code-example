@@ -1,0 +1,40 @@
+
+	/** получить текстовое содержимое указанного (XPath) Node */
+	private static String getStringFromDocumentByPath(Document document, String path){
+		Node node=getNodeFromDocument(document, path);
+		if(node!=null){
+			return node.getTextContent();
+		}else{
+			return null;
+		}
+	}
+	
+	/** получить Node по указанному пути */
+	private static Node getNodeFromDocument(Document document, String path){
+		XPath xpath = XPathFactory.newInstance().newXPath();
+		try {
+			return (Node)xpath.evaluate(path, document, XPathConstants.NODE);
+		} catch (XPathExpressionException e) {
+			return null;
+		}
+	}
+
+
+!!! IMPORTANT  !!!
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<REQUEST>
+	<PARTNER><KOD>111</KOD></PARTNER>
+	<FUNCTION_NAME>registration</FUNCTION_NAME>
+	<NAME>user name</NAME>
+	<SURNAME>user surname</SURNAME>
+	<BIRTHDAY>31.07.2010 18:09:15</BIRTHDAY>
+	<PLACE>paradox text
+		<CITY_KOD>999</CITY_KOD>
+	</PLACE>
+	<SEX>male</SEX></REQUEST>
+
+при получении из указанного документа getStringFromDocumentByPath(request, "//REQUEST/PLACE");
+на печать будет выведено:
+paradox text999
+то есть можно задать текст для элемента, который имеет appendChild, но текст будет содержать и текст из Child

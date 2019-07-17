@@ -1,0 +1,7 @@
+Server:
+java -cp hsqldb.jar org.hsqldb.Server
+( DefaultPort: 9001 )
+
+
+Manager:
+java -cp hsqldb.jar org.hsqldb.util.DatabaseManager

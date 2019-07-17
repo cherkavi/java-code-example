@@ -1,0 +1,8 @@
+		JFileChooser dialog=new JFileChooser();
+		dialog.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+		dialog.setSelectedFile(new File(this.fieldTempPath.getText()+this.getFileName()+".save"));
+		if(dialog.showDialog(this, "Файл для сохранения")==JFileChooser.APPROVE_OPTION){
+			saveObjectToFile(dialog.getSelectedFile().getPath());
+		}else{
+			JOptionPane.showMessageDialog(this, "not saved");
+		}

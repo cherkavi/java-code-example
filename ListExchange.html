@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	var prefix="p_";
+	var suffixCounter=0;
+	function move(source, destination,method){
+		for(var counter=(source.options.length-1);counter>=0;counter--){
+			if(source.options[counter].selected){
+				var element=source.options[counter];
+				source.removeChild(element);
+				destination.appendChild(element);
+
+				method(element);
+			}
+		}
+	}
+
+	function removeElementFromForm(element){
+		var formElement=document.getElementById("body_destination");
+		var typeName;
+		var typeValue;
+		var currentElement;
+		for(var counter=0;counter<formElement.childNodes.length;counter++){
+			try{
+				currentElement=formElement.childNodes[counter];
+				typeName=currentElement.getAttribute("type");
+				typeValue=currentElement.getAttribute("value");
+				if((typeName=="hidden")&&(typeValue==element.text)){
+					formElement.removeChild(currentElement);
+					return ;
+				}
+			}catch(err){
+			}
+		}
+	}
+	
+	function addElementToForm(element){
+		var elementText=element.text;
+		var hiddenElement=document.createElement("input");
+		//suffixCounter++;
+		hiddenElement.name=element.getAttribute("id");//prefix+suffixCounter;
+		hiddenElement.type="hidden";
+		hiddenElement.value=elementText;
+		formDestination=document.getElementById("body_destination");
+		formDestination.appendChild(hiddenElement);
+	}
+
+	
+	function fromSource(){
+		var source=document.getElementById("source");
+		var destination=document.getElementById("destination");
+		move(source,destination,addElementToForm);
+	}
+	
+	function fromDestination(){
+		var source=document.getElementById("destination");
+		var destination=document.getElementById("source");
+		move(source,destination,removeElementFromForm);
+	}
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td valign="center">
+				<select multiple="multiple" id="source">
+					<option id="first_id">first </option>
+					<option id="second_id">second </option>
+					<option id="third_id">third </option>
+					<option id="forth_id">forth </option>
+					<option id="fifth_id">fifth</option>
+				</select >
+			</td>
+			<td valign="center">
+				<input type="button" value=">" onclick="fromSource()">
+				<br>
+				<input type="button" value="<" onclick="fromDestination()">
+			</td>
+			<td>
+				<select multiple="multiple" id="destination">
+				</select >
+			</td>
+		</tr>
+		<tr>
+			<td colspan=3>
+				<form action="http://localhost:8080/TempDynamic/Test" id="body_destination" method="get">
+					<input type="submit" value="goto" >
+				</form>
+			</td>
+		</tr>
+	</table>
+	<span id="console">
+	<span>
+	
+</body>
+</html>

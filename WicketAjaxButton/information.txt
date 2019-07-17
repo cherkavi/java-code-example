@@ -1,0 +1,24 @@
+Обязательно, каждая группа Ajax-кнопок ( или же одна кнопка ) должна быть в составе формы.
+Другими словами, может работать и без формы, но при последующем наращивании компонентов ( в частности модальные окна )
+начнет проявляться.
+
+
+То есть можно:
+	<form wicket:id="form_button">
+		<input type="button" wicket:id="change_button">
+	</form>
+
+И нельзя 
+	<input type="button" wicket:id="change_button">
+	
+
+или же для группы кнопок:
+Можно:
+	<form wicket:id="form_button">
+		<input type="button" wicket:id="button_ok">
+		<input type="button" wicket:id="button_cancel">
+	</form>
+
+Нельзя 
+		<input type="button" wicket:id="button_ok">
+		<input type="button" wicket:id="button_cancel">

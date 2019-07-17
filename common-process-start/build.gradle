@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'groovy'
+
+task "create-dirs" << {
+   sourceSets*.java.srcDirs*.each { it.mkdirs() }
+   sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+}
+
+
+task first(type:JarBackgroundExecutor){
+	pathToJar = "/home/technik/temp/file-writer.jar"
+}
+
+
+
+class JarBackgroundExecutor extends DefaultTask {
+    String pathToJar = ''
+
+    @TaskAction
+    def runJar() {
+	try{
+		("java -jar "+pathToJar+" &").execute()	
+	}catch(ex){
+		println "exception:"+ex	
+	}	
+	java.util.concurrent.TimeUnit.SECONDS.sleep(5)        
+	println "started:"+pathToJar
+    }
+
+}

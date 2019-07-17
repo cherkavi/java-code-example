@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ 
+    <class name="database.TableOne"
+           table="one">
+        <id name="field_one" column="field_one" type="integer">
+            <generator class="native"/>
+        </id>
+        <property name="field_two" column="FIELD_TWO" type="string" />
+        <property name="field_three" column="FIELD_THREE" type="string" />
+        <property name="field_four" column="FIELD_FOUR" type="double" />
+    </class>
+
+
+    <sql-query name="test_query">
+    	select * from one where field_two=:field_two_condition
+    </sql-query>
+
+    <sql-query name="test_query_two" >
+    	<return class="database.TableOne" alias="determinant_table" />
+    	select
+    		field_one as {determinant_table.field_one},
+    		field_two as {determinant_table.field_two},
+    		field_three as {determinant_table.field_three},
+    		field_four as {determinant_table.field_four}
+    	from one where field_two=?
+    </sql-query>
+    
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>people_edit_manager</servlet-name>
+    <servlet-class>com.cherkashin.vitaliy.rfid.web_server.server.PeopleEditManagerImpl</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>show_result</servlet-name>
+    <servlet-class>com.cherkashin.vitaliy.rfid.web_server.server.ShowResultImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>people_edit_manager</servlet-name>
+    <url-pattern>/rfid_webserver/people_edit_manager</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>show_result</servlet-name>
+    <url-pattern>/rfid_webserver/show_result</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>RFID_WebServer.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

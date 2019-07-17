@@ -1,0 +1,8 @@
+SectionWalker
+#getNextSection() // return null, if not exists
+
+	PageWalker
+	#getNextPage() // return null if not exists
+	
+		BlockWalker
+		#getNextBlock() // return null if not exists

@@ -1,0 +1,14 @@
+ // Create the buttons.
+    JRadioButton firstButton = new JRadioButton(first);
+    firstButton.setKeyAccelerator('1'); 
+    firstButton.setActionCommand(first);
+    firstButton.setSelected(true);
+
+    JRadioButton secondButton = new JRadioButton(second);
+    secondButton.setKeyAccelerator('2'); 
+    secondButton.setActionCommand(second);
+
+    // Group the radio buttons.
+    ButtonGroup group = new ButtonGroup();
+    group.add(firstButton);
+    group.add(secondButton);

@@ -1,0 +1,3 @@
+≈сли возникает поле jdoDetachedState при работе с Hibernate/ JPA (Java Persistance Annotation)
+- нужно добавить в каждую таблицу следующую аннтотацию:
+@PersistenceCapable(detachable="false")

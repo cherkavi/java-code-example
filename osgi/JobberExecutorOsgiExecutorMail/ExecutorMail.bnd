@@ -1,0 +1,14 @@
+Bundle-Name: Mail Executor
+Bundle-Activator: bonpay.jobber.executor.ExecutorActivator
+Private-Package: bonpay.jobber.executor, bonpay.mail.*, database, logger.utility.* 
+Include-Resource: lib
+Bundle-ClassPath: ., mail.jar, dsn.jar, imap.jar, mailapi.jar, pop3.jar, smtp.jar, log4j-1.2.15.jar, ojdbc14.jar, activation.jar
+Import-Package: org.osgi.framework, bonpay.osgi.service.interf, javax.security.auth.callback, javax.security.sasl
+DynamicImport-Package: org.apache.log4j.*, javax.jms.*, javax.mail.*, \
+				com.test.*, com.sun.jdmk.comm.*, javax.management.*, \
+				javax.naming.*, javax.swing.*, javax.xml.*, \
+				org.w3c.dom.*, org.xml.sax.*,javax.net, javax.net.ssl, \
+				javax.resource, javax.resource.spi, javax.resource.spi.security, \
+				javax.security.auth, javax.sql, javax.transaction.xa, oracle.ons, \
+				oracle.sql.converter, oracle.i18n.text.converter, database, javax.activation 
+					    

@@ -1,0 +1,3 @@
+#helloworld.bnd
+Private-Package: felix.example
+Bundle-Activator: felix.example.HelloWorldActivator

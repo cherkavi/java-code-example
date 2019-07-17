@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE java2excel PUBLIC "-//epere4/DTD Java2Excel mapping file//EN"
+	"http://java2excel.sourceforge.net/dtd/java2excel-mapping.dtd">
+<java2excel>
+	<!-- 
+		This header is here just for future enhancements. Don't use it.
+		You can even ommit the header if you want. Please note that future
+		versions may not support any CDATA inside the header tags.
+	-->
+	<header> nothing for now </header>
+	<body>
+		<!-- 
+		Setting an includeExtraLevel="1" makes the excel writer
+		to scan (by reflection) all the properties in levels 1 and 0 of each element
+		in the collection. The default value here is includeExtraLevel = "-1"
+		which means no reflection scan at all.
+		-->
+		<properties includeExtraLevel="1">
+			<!-- 
+			expression is an ognl expression that will be applied to
+			each element in the collection to obtain its value.
+			In the road to getting the value some problems may arrise, 
+			such as a property being inexistent or null. With 
+			protectNullPointer="true" (which is the default value, by the way)
+			all exception of this kind will be ignored and an empty cell
+			will go to excel.
+			-->
+			<property expression="text" protectNullPointer="true">
+				<description> This is a text property. </description>
+			</property>
+			<property expression="integerNumber" protectNullPointer="false"/>
+			<property expression="date"/>
+			<property expression="calendar"/>
+			<property expression="boolValue"/>
+			<!-- 
+			If the title parameter is set, then the excel column will have
+			that text as title. If parameter is ommited, then the 
+			column name will be exactly what you put in expression.
+			-->
+			<property expression="internal.integerNumber"
+				title="Interal Integer Number"/>
+			<property expression="internal.date" title="ESTE ES NULL"/>
+			<property expression="internal2.integerNumber"
+				protectNullPointer="true"/>
+			
+		</properties>
+	</body>
+</java2excel>

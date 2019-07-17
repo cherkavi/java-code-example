@@ -1,0 +1,9 @@
+----  unique tables from FIRST connection  -----------
+0 : two
+------------------------------------------------------
+-------- equals names of tables and not equals fields  -----------
+    Table with differences in fields: one
+        0 : cause=unique, description=first connection, name=field_two, size=50, typeName=VARCHAR
+        1 : cause=size, description=100 <> 120, name=field_three, size=100, typeName=VARCHAR
+        2 : cause=type, description=DOUBLE <> TIME, name=field_four, size=22, typeName=DOUBLE
+------------------------------------------------------

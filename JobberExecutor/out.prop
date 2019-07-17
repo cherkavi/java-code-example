@@ -1,0 +1,12 @@
+start Launcher
+start Launcher
+start Launcher
+start Launcher
+select * from bc_admin.vc_ext_jobs_all where next_start<to_date('14.01.2010 15:54:34','dd.mm.rrrr hh24:mi:ss')
+executor's does not exists 
+select * from bc_admin.vc_ext_jobs_all where next_start<to_date('14.01.2010 15:54:40','dd.mm.rrrr hh24:mi:ss')
+executor's does not exists 
+select * from bc_admin.vc_ext_jobs_all where next_start<to_date('14.01.2010 15:54:45','dd.mm.rrrr hh24:mi:ss')
+executor's does not exists 
+select * from bc_admin.vc_ext_jobs_all where next_start<to_date('14.01.2010 15:54:50','dd.mm.rrrr hh24:mi:ss')
+executor's does not exists 

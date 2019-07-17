@@ -1,0 +1,95 @@
+Solar:
+--------------------------------
+	»мпортирование данных из базы данных
+	- создать новую схему (test)- копированием существующей 
+	( например: %SOLR%/example/example-DIH/solr/db)
+	- создать файл test/conf/data-config.xml
+		<?xml version="1.0" encoding="UTF-8" ?>
+		<dataConfig>
+		  <dataSource type="JdbcDataSource" 
+					  driver="org.gjt.mm.mysql.Driver"
+					  url="jdbc:mysql://localhost:3306/shop_list" 
+					  user="technik" 
+					  password="technik"/>
+		  <document>
+			<entity name="id" 
+					query="select id,name from parse_record">
+			</entity>
+		  </document>
+		</dataConfig>
+		( суд€ по запросу, будут выбраны два пол€ - id, name )
+	- положить в /test/lib файл mysql-connector-java-5.0.5-bin.jar 
+	(driver="org.gjt.mm.mysql.Driver")
+	
+	- редактирование schema.xml
+	приблизительный состав:
+		<types /> (описание возможных типов данных )
+		<fields /> ( пол€, которые учавствуют в схеме )
+		<uniqueKey /> ( уникальное поле схемы)
+		<defaultSearchField /> ( default-поле, по которому производитс€ запрос )
+		<solrQueryParser /> ( какой оператор примен€етс€ по умолчанию в случае мультипоиска )
+		<copyField /> (копирование полей)
+		
+		убрать в исходном файле все fields, uniqueKey, defaultSearchField, solrQueryParser, 
+		copyField, заменить на:
+	 <fields>
+	   <field name="id" type="string" indexed="true" stored="true" required="true" /> 
+	   <field name="name" type="string" indexed="true" stored="true" required="true"/>
+	   
+	 </fields>
+
+	 <!-- Field to use to determine and enforce document uniqueness. 
+		  Unless this field is marked with required="false", it will be a required field
+	   -->
+	 <uniqueKey>id</uniqueKey>
+
+	 <!-- field for the QueryParser to use when an explicit fieldname is absent -->
+	 <defaultSearchField>name</defaultSearchField>
+
+	 <!-- SolrQueryParser configuration: defaultOperator="AND|OR" -->
+	 <solrQueryParser defaultOperator="AND" />
+
+	<!-- <copyField source="id" dest="name"/> -->
+	
+	- запустить схему ( смотреть ниже )
+	
+	- импортировань данные:
+	http://localhost:8983/solr/dataimport?command=full-import
+	
+	- просмотр импортированных данных:
+	http://localhost:8983/solr/dataimport - data about import data
+
+--------------------------------
+	«апуск из указанного каталога с новыми параметрами 
+	( новыми конфигурационными файлами: test/conf/schema.xml, text/conf/solrconfig.xml )
+java -Dsolr.solr.home="test/" -jar start.jar
+--------------------------------
+	ѕоиск
+http://localhost:8983/solr/select?q=cat:electronics
+	- полный путь к Solr
+http://localhost:8983/solr 
+							- директива поиска
+						  /select?q= 
+									(им€ пол€, шаблон поиска)
+									cat:electronics 
+--------------------------------	
+	»скать все вхождени€ в поле cat шаблона electron*
+http://localhost:8983/solr/select?q=cat:electron*
+
+--------------------------------
+	¬ывод только указанных полей в результирующей выборке: id, name
+http://localhost:8983/solr/select?q=name:*6024-031*&fl=id,name
+													fl=id,name
+
+--------------------------------
+	ƒобавлена сортировка 
+http://localhost:8983/solr/select?q=name:*6024-031*&sort=id asc,name desc&fl=id
+													sort:id
+													
+--------------------------------
+	ƒобавлен диапазон стартовый и количественный маркеры
+http://localhost:8983/solr/select?q=name:*G900*&sort=id%20asc&rows=6&start=5	
+															 &rows=6&start=5	
+--------------------------------	
+	Ѕулевый оператор
+http://localhost:8983/solr/select?q=name:*6024-031*%20&&%20name:*Atlant*

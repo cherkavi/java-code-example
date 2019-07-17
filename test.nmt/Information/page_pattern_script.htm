@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>java script program</title>
+    <script language="javascript">
+        var field_values=new Array("Первый","Второй","Третий");
+        var combobox_name="criteria";
+        var combobox_parent_name="combobox_parent";
+        var table_name="table";
+        var table_parent_name="form";
+        var form_element_prefix="index_";
+    </script>
+    <script language="JavaScript" type="text/javascript" scr="script.js" >        
+
+    </script>
+
+</head>
+<body onload="load_combobox_criteria();" id="body">
+    <input type=button value="add criteria" id="button_add" onclick="button_add_click()"/>
+    <span id="combobox_parent">
+        <select id="criteria">
+            
+        </select>
+    </span>
+    <br />
+
+    <form action="page_pattern_script.htm" id="form" method="post">
+        <table id="table">
+        </table>
+
+        <span id="manager">
+	    <input type="radio" name="exp" value="pdf" checked/> pdf<br />
+	    <input type="radio" name="exp" value="rtf" /> rtf<br />
+	    <input type="radio" name="exp" value="xls" /> xls<br />
+	    </span>
+	    <input type="submit" value="get_file"/>
+	</form>
+    <span id="console"></span>
+</body>
+</html>

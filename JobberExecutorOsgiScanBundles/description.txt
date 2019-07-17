@@ -1,0 +1,20 @@
+JobberExecutorOsgiExecutor
+	Шаблон для изготовления запускных файлов 
+
+JobberExecutorOsgiExecutorMail
+	Отправщик почты
+
+JobberExecutorOsgiLauncher
+	Bundle, который, получая данные из базы данных анализирует задачи, 
+	у которых нужно вызвать метод IExecute.execute()
+		
+JobberExecutorOsgiScanBundles
+	сканирует определенный каталог на наличие в нем
+
+JobberExecutorOsgiServiceInterface
+	интерфейс для сервисов 
+	( сервис запуска IExecute, сервис регистрации IModuleExecute )
+
+JobberExecutorOsgiServiceImpl
+	имплементация интерфейсов (IExecute, IModuleExecute)
+	

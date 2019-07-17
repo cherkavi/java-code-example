@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapping.Ofs_t_casesMapper">
+  <select 
+  	id="selectById" 
+  	parameterType="int" 
+  	resultType="com.test.mapping.Ofs_t_cases"
+  >
+    	select id, domain, title, payload from ofs_t_cases where id = #{id}
+  </select>
+  
+  <insert
+  	id="insert"
+  	parameterType="com.test.mapping.Ofs_t_cases" 
+  >
+	<selectKey keyProperty="id" resultType="int" order="BEFORE">
+	    select acl_sequence.nextval from dual
+	</selectKey>  	
+	
+	insert into ofs_t_cases( id, domain, title, payload )
+	values ( #{id}, #{domain}, #{title}, #{payload,javaType=org.w3c.dom.Document,typeHandler=com.test.handler.XmlHandler} )
+  </insert>
+  
+  <update 
+  	id="update" 
+  	parameterType="com.test.mapping.Ofs_t_cases">
+
+	update ofs_t_cases set domain=#{domain}, title=#{title}, payload=#{payload,javaType=org.w3c.dom.Document,typeHandler=com.test.handler.XmlHandler} where id=#{id}
+
+  </update>
+  
+  <delete 
+  	id="delete" 
+  	parameterType="int"
+  	>
+  	delete from ofs_t_cases where id = #{id}
+  </delete>
+
+  <delete 
+  	id="deleteCase" 
+  	parameterType="com.test.mapping.Ofs_t_cases"
+  	>
+  	delete from ofs_t_cases where id = #{id}
+  </delete>
+
+
+</mapper>

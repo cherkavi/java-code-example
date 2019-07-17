@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">	
+	
+	<bean id="bean" class="spring_another_property.Bean" depends-on="another_bean">
+		<property name="intValue">
+			<value>5</value>
+		</property>
+		<property name="stringValue">
+			<util:property-path id="name" 
+								path="another_bean.dateCreate" />
+		</property>
+		<!--  <property name="stringValue" value="#{another_bean.dateCreate}" />
+		 -->
+	</bean>
+	
+	<bean id="another_bean" class="spring_another_property.AnotherBean">
+	</bean>
+</beans>

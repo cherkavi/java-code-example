@@ -1,0 +1,8 @@
+Bundle-Name: RFID Com Reader
+Import-Package: org.osgi.framework, \
+				com.cherkashin.vitaliy.rfid.timing.core_interface
+Bundle-Activator: com_port.ComPortBundle
+Private-Package: com_port
+Include-Resource: lib
+Bundle-ClassPath: ., RXTXcomm.jar
+DynamicImport-Package: gnu.io.* 

@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.url">
+			jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(LOAD_BALANCE=OFF)(FAILOVER=ON)(ADDRESS=(PROTOCOL=TCP)(HOST=10.91.57.225)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.91.57.227)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=rtn7uadg.world)(FAILOVER_MODE=(TYPE=SESSION)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))
+		</property>
+		<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+
+		<property name="hibernate.connection.username">rataqauser</property>
+		<property name="hibernate.connection.password">uauser</property>
+		<property name="hibernate.connection.pool_size">2</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		
+		<mapping resource="ua/cetelem/db/um/user.hbm.xml"/>
+		<mapping resource="ua/cetelem/db/um/userrolelink.hbm.xml"/>
+		<mapping resource="ua/cetelem/db/ed/userexternaldistributorlink.hbm.xml"/>
+		<mapping resource="ua/cetelem/db/ed/externaldistributor.hbm.xml"/>
+		<mapping resource="ua/cetelem/db/insurance/powerofattorney.hbm.xml"/>
+		
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,4 @@
+14:09:17,171 DEBUG TcpHeartBeat:40 - start heart beat
+14:09:17,171 DEBUG TcpHeartBeat:46 - attempt to send HeartBeatData into port:20102
+14:09:18,125 ERROR TcpHeartBeat:55 - TcpHeartBeat pulse Exception:Connection refused: connect
+14:09:18,125 ERROR TcpHeartBeat:56 - ComPort will be closed

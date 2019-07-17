@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?><Model version="5.0">
+    <Configuration>
+        <Property name="dialect" value="MySQLDialect"/>
+        <Property name="ALIAS" value="indirector"/>
+        <Property name="DRIVER" value="com.mysql.jdbc.Driver"/>
+        <Property name="OX_PACKAGE" value="com.cherkashyn.vitalii.indirector.workers.domain"/>
+        <Property name="OX_SRCDIR" value="/home/technik/temp"/>
+        <Property name="OX_STYPE_INT UNSIGNED" value=""/>
+        <Property name="OX_STYPE_VARCHAR" value=""/>
+        <Property name="OX_TYPE_INT UNSIGNED" value="Integer"/>
+        <Property name="OX_TYPE_VARCHAR" value="String"/>
+        <Property name="PASSWORD" value="root"/>
+        <Property name="PROMPTFORPASSWORD" value="false"/>
+        <Property name="URL" value="jdbc:mysql://localhost:3306/indirector"/>
+        <Property name="USER" value="root"/>
+    </Configuration>
+    <CustomTypes/>
+    <Domains/>
+    <Tables>
+        <Table id="2b1f83a9-da74-42d4-a3ce-b90e45251b60" name="worker" schema="">
+            <Property name="LOCATION" value="760:20"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="f6cd6a48-4a6a-457f-8591-aae4a98744dd" name="id" nullable="false" scale="10" size=""/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="bc3d7528-3916-403a-849a-34fe09772a9e" name="surname" nullable="false" scale="10" size="100"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="b5c2765b-4140-482b-8744-d1cecf978632" name="name" nullable="false" scale="10" size="100"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="f4b66be0-ccb4-483f-b5e5-4a35e0a2c573" name="fathername" nullable="true" scale="10" size="100"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="27b0b417-d5fb-4ddb-a5ae-0cfb452fe3db" name="description" nullable="true" scale="10" size="255"/>
+            <Index id="043664e1-9d87-459c-9ee4-866abab0dc5e" indextype="PRIMARYKEY" name="person_pk">
+                <Indexattribute attributerefid="f6cd6a48-4a6a-457f-8591-aae4a98744dd" id="22d1d5b4-cd81-4e5a-bfdf-0eddc5f6b52c"/>
+            </Index>
+        </Table>
+        <Table id="f325d5d2-d9d6-47dc-98e8-cfaa21e862e6" name="skill2category" schema="">
+            <Property name="LOCATION" value="1574:418"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="9d9ff719-f79f-45e3-b039-1a77c6a1d225" name="id" nullable="false" scale="10" size=""/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="39f70018-af5f-41f3-b56a-e2eb24eb7f3e" name="name" nullable="false" scale="10" size="100"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="38e0da3f-edb9-44ee-909d-c448923f79f3" name="parent_id" nullable="true" scale="10" size=""/>
+            <Index id="701b3f53-3a0b-4635-b2b1-429a23395957" indextype="PRIMARYKEY" name="skills_category_pk">
+                <Indexattribute attributerefid="9d9ff719-f79f-45e3-b039-1a77c6a1d225" id="7ecbd9a1-cf19-4147-b3ac-8fa07daf74f7"/>
+            </Index>
+        </Table>
+        <Table id="07a46088-471d-4d53-9dce-839ce30c747d" name="skill" schema="">
+            <Property name="LOCATION" value="1146:418"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="986c48b3-ed07-4944-9dec-265eac0df7e1" name="id" nullable="false" scale="10" size=""/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="52cf739f-b70f-4db8-975d-2d3fa901d27d" name="name" nullable="false" scale="10" size="100"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="c3362c94-a2ea-423c-9bf2-bd5680d87b8b" name="category_id" nullable="false" scale="10" size=""/>
+            <Index id="f23c817b-c51f-48a9-8aea-94c0924f1f7b" indextype="PRIMARYKEY" name="skill_pk">
+                <Indexattribute attributerefid="986c48b3-ed07-4944-9dec-265eac0df7e1" id="b3d8df29-ec3e-4715-9b18-efab9a0420a8"/>
+            </Index>
+        </Table>
+        <Table id="10e66d76-1296-4693-b550-ba6a559b052e" name="worker2skill" schema="">
+            <Property name="LOCATION" value="1154:191"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="f699af70-20a1-4571-9a8b-a52c5408c637" name="id_worker" nullable="false" scale="10" size=""/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="2deccfb0-c44c-4efd-9e19-ba580fe2778a" name="id_skill" nullable="false" scale="10" size=""/>
+            <Index id="f2390215-08a7-4435-b33d-59099007d23c" indextype="UNIQUE" name="p2s_worker">
+                <Indexattribute attributerefid="f699af70-20a1-4571-9a8b-a52c5408c637" id="af157314-247b-466f-bc1e-0d6b94f8394c"/>
+            </Index>
+        </Table>
+        <Table id="1ac224e4-cbe2-4fd4-bc64-ba22c221bd73" name="district" schema="">
+            <Property name="LOCATION" value="770:407"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="0a2d48f6-2991-4aba-9931-d52b12e537e6" name="id" nullable="false" scale="10" size=""/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="4fcb8d50-8746-45e0-8683-6338d3df3cb1" name="name" nullable="false" scale="10" size="100"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="b1d43cef-5dcc-49a7-bfb6-f84aeb02f3b5" name="parent_id" nullable="true" scale="10" size=""/>
+            <Index id="a2c0c5ac-6df2-4841-9497-f8c13998a82b" indextype="PRIMARYKEY" name="distring_pk">
+                <Indexattribute attributerefid="0a2d48f6-2991-4aba-9931-d52b12e537e6" id="84651e61-c961-4205-b174-68b46e5ee626"/>
+            </Index>
+            <Index id="b499daca-bb22-42a9-b7ee-1b658373f021" indextype="UNIQUE" name="district_parent">
+                <Indexattribute attributerefid="b1d43cef-5dcc-49a7-bfb6-f84aeb02f3b5" id="544f34ac-b635-45cb-bd2a-c8813e3145d2"/>
+            </Index>
+        </Table>
+        <Table id="fe5d0902-1bb1-4410-b673-ceb2e87b8e89" name="asset" schema="">
+            <Property name="LOCATION" value="473:442"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="36a65865-e5c9-464e-97f0-a7315b445ad0" name="id" nullable="false" scale="10" size=""/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="003091be-a048-4eef-b00a-2238cac57b7d" name="name" nullable="false" scale="10" size="100"/>
+            <Index id="f2987abd-d2a0-4632-ad87-fcd6faf14c9c" indextype="PRIMARYKEY" name="asset_pk">
+                <Indexattribute attributerefid="36a65865-e5c9-464e-97f0-a7315b445ad0" id="3bfe8dfe-c56d-46f6-a6e3-eb69b39aaab5"/>
+            </Index>
+        </Table>
+        <Table id="919db15c-9c9b-4195-9926-4c36a45976b1" name="worker2asset" schema="">
+            <Property name="LOCATION" value="456:251"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="3e4f5fc3-1042-4b1d-9aec-ab864dd56157" name="id_worker" nullable="false" scale="10" size=""/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="ca4e48bf-6559-4422-bf61-6110ac01f1a6" name="id_asset" nullable="false" scale="10" size=""/>
+            <Index id="1ef594c4-5353-4791-b5e7-b6f04d869451" indextype="UNIQUE" name="worker2asset_worker">
+                <Indexattribute attributerefid="3e4f5fc3-1042-4b1d-9aec-ab864dd56157" id="ed95d7e7-ad71-47ca-8cba-5735fcc64099"/>
+            </Index>
+            <Index id="09ef357b-4bbf-4f84-87d3-c293a72703ce" indextype="UNIQUE" name="worker2asset_asset">
+                <Indexattribute attributerefid="ca4e48bf-6559-4422-bf61-6110ac01f1a6" id="e0210fc0-50e0-4280-a47d-282d299d5771"/>
+            </Index>
+        </Table>
+        <Table id="7652cbc8-1635-4c75-bdd7-c3bda78379b9" name="worker2district" schema="">
+            <Property name="LOCATION" value="764:226"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="ccd0b104-4794-4806-8da7-444d27560b0d" name="id_worker" nullable="false" scale="10" size=""/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="e4d83689-638f-459e-add9-283f0445726e" name="id_district" nullable="false" scale="10" size=""/>
+        </Table>
+        <Table id="87d12810-bc4b-4d45-aafd-3fdadbe44251" name="phone" schema="">
+            <Property name="LOCATION" value="354:19"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="fb88e67a-0b55-4b3d-8716-1fe885b5b689" name="id" nullable="false" scale="10" size=""/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="d439cf1a-c25d-43fd-bb17-afc5788c7f10" name="phone" nullable="false" scale="10" size="50"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="null" id="3a111ac8-b85e-4ac9-a93b-6ecca3b8f0a9" name="description" nullable="false" scale="10" size="255"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="d6469dd4-aecd-4631-8d2b-f05270d0885a" name="id_worker" nullable="true" scale="10" size=""/>
+            <Index id="00719fe6-5808-4e9a-b0b3-130a28a91b72" indextype="UNIQUE" name="phone_pk">
+                <Indexattribute attributerefid="fb88e67a-0b55-4b3d-8716-1fe885b5b689" id="4e1ec5ea-a538-45ca-8217-4fb8bb55cb8d"/>
+            </Index>
+        </Table>
+        <Table id="c6a5d60d-056c-4bd3-9af3-c25fab573775" name="worker2hour" schema="">
+            <Property name="LOCATION" value="1262:27"/>
+            <Property name="avgRowLength" value="0"/>
+            <Property name="characterSet" value=""/>
+            <Property name="checksum" value="false"/>
+            <Property name="delayKeyWrite" value="false"/>
+            <Property name="engine" value="MyISAM"/>
+            <Property name="maxRows" value="0"/>
+            <Property name="minRows" value="0"/>
+            <Property name="packKeys" value="false"/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="a2c0b85c-b3d6-4217-bd73-3a925726fd92" name="id" nullable="false" scale="10" size=""/>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="751aadd7-12f5-4d96-a6fa-6678a91ae2f0" name="worker_id" nullable="false" scale="10" size="">
+                <Comment>FK worker</Comment>
+            </Attribute>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="ba1e4242-12f8-4980-b2aa-bbcbe4f46607" name="day" nullable="false" scale="10" size="">
+                <Comment>1..7 - Mo- Su</Comment>
+            </Attribute>
+            <Attribute datatype="INT UNSIGNED" defaultvalue="" extra="" fraction="null" id="bea3724e-41f6-4a74-b018-14f39cbac620" name="hour" nullable="false" scale="10" size="">
+                <Comment>0..23 working hours</Comment>
+            </Attribute>
+            <Index id="cd7a52e3-d856-4cf7-a376-c1fe5b1752ef" indextype="PRIMARYKEY" name="worker2hour_pk">
+                <Indexattribute attributerefid="a2c0b85c-b3d6-4217-bd73-3a925726fd92" id="f52bab66-0042-4c36-be66-332075da5b79"/>
+            </Index>
+        </Table>
+    </Tables>
+    <Relations>
+        <Relation exportingtablerefid="f325d5d2-d9d6-47dc-98e8-cfaa21e862e6" id="d35701bc-2d4c-49eb-99da-9b05a759a951" importingtablerefid="07a46088-471d-4d53-9dce-839ce30c747d" name="category2skill" ondelete="CASCADE" onupdate="CASCADE">
+            <Property name="labelposition" value="500:0"/>
+            <Property name="points" value="787:575,785:417"/>
+            <Mapping exportingexpressionrefid="7ecbd9a1-cf19-4147-b3ac-8fa07daf74f7" importingattributerefid="c3362c94-a2ea-423c-9bf2-bd5680d87b8b"/>
+        </Relation>
+        <Relation exportingtablerefid="f325d5d2-d9d6-47dc-98e8-cfaa21e862e6" id="5d3c9ee0-2de6-428b-b1c1-517006ba8f18" importingtablerefid="f325d5d2-d9d6-47dc-98e8-cfaa21e862e6" name="skill_category_parent" ondelete="NOTHING" onupdate="NOTHING">
+            <Property name="labelposition" value="500:0"/>
+            <Property name="points" value="767:325,807:325"/>
+            <Mapping exportingexpressionrefid="7ecbd9a1-cf19-4147-b3ac-8fa07daf74f7" importingattributerefid="38e0da3f-edb9-44ee-909d-c448923f79f3"/>
+        </Relation>
+        <Relation exportingtablerefid="2b1f83a9-da74-42d4-a3ce-b90e45251b60" id="c2ce7379-ee56-4b61-a660-e5128c8e0c6a" importingtablerefid="10e66d76-1296-4693-b550-ba6a559b052e" name="w2s_w" ondelete="CASCADE" onupdate="CASCADE">
+            <Property name="labelposition" value="307:19"/>
+            <Property name="points" value="659:132,549:86"/>
+            <Property name="textoffset" value="15:6"/>
+            <Mapping exportingexpressionrefid="22d1d5b4-cd81-4e5a-bfdf-0eddc5f6b52c" importingattributerefid="f699af70-20a1-4571-9a8b-a52c5408c637"/>
+        </Relation>
+        <Relation exportingtablerefid="fe5d0902-1bb1-4410-b673-ceb2e87b8e89" id="90619731-6353-4829-8c00-e306ca263bc0" importingtablerefid="919db15c-9c9b-4195-9926-4c36a45976b1" name="w2a_a" ondelete="CASCADE" onupdate="CASCADE">
+            <Mapping exportingexpressionrefid="3bfe8dfe-c56d-46f6-a6e3-eb69b39aaab5" importingattributerefid="ca4e48bf-6559-4422-bf61-6110ac01f1a6"/>
+        </Relation>
+        <Relation exportingtablerefid="2b1f83a9-da74-42d4-a3ce-b90e45251b60" id="2034f1a4-3b46-4970-8a0d-0bb656e9d130" importingtablerefid="919db15c-9c9b-4195-9926-4c36a45976b1" name="w2a_w" ondelete="CASCADE" onupdate="CASCADE">
+            <Property name="labelposition" value="500:0"/>
+            <Property name="points" value="163:199,451:44"/>
+            <Mapping exportingexpressionrefid="22d1d5b4-cd81-4e5a-bfdf-0eddc5f6b52c" importingattributerefid="3e4f5fc3-1042-4b1d-9aec-ab864dd56157"/>
+        </Relation>
+        <Relation exportingtablerefid="07a46088-471d-4d53-9dce-839ce30c747d" id="bc177960-95ee-44e6-bc83-72af758ddc8e" importingtablerefid="10e66d76-1296-4693-b550-ba6a559b052e" name="w2s_s" ondelete="CASCADE" onupdate="CASCADE">
+            <Mapping exportingexpressionrefid="b3d8df29-ec3e-4715-9b18-efab9a0420a8" importingattributerefid="2deccfb0-c44c-4efd-9e19-ba580fe2778a"/>
+        </Relation>
+        <Relation exportingtablerefid="1ac224e4-cbe2-4fd4-bc64-ba22c221bd73" id="13803a7d-042a-4492-8634-0f7efc314e64" importingtablerefid="1ac224e4-cbe2-4fd4-bc64-ba22c221bd73" name="district_parent" ondelete="CASCADE" onupdate="CASCADE">
+            <Mapping exportingexpressionrefid="84651e61-c961-4205-b174-68b46e5ee626" importingattributerefid="b1d43cef-5dcc-49a7-bfb6-f84aeb02f3b5"/>
+        </Relation>
+        <Relation exportingtablerefid="2b1f83a9-da74-42d4-a3ce-b90e45251b60" id="556da4ed-a6e1-400b-9eb0-3fab89398bba" importingtablerefid="7652cbc8-1635-4c75-bdd7-c3bda78379b9" name="w2d_w" ondelete="CASCADE" onupdate="CASCADE">
+            <Mapping exportingexpressionrefid="22d1d5b4-cd81-4e5a-bfdf-0eddc5f6b52c" importingattributerefid="ccd0b104-4794-4806-8da7-444d27560b0d"/>
+        </Relation>
+        <Relation exportingtablerefid="1ac224e4-cbe2-4fd4-bc64-ba22c221bd73" id="44da9f2a-0115-4195-ae09-ad71b902a3e3" importingtablerefid="7652cbc8-1635-4c75-bdd7-c3bda78379b9" name="w2d_d" ondelete="CASCADE" onupdate="CASCADE">
+            <Mapping exportingexpressionrefid="84651e61-c961-4205-b174-68b46e5ee626" importingattributerefid="e4d83689-638f-459e-add9-283f0445726e"/>
+        </Relation>
+        <Relation exportingtablerefid="2b1f83a9-da74-42d4-a3ce-b90e45251b60" id="b0b304cb-81e0-4de0-ad9e-aa04ed776108" importingtablerefid="87d12810-bc4b-4d45-aafd-3fdadbe44251" name="worker_phones" ondelete="CASCADE" onupdate="CASCADE">
+            <Mapping exportingexpressionrefid="22d1d5b4-cd81-4e5a-bfdf-0eddc5f6b52c" importingattributerefid="d6469dd4-aecd-4631-8d2b-f05270d0885a"/>
+        </Relation>
+        <Relation exportingtablerefid="2b1f83a9-da74-42d4-a3ce-b90e45251b60" id="876a0369-8591-4faa-b817-31a847e70359" importingtablerefid="c6a5d60d-056c-4bd3-9af3-c25fab573775" name="worker_hours" ondelete="CASCADE" onupdate="CASCADE">
+            <Mapping exportingexpressionrefid="22d1d5b4-cd81-4e5a-bfdf-0eddc5f6b52c" importingattributerefid="751aadd7-12f5-4d96-a6fa-6678a91ae2f0"/>
+        </Relation>
+    </Relations>
+    <Views/>
+    <Subjectareas/>
+    <Comments/>
+</Model>

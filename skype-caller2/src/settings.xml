@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+   	   xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+       
+       <!--  custom date configurer date  -->
+	<bean id="customEditorConfigurer"
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="java.util.Date">
+					<bean class="org.springframework.beans.propertyeditors.CustomDateEditor">
+						<constructor-arg index="0">
+							<bean class="java.text.SimpleDateFormat">
+								<constructor-arg value="dd.MM.yyyy HH:mm:ss" />
+							</bean>
+						</constructor-arg>
+						<constructor-arg index="1" value="false" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+         
+<!--  main container for execute all beans  -->
+       <bean id="generator_container" class="skype_caller.command_generator.GeneratorContainer">
+       		<property name="listOfCommandGenerator">
+       			<list>
+       				<!-- 
+       				<bean class="skype_caller.command_generator.impl.SingleGenerator">
+						<property name="dateOfStart" value="12.11.2011 22:10:00" />
+						<property name="command" ref="command_call_and_drop" />
+						<property name="name" value="single generator" />
+       				</bean>
+       				-->
+       				 
+       				<bean class="skype_caller.command_generator.impl.MultiplyGenerator">
+       					<property name="executeTime">
+       						<list>
+       							<value>12.11.2011 22:28:10</value>
+       							<value>12.11.2011 22:29:50</value>
+       						</list>
+       					</property>
+						<property name="command" ref="command_call_and_drop" />
+						<property name="name" value="multiply generator" />
+       				</bean>
+       				
+       			</list>
+       		</property>
+       </bean>
+       <!-- command for execute  -->
+       <bean id="command_call_and_drop" class="skype_caller.command.CallAndDrop" scope="prototype">
+       		<property name="recipient" value="+380954671400" />
+       		<property name="name" value="shoot and forget" />
+       		<!-- <property name="callTimeOut" value="20" />  -->
+       </bean>
+       
+</beans>

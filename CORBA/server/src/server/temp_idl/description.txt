@@ -1,0 +1,15 @@
+созданы файлы, необходимые для технологии CORBA:
+
+Env.idl
+
+и откомпилированы для того чтобы была возможность использовать их на стороне сервера:
+idlj.exe -fall Env.idl
+
+(-fall - ключ для генерации серверных файлов, по умолчанию, без ключа, генерируются клиентские файлы)
+
+_EnvStub.java
+Env.java
+EnvHelper.java
+EnvHolder.java
+EnvOperations.java
+EnvPOA.java

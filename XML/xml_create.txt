@@ -1,0 +1,10 @@
+	Document destination_document=null;
+	Element destination=null;
+	// create empty XML document
+	javax.xml.parsers.DocumentBuilderFactory document_builder_factory=javax.xml.parsers.DocumentBuilderFactory.newInstance();
+	document_builder_factory.setValidating(false);
+	document_builder_factory.setIgnoringComments(true);
+	javax.xml.parsers.DocumentBuilder document_builder=document_builder_factory.newDocumentBuilder();
+	destination_document=document_builder.newDocument();
+	destination=destination_document.createElement("PATTERN");
+	destination_document.appendChild(destination);

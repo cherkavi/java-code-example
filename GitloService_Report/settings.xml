@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><!--  client XML -->
+<SETTINGS>
+	<PATTERN_HTML>D:\eclipse_workspace\GitloService_Report\src\reporter\pattern.html</PATTERN_HTML>	
+	<PATTERN_AKT_HTML>D:\eclipse_workspace\GitloService_Report\src\reporter\pattern_akt.html</PATTERN_AKT_HTML>	
+	<DBF_DIRECTORY>D:\eclipse_workspace\GitloService_Report\Information\</DBF_DIRECTORY>
+	<DBF_DIRECTORY_SOURCE>D:\Temp\</DBF_DIRECTORY_SOURCE>
+	<URL_DATABASE>jdbc:firebirdsql://localhost/D:\eclipse_workspace\GitloService_Report\DataBase\GitloService.gdb?sql_dialect=3</URL_DATABASE>
+	<URL_DATABASE_TEMP>jdbc:firebirdsql://localhost/D:\eclipse_workspace\GitloService_Report\DataBase\temp.gdb?sql_dialect=3</URL_DATABASE_TEMP>
+</SETTINGS>

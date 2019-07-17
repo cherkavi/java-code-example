@@ -1,0 +1,24 @@
+Данный проект создан для чтения данных из источника и "вливания" этих данных в приемник.
+
+При чем выборка данных из источника ( имя таблицы и поля) должны соответствовать приемнику.
+Другими словами, если имеем таблицу в источнике
+[COMMODITY]
+id (integer)
+name (varchar)
+kod_assortment
+kod_price
+kod_operation
+quantity
+
+и есть желание "перелить" данные в приемник:
+[COMMODITY_EXISTS]
+id
+id_assortment
+quantity
+
+то нужно сделать запрос
+select
+	commodity_exists.id id
+	commodity_exists.kod_assortment id_assortment
+	commodity_exists.quantity quantity
+from commodity commodity_exists

@@ -1,0 +1,34 @@
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+     <!-- Database connection settings -->
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <!--  <property name="connection.url">jdbc:hsqldb:mem:testdb</property>  -->
+        <property name="connection.url">jdbc:hsqldb:file:c:/temp/temp</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">2</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup --> 
+        <property name="hbm2ddl.auto">update</property>
+
+<!--  descriminator -->
+<!-- <mapping resource="table_per_hierarchy.cfg.xml"/> -->
+
+<!--  union example  -->
+<mapping resource="table_per_concrete.cfg.xml"/>
+
+<!--  join example -->
+<!-- <mapping resource="table_per_class.cfg.xml"/>  -->
+         
+  </session-factory>
+</hibernate-configuration>

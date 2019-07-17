@@ -1,0 +1,21 @@
+		String url="jdbc:mysql://"+
+		           ((host==null)?"127.0.0.1":host)+":"+
+		           ((port==null)?(3306):port)+"/"+
+		           databaseName;
+		url=url+"?user="+userName+"&password="+password+"&useUnicode=true&characterEncoding=Cp1251";
+		this.connectorPool=new ConnectorPool(driverName, url, this.userName, this.password);
+		
+		/*Properties connInfo = new Properties();
+
+		connInfo.put("user",user);
+		connInfo.put("password",pass);
+
+		connInfo.put("useUnicode","true");
+		connInfo.put("characterEncoding","Cp1251");
+		this.connectorPool=new ConnectorPool(driverName, url, connInfo);
+		*/
+
+
+
+for context.xml:
+	jdbc:mysql://localhost:3306/astronomy?characterEncoding=UTF8&amp;useUnicode=true

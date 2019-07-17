@@ -1,0 +1,22 @@
+Движение вглубь раздела
+url+index.html
+   +index1.html
+   +index2.html
+(enough:
+	<body>
+		<h1>Object not found!</h1>
+	</body>
+
+	
+Страница:	
+body
+	table
+		tr
+			td
+				table width=780  ( третий)
+	tr
+		td width=100%
+			table width=100%
+				tr
+					td valign=top
+						table width=100%

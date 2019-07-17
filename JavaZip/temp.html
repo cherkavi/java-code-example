@@ -1,0 +1,17 @@
+<html>
+	<head> 
+		<script type="text/javascript">
+			function change(element_id,value){
+				var element=document.getElementById(element_id);
+				element.innerHTML="<input type='button' onclick=\"change('for_out')\" value='change'>";
+			}
+		</script>
+	</head>
+
+	<body> 
+		<input type="button" onclick="change('for_out')" value="change">
+		<br>
+		<span id="for_out">
+		</span>	
+	</body>
+</html>

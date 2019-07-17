@@ -1,0 +1,5 @@
+http://static.springsource.org/spring/docs/2.5.x/reference/beans.html
+
+http://static.springsource.org/spring/docs/1.2.9/reference/beans.html
+http://static.springsource.org/spring/docs/1.2.9/reference/beans.html#beans-factory-modes
+

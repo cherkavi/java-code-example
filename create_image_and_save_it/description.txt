@@ -1,0 +1,21 @@
+Image image;
+Dimension d;
+int iw,ih; 
+ 
+image = ImageIO.read(new File("bug_apple.bmp"));
+iw = image.getWidth(null);
+ih = image.getHeight(null);
+int pixels[] = new int[ih*iw];
+ 
+PixelGrabber pg = new    PixelGrabber(image,0,0,iw,ih,pixels,0,iw);
+pg.grabPixels();
+		
+img = createImage(new MemoryImageSource(iw,ih,pixels,0,iw));       
+ 
+BufferedImage bi = new BufferedImage(iw,ih,BufferedImage.TYPE_INT_ARGB);
+Graphics2D g2d = bi.createGraphics();
+g2d.drawImage(img, 0, 0, null);
+g2d.dispose(); 
+img=bi;
+ 
+ImageIO.write(img,"BMP",new File("a.bmp")) ;         

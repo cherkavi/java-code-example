@@ -1,0 +1,30 @@
+package tutorial;
+
+option java_package = "com.cherkashyn.vitaliy.protobuf.exchange";
+option java_outer_classname = "ElementWorker";
+
+message Worker {
+  required int32 id=1;
+  required string name_first=2;
+  required string name_second=3;
+  optional string phone=4;
+
+  repeated Position positions=5;
+  optional Address home_address=6;
+  optional Address work_address=7;
+
+  message Address{
+    required int32 post_index=1;
+    required string city=2;
+    required string street=3;
+    required int32 b_number=4;
+    optional string b_number_add=5;
+    optional int32 flat_number=6;
+  }
+}
+
+message Position {
+   required int32 id=1;
+   required float salary=2;
+   required string position_name=3;
+}

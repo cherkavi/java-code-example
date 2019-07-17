@@ -1,0 +1,9 @@
+Convert Image to RenderedImage
+
+	private RenderedImage getRenderedImageFromImage(Image img){
+		BufferedImage bimg = new BufferedImage(img.getWidth(null),img.getHeight(null),BufferedImage.TYPE_BYTE_GRAY);
+		Graphics2D bImageGraphics  = bimg.createGraphics();
+		bImageGraphics.drawImage(img,null,null);
+		bImageGraphics.dispose();
+		return (RenderedImage)bimg;
+	}

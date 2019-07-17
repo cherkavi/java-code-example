@@ -1,0 +1,11 @@
+«апуск всех частей программы:
+(port 2809 может быть изменен на любой подход€щий)
+
+запуск брокера:
+%java_home%/bin/orbd -ORBInitialPort 2809
+
+запуск сервера:
+java -jar server.jar -ORBInitialPort 2809
+
+запуск клиента:
+java -jar Client.jar -ORBInitialPort 2809

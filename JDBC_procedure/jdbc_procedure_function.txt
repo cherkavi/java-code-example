@@ -1,0 +1,10 @@
+debug("create procedure");
+CallableStatement statement = connection.prepareCall("{? = call PACK_BC_ARM.get_cards_count(?)}");
+debug("set value");
+statement.setString(2,source_value);
+debug("register output parameter");
+statement.registerOutParameter(1, Types.VARCHAR);
+debug("execute procedure ");
+statement.execute();
+String result=statement.getString(1);
+debug("result="+result);

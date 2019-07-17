@@ -1,0 +1,2 @@
+Private-Package:test.service.activator, test.service.interfaces
+Bundle-Activator:test.service.activator.ServiceActivator

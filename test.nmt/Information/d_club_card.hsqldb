@@ -1,0 +1,11 @@
+CREATE TABLE d_club_card
+    (card_serial_number             VARCHAR2(20),
+    nt_icc                         NUMBER NOT NULL,
+    cd_card1                       NUMBER(30,0),
+    id_club                        NUMBER,
+    id_issuer                      NUMBER NOT NULL,
+    id_payment_system              NUMBER NOT NULL,
+    name_payment_system            VARCHAR2(250) NOT NULL,
+    cd_currency                    NUMBER(10,0) NOT NULL,
+    name_currency                  VARCHAR2(250),
+    language                       VARCHAR2(4) NOT NULL)

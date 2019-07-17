@@ -1,0 +1,14 @@
+<html>
+<head>
+</head>
+<body>
+	Пример работы с JmxUtility:
+		<ul>
+			<li><b>TestAttribute</b> - класс, реализующий маркерный интерфейс IMBeanAttributes, это JavaBean у которого все get/set методы могут удаленно вызываться с помощью JMX</li>
+			<li><b>TestOperations</b> - класс, реализующий маркерный интерфейс IMBeanOperations все методы которого доступны для удаленных вызовов через JMX </li>
+			<li><b>ITestNotification</b> - интерфейс, реализующий маркерный интерфейс INotification, пустая реализация данного интерфейса (только логгирование)- TestNotification, передается
+			в качестве параметра в NotificationAware, а после построения JmxUtility вынимаем оттуда (из NotificationAware) proxy-object ITestNotification</li>
+			<li><b>TestJmxUtility</b> - объединение всех компонентов вместе </li>
+		</ul>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <!-- here we define the bar route -->
+    <route id="from_file_to_file">
+    		<!--  delay=10000&idempotent=false&include=fileMatch&noop=true&readLock=fileLock  -->
+	        <from uri="file:/tmp/camel_source/?delete=true"/>
+	        <doTry>
+	        	<process ref="processor_checker" />
+	        	<to uri="file:/tmp/camel_destination/"/>
+				<doCatch>
+		            <exception>java.io.IOException</exception>
+		            <exception>java.lang.IllegalStateException</exception>
+	        		<process ref="processor_logger" />
+					<to uri="file:/tmp/camel_destination_error/"/>
+				</doCatch>	        
+	        </doTry>
+    </route>
+ 
+</routes>

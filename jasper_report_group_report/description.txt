@@ -1,0 +1,26 @@
+Для отображения вложенных репортов необходимо:
+1 - создать группы для отчетов,
+при чем кол-во групп должно быть на 1 меньше чем самих отчетов внутри
+главного отчета
+
+2 - создаем SubReports и назначаем для них DataSource
+Subreport->Use data source expression 
+  - в созданном отчете должна быть ссылка на файл "*.jasper"
+
+3 - назначаем Print when expression (Boolean):
+
+4 - на форме iReport кладем наши созданные subreport на заголовки групп,
+и только последний кладем на detail band ( вот почему групп нужно на 1 меньше)
+
+5 - на стороне Java:
+
+// путь к файлам на стороне сервера
+parameters.put("SUBREPORT_DIR", "c:\\");
+// название параметра, который показывает нужно ли отображать подотчет
+parameters.put("show_subreport_1", new Boolean(false));
+// DataSource для отчета
+parameters.put("DataSource_sub1", new JREmptyDataSource());
+// название параметра, который показывает нужно ли отображать подотчет
+parameters.put("show_subreport_2", new Boolean(true));
+// DataSource для отчета
+parameters.put("DataSource_sub2", new JREmptyDataSource());

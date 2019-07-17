@@ -1,0 +1,12 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+</head>
+<body>
+	центральный класс пакета - ComPort, который (работает в трёх потоках): 
+		шлет имя порта в качестве сердцебиения
+		слушает входящий TCP порт на наличие данных и отправляет их в SerialPort
+		полученные с порта данные шлет на TCP порт
+	( Runnable Jar нужно делать именно на его основе )
+</body>
+</html>

@@ -1,0 +1,37 @@
+<sequence-diagram version="1.0.4" icons="true">  
+  <object id="1" language="java" name="tools.transformer.TransformerExecutor" project="Transformer" 
+    file="/Transformer/src/tools/transformer/TransformerExecutor.java" binary="false" label="transformerExecutor" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="257" y="0"/>    
+    <execution id="1">      
+      <position height="57" width="0" x="0" y="152"/>    
+    </execution>  
+  </object>  
+  <object id="3" language="java" name="tools.transformer.Transformer" project="Transformer" 
+    file="/Transformer/src/tools/transformer/Transformer.java" binary="false" label="transformer" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="1">      
+      <position height="19" width="0" x="0" y="171"/>    
+    </execution>    
+    <execution id="2">      
+      <position height="76" width="0" x="0" y="256"/>    
+    </execution>    
+    <execution id="3">      
+      <position height="19" width="0" x="0" y="294"/>    
+    </execution>  
+  </object>  
+  <object id="2" language="java" name="tools.transformer.core.source.ISourceIterator" project="Transformer" 
+    file="/Transformer/src/tools/transformer/core/source/ISourceIterator.java" binary="false" label="iSourceIterator" 
+    type="interface" autoSize="true">    
+    <position height="-1" width="-1" x="258" y="0"/>  
+  </object>  
+  <message operation="setSource(tools.transformer.core.source.ISourceIterator):void">    
+    <end type="SOURCE" nodeId="1" executionId="0"/>    
+    <end type="TARGET" nodeId="3" executionId="0"/>  
+  </message>  
+  <message operation="setSource(tools.transformer.core.source.ISourceIterator):void">    
+    <end type="SOURCE" nodeId="3" executionId="1"/>    
+    <end type="TARGET" nodeId="3" executionId="2"/>  
+  </message>
+</sequence-diagram>

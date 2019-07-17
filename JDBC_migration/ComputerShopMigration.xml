@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><settings><jdbc_source><url>jdbc:firebirdsql://localhost:3050/D:/temp/database.gdb?sql_dialect=3</url><driver_class>org.firebirdsql.jdbc.FBDriver</driver_class><login>SYSDBA</login><password>masterkey</password></jdbc_source><jdbc_destination><url>jdbc:mysql://localhost:3306/computer_shop_resource?useUnicode=true&amp;characterEncoding=Cp1251</url><driver_class>org.gjt.mm.mysql.Driver</driver_class><login>root</login><password>root</password></jdbc_destination><elements><element><query>SELECT
+      commodity.assortment_kod kod_assortment,
+      sum(commodity.quantity) quantity,
+      null kod_operation
+FROM COMMODITY
+GROUP BY
+      COMMODITY.assortment_kod
+HAVING SUM(COMMODITY.QUANTITY)&gt;0
+</query><delete_before_insert>true</delete_before_insert></element><element><query>select * from price</query><delete_before_insert>true</delete_before_insert></element><element><query>select * from clients</query><delete_before_insert>true</delete_before_insert></element><element><query>select * from class</query><delete_before_insert>true</delete_before_insert></element><element><query>select * from assortment	</query><delete_before_insert>true</delete_before_insert></element><element><query>select * from course</query><delete_before_insert>true</delete_before_insert></element></elements></settings>

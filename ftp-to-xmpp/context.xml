@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			    http://www.springframework.org/schema/beans/spring-beans.xsd
+			    http://www.springframework.org/schema/util 
+			    http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <bean class="com.cherkashyn.vitalii.internet.tools.ftp.collector.storage.FtpServerClient">
+	<constructor-arg index="0" value="santech-service.kiev.ua" />
+	<constructor-arg index="1" value="ftp-login" />
+	<constructor-arg index="2" value="ftp-password" />
+    </bean>
+
+
+    <bean class="com.cherkashyn.vitalii.internet.tools.ftp.collector.display.XmppDisplay">
+	<constructor-arg index="0" value="jabber.kiev.ua" />
+	<constructor-arg index="1" value="5223" />
+	<constructor-arg index="2" value="jabber-login" />
+	<constructor-arg index="3" value="jabber-password" />
+	<constructor-arg index="4" value="santechserviceoperator@jabber.kiev.ua" />
+    </bean>
+
+    <bean class="com.cherkashyn.vitalii.internet.tools.ftp.collector.storage.FtpDirectories">
+	<constructor-arg index="0" ref="dirList" />
+    </bean>
+
+	<util:list id="dirList" value-type="java.lang.String">
+		<value>public_html</value>
+		<value>public_html/bereznjaki</value>
+		<value>public_html/borshhagovka</value>
+		<value>public_html/centr</value>
+		<value>public_html/chokolovka</value>
+		<value>public_html/darnickij</value>
+		<value>public_html/dvrz</value>
+		<value>public_html/goloseevskij</value>
+		<value>public_html/harkovskij</value>
+		<value>public_html/kiev</value>
+		<value>public_html/kurenevka</value>
+		<value>public_html/lukjanovka</value>
+		<value>public_html/obolonskij</value>
+		<value>public_html/orders</value>
+		<value>public_html/otradnyj</value>
+		<value>public_html/pecherskij</value>
+		<value>public_html/podol</value>
+		<value>public_html/poznjaki</value>
+		<value>public_html/shevchenkovskij</value>
+		<value>public_html/solomenskij</value>
+		<value>public_html/svjatoshinskij</value>
+		<value>public_html/syrec</value>
+		<value>public_html/teremki</value>
+		<value>public_html/troeshhina</value>
+		<value>public_html/ukrainka</value>
+		<value>public_html/vinogradar</value>
+		<value>public_html/vishnevoe</value>
+		<value>public_html/vyshgorod</value>
+	</util:list>
+</beans>
+          

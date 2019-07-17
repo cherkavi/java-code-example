@@ -1,0 +1,3 @@
+Private-Package: bonpay.osgi.service.implementation
+Bundle-Activator: bonpay.osgi.service.implementation.ModuleExecutorActivator
+Import-Package: org.osgi.framework, bonpay.osgi.service.interf

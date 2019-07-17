@@ -1,0 +1,21 @@
+[letter_state]
+CANCELED               Відмінено             
+CARRIED_OUT            Виконується           
+CARRIED_OUT_PARTIALLY  Виконується частково  
+ERROR                  Помилка               
+EXECUTED               Виконано              
+EXECUTED_PARTIALLY     Виконано частково     
+NEW                    Нове
+1. Клиенты
+bc_admin.VC_EMAIL_ALL - все сообщения
+bc_admin.vc_email_files_all - присоединенные файлы
+
+VC_NAT_PRS_EMAIL_ALL 
+VC_NAT_PRS_MESSAGES_FILES_ALL - присоединенные файлы
+VC_NAT_PRS_MESSAGES_SEND_ALL - информация об отправке
+
+2. Партнеры
+VC_JUR_PRS_EMAIL_ALL - все сообщения
+VC_JUR_PRS_MESSAGES_FILES_ALL - присоединенные файлы
+VC_JUR_PRS_MESSAGES_SEND_ALL - информация об отправке
+VC_DS_EMAIL_PROFILE_ALL - профиль E-mail

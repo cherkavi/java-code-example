@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db_loader>
+	<!-- Connection to DataBase -->
+	<connector>
+		<!-- URL for connect to DataBase -->
+		<url>jdbc:mysql://localhost:3306/test</url>
+		<!-- Database login -->
+		<login>root</login>
+		<!--  Database password -->
+		<password></password>
+	</connector>
+	
+	<!-- format of data: configurator.elements.format.Format_["format.name"].java -->
+	<formats>
+		<format name="date">
+			<!--  format type -->
+			<type>date</type>
+			<!--  date pattern SimpleDateFormat -->
+			<pattern>dd.MM.yyyy</pattern>
+		</format>
+
+		<format name="excel_date">
+			<!--  format type  -->
+			<type>date</type>
+			<!--  date pattern SimpleDateFormat  -->
+			<pattern>dd.MM.yy</pattern>
+		</format>
+		
+		<format name="timestamp">
+			<!--  format type  -->
+			<type>timestamp</type>
+			<!--  date pattern SimpleDateFormat  -->
+			<pattern>dd.MM.yyyy HH:mm:ss</pattern>
+		</format>
+
+		<format name="integer">
+			<!-- format type  -->
+			<type>integer</type>
+		</format>
+
+		<format name="double">
+			<!--  format type  -->
+			<type>double</type>
+			<!--  mantissa delimeter -->
+			<delimiter>.</delimiter>
+		</format>		
+	</formats>
+	
+	<!-- list of dictionary, special type of table - dictionary (table with one column as dictionary)  -->
+	<dictionaries>
+		<!--  dictionary  -->
+		<dictionary name="main_dictionary">
+			<!--  dictionary_table -->
+			<table>dictionary</table>
+			<!-- dictionary column - unique name for groups in dictionary  -->
+			<dictionary_column>dictionary_name</dictionary_column>
+		</dictionary>
+	</dictionaries>
+	
+	<!--  list of files  -->
+	<files>
+		<file path="test_loader2.xls" 
+		  	  type="xls">
+			<sheet  name="table_three" 
+					table_name="test_three" 
+					start_row="2" >
+				<column number="0" 
+						table_field="id" 
+						format_name="integer" />
+				<column number="1" 
+						table_field="name" />
+			</sheet>
+		</file>
+
+		<!-- file for save, "path" - path to file, "type" - type of file -->
+		<file path="test_loader.xls" 
+			  type="xls">
+			<!--  sheet in file, "name" - sheet title, "table_name" - table for save, "start_row" - start of the data in sheet (row with data: 0..65536 ) -->
+			<sheet  name="table_one" 
+					table_name="table_test" 
+					start_row="1" >
+				<!-- column in sheet, "number" - column number (from 0), "table_field" - field for save, "format_name" - converter for value -->
+				<column number="0" 
+						table_field="id" 
+						format_name="integer" />
+				<column number="1" 
+						table_field="name" />
+				<column number="2" 
+						table_field="description" />
+				<column number="3" 
+						table_field="dateWrite" 
+						format_name="excel_date"/>
+			</sheet>
+			<!-- save value to dictionary  
+			"dictionary_name" - correspond to  [db_loader/dictionaries/dictionary/name]
+			"dictionary_value" - value for insert into db_loader/dictionaries/dictionary/dictionary_column
+			"start_row" - start row data
+			-->
+			<sheet  name="table_two"
+					dictionary_name="main_dictionary"
+					dictionary_value="test"
+					start_row="1">
+				<column number="2" 
+						table_field="key_id" 
+						format_name="integer" />
+				<column number="3" 
+						table_field="key_value" />
+				<column number="0" 
+						table_field="id" 
+						format_name="integer" />
+			</sheet>
+		</file>
+	
+	</files>
+</db_loader>

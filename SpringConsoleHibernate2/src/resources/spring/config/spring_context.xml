@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 	xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!-- 	first way to get Datasource with database
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>resources/spring/database/database.properties</value>
+		</property>
+	</bean> -->
+	<bean id="currentDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.firebirdsql.jdbc.FBDriver" />
+		<property name="url" value="jdbc:firebirdsql://localhost:3050/D:/eclipse_workspace/CarDetect/database/CAR_DETECT.GDB?sql_dialect=3" />
+		<property name="username" value="SYSDBA" />
+		<property name="password" value="masterkey" />
+	</bean>
+
+
+<!--  second way to get datasource with database -->
+	<!-- 
+	<bean id="currentDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    	<property name="driverClassName" value="org.firebirdsql.jdbc.FBDriver"/>
+        <property name="url" value="jdbc:firebirdsql://localhost:3050/D:/eclipse_workspace/CarDetect/database/CAR_DETECT.GDB?sql_dialect=3" />
+        <property name="defaultAutoCommit" value="false"/>
+        <property name="username" value="SYSDBA"/>
+        <property name="password" value="masterkey"/>
+	</bean>
+  	-->
+<!--  Session factory -->
+	<bean id="currentSessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+			<!--  datasource for Hibernate factory -->
+	        <property name="dataSource" ref="currentDataSource" />
+	        <!-- Classes with annotations with Hibernate  -->
+	        <!-- first way to scan some classes into packages  	
+	        	<property 	name="packagesToScan" 
+	        				value="com.test.database.db_beans"/>
+	         -->
+	         <!-- second way - point to classes directly  -->
+	        <property name="annotatedClasses">
+	            <list>
+	                <value>com.test.database.db_beans.CarByName</value>
+	                <value>com.test.database.db_beans.CarNumber</value>
+	                <value>com.test.database.db_beans.Place</value>
+	            </list>
+	        </property>
+	        <!--  hibernate properties -->
+	        <property name="hibernateProperties">
+	            <props>
+	                <prop key="hibernate.dialect"> org.hibernate.dialect.FirebirdDialect</prop>
+	                <prop key="hibernate.show_sql">true</prop>
+	                <prop key="hibernate.hbm2ddl.auto">create</prop>
+	                <prop key="hibernate.connection.autocommit">false</prop>
+					<!--  	
+							<prop key="hibernate.connection.autocommit" value="false" />
+							<prop key="hibernate.format_sql">true</prop>
+							properties.put("hibernate.dialect", hibernateDialect);
+							properties.put("hibernate.connection.driver_class", "org.firebirdsql.jdbc.FBDriver");
+							properties.put("hibernate.connection.url", "jdbc:hsqldb:mem:baseball");
+							properties.put("hibernate.connection.username", "sa");
+							properties.put("hibernate.connection.password", "");
+							properties.put("hibernate.connection.pool_size", "5");
+							properties.put("hibernate.connection.autocommit", "false");
+							properties.put("hibernate.cache.provider_class", "org.hibernate.cache.HashtableCacheProvider");
+							properties.put("hibernate.hbm2ddl.auto", "create-drop");
+							properties.put("hibernate.show_sql", "true");
+				     -->      
+	            </props>
+	        </property>
+	</bean> 
+	
+	<!--  injection sessionFactory to DAO -->
+	<!--  you also can 
+			write annotation for class: @Service("actionsDao");   @Scope("prototype");  
+			add to this file: <context:component-scan  base-package="com.test" />
+	-->
+	<bean id="placeDAO" class="com.test.dao_impl.PlaceDAO" >
+		<property name="sessionFactory" 
+				  ref="currentSessionFactory" />
+	</bean>
+</beans>

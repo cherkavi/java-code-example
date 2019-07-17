@@ -1,0 +1,73 @@
+	#"Связывание данных:"
+таблица Event ссылается на таблицу Action через ключ ID_ACTION, то есть
+EVENT.ID_ACTION=ACTION.ID, в этом случае можно создать поле в Event
+
+создаем поле в таблице, которая ссылается на другую таблицу (EAGER - присоединить при создании объекта )
+	@ManyToOne(targetEntity=Action.class,fetch=FetchType.EAGER)
+	@JoinColumn(name="ID_ACTION",nullable=true,columnDefinition="id",insertable=false, updatable=false)
+	private Action action;
+	
+	
+	public Action getAction(){
+		return this.action;
+	}
+
+
+------------------------------------------------
+
+
+session.createCriteria(Action.class).add(Restrictions.eq("id", 10)).uniqueResult()
+	#"возвращает null, если нет данных, то есть нельзя допускать в этом случае выполнение:"
+Action action=(Action)session.createCriteria(Action.class).add(Restrictions.eq("id", 10)).uniqueResult()
+	#"то есть в случае не нахождения записи с кодом ID - NullPointerException (extends RuntimeException)"
+
+------------------------------------------------
+
+Action action=(Action)session.createCriteria(Action.class).add(Restrictions.lt("id", 10)).uniqueResult();
+	#"данный запрос подразумевает получение первого значения из списка, "
+	#"но будет выброшено исключение org.hibernate.NonUniqueResultException"
+	# нужно использовать setMaxResult(1).list().get(0)
+
+------------------------------------------------
+
+#"Получение объектов из SQL запросов:"
+List<Event> list=(List<Event>)session.createSQLQuery("SELECT * FROM EVENT WHERE EVENT.IS_SENDED IS NULL")
+				     .addEntity(Event.class) // получение объектов как сущностей, иначе - Object[]
+ 				     .setMaxResults(5)
+				     .list();
+
+List<Event> list=(List<Event>)session.createSQLQuery("SELECT * FROM EVENT WHERE EVENT.IS_SENDED IS NULL")
+				     .addEntity("database.wrap.Event") // указать ПОЛНЫЙ путь к классу
+ 				     .setMaxResults(5)
+				     .list();
+
+------------------------------------------------
+
+	#"получение запросов из SQL будет валидно для случая:"
+List<Event> list=(List<Event>)session.createSQLQuery("select event.*, action.* from event inner join action on action.id=event.id_action")
+				     .addEntity("database.wrap.Event").setMaxResults(5).list();
+	#"то есть можно сделать вывод что Hibernate берет первый из списка SELECT, но это не так"
+	#"следующий оператор так же выдает данные"
+List<Event> list=(List<Event>)session.createSQLQuery("select action.*, event.* from event inner join action on action.id=event.id_action")
+				     .addEntity("database.wrap.Event").setMaxResults(5).list();
+	#"следующий оператор так же выдает данные в виде объектов Event"
+List<Event> list=(List<Event>)session.createSQLQuery("select event.id, event.date_sensor, event.date_camera, event.id_event_type from event inner join action on action.id=event.id_action")
+				     .addEntity("database.wrap.Event").setMaxResults(5).list();
+	#"следовательно это равносильно SQL запросу:"
+List<Event> list=(List<Event>)session.createSQLQuery("select event.id, event.date_sensor, event.date_camera, event.id_event_type, 'c:\temp.gdb' filename, 0 id_action, null is_sended from event inner join action on action.id=event.id_action").addEntity("database.wrap.Event").setMaxResults(5).list();
+	#"ВЫВОД: из запроса последовательно берутся поля для указанного класса, к которому приводятся все объекты - setEntity"
+
+
+-----------------------------------------------
+#"Пример запроса для изменения данных в SQL виде "
+	SQLQuery query=session.createSQLQuery("UPDATE EVENT SET IS_SENDED=1 WHERE DATE_SENSOR<:date_end");
+	query.setDate("date_end", calendar.getTime());
+	System.out.println("Quantity:"+query.executeUpdate());
+
+-----------------------------------------------
+#Пример запроса с Join
+	KindDescription kindDescription=(KindDescription)session.createCriteria(KindDescription.class)
+					.createAlias("kind", "kind", CriteriaSpecification.INNER_JOIN)
+					.add(Restrictions.eq("kind.name", "В очереди на обработку"))
+					.add(Restrictions.eq("description",(String)this.selectVariants.getValue()))
+					.uniqueResult();

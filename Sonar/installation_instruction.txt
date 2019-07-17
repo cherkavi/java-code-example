@@ -1,0 +1,72 @@
+Sonar steps:
+	- Download Sonar and unpack it 
+	
+	- create database ( for example - MySQL, create schema sonar_schema )
+	
+	- change %Sonar%/conf/sonar.properties
+		# comment-uncomment next lines 
+		sonar.jdbc.url:                            jdbc:mysql://localhost:3306/sonar_schema?useUnicode=true&characterEncoding=utf8
+		sonar.jdbc.driverClassName:                com.mysql.jdbc.Driver
+		sonar.jdbc.validationQuery:                select 1
+	
+	- install maven
+	
+	- change maven configuration:
+		%Maven%/conf/settings.xml
+		( to <settings/profiles> add: )
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<sonar.jdbc.url>
+				  jdbc:mysql://localhost:3306/sonar_schema?useUnicode=true&amp;characterEncoding=utf8
+				</sonar.jdbc.url>
+				<sonar.jdbc.driverClassName>com.mysql.jdbc.Driver</sonar.jdbc.driverClassName>
+				<sonar.jdbc.username>root</sonar.jdbc.username>
+				<sonar.jdbc.password></sonar.jdbc.password>
+
+				<sonar.host.url>
+				  http://localhost:9000
+				</sonar.host.url>
+			</properties>
+		</profile>
+		
+	
+	- start sonar
+		%Sonar%/bin/<operation-system>/StartSonar.*
+		
+	- run maven command:
+		mvn sonar:sonar
+		
+-------------------------------
+------- Checkstyle plugin -----
+	- download Checkstyle plugin for eclipse ( install it as archive plugin )
+	- eclipse->project->( right click )->checkstyle->activate plugin
+	- eclipse->project->( right click )->properties->Checkstyle->Local Check configuration->New
+		Type - External Configuration file
+		Location - need to set the file from Sonar Permanent link
+		Name - type the name ( "Sonar checkstyle" )
+		return to tab "Main" - nearly with "Local Check configuration"
+		"Simple - use the following check configuration for all files" - select "Sonar checkstyle"
+	- Eclipse -> Show view "Checkstyle"
+	
+-------------------------------
+------- Findbugs plugin -----
+	- install plugin: http://findbugs.cs.umd.edu/eclipse		
+	- load rules from sonar: eclipse->Windows->Preferences->Java->-Findbugs->Filter Files->Include->add
+	- Eclipse->Open Perspective->FindBugs
+
+-------------------------------
+------- PMD plugin
+	- install plugin: http://pmd.sourceforge.net/eclipse
+	( need to choose the "PMD for Eclipse 3" )
+	- load rules from sonar: Eclipse->Project->(right click)->Properties->PMD->
+		- Enable PMD (check)
+		- Use the ruleset configured in a project file: ( Browse to Sonar PMD XML file )
+	- project->(right click)->PMD->check project with pmd
+	
+	
+http://doc.petalslink.com/display/petalsview/PMD,+CheckStyle+and+FindBugs
+http://www.vogella.de/articles/Findbugs/article.html

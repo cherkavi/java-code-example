@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.url">
+			jdbc:mysql://127.0.0.1:3306/test
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.pool_size">1</property>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLInnoDBDialect
+		</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- "Import" the mapping resources here -->
+		<mapping resource="TableOne.xml"/>
+	</session-factory>
+</hibernate-configuration>

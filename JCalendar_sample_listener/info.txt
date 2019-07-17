@@ -1,0 +1,11 @@
+	public void propertyChange(PropertyChangeEvent evt) {
+		if (calendarPanel != null) {
+			if (evt.getPropertyName().equals("calendar")) {
+				//                       "date"
+				// calendar = (Calendar) evt.getNewValue();
+				// DateFormat df = DateFormat.getDateInstance(DateFormat.LONG,
+				// jcalendar.getLocale());
+				// dateField.setText(df.format(calendar.getTime()));
+			}
+		}
+	}

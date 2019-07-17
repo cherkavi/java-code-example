@@ -1,0 +1,1 @@
+java -Dspring.datasource.url=jdbc:h2:mem:user-app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE -Dserver.port=8090  -Dstorage.location=c:\temp\out -jar ./target/restfileserver-0.0.1-SNAPSHOT.jar 

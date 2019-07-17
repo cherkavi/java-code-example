@@ -1,0 +1,28 @@
+DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+factory.setNamespaceAware(true); // never forget this!
+DocumentBuilder builder = factory.newDocumentBuilder();
+Document doc = builder.parse("books.xml");
+
+// So far, this is just standard JAXP and DOM, nothing really new.
+// Next you create an XPathFactory:
+XPathFactory factory = XPathFactory.newInstance();
+
+// You then use this factory to create an XPath object:
+XPath xpath = factory.newXPath();
+
+// The XPath object compiles the XPath expression:
+XPathExpression expr = xpath.compile("//book[author='Neal Stephenson']/title/text()");
+
+
+NodeList nodes = (NodeList) xpath.evaluate(expression, inputSource, XPathConstants.NODESET);
+
+ƒл€ получени€ пути относительно какого-либо Node - нужно XPath строку формировать без предшествующего знака /:
+<body> 	
+	<temp>
+		<value>
+			<set>22343</set>
+		</value>
+	</temp>
+</body>
+
+Ќапример, получен Node n1="//body/temp", дл€ получени€ set из n1="value/set" (без предшествующего знака /)

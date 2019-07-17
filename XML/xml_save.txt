@@ -1,0 +1,7 @@
+javax.xml.transform.TransformerFactory transformer_factory = javax.xml.transform.TransformerFactory.newInstance();  
+javax.xml.transform.Transformer transformer = transformer_factory.newTransformer();  
+javax.xml.transform.dom.DOMSource dom_source = new javax.xml.transform.dom.DOMSource(doc); // Pass in your document object here  
+java.io.FileWriter out=new java.io.FileWriter("c:\\out_server.xml");
+//string_writer = new Packages.java.io.StringWriter();  
+javax.xml.transform.stream.StreamResult stream_result = new javax.xml.transform.stream.StreamResult(out);  
+transformer.transform(dom_source, stream_result);  

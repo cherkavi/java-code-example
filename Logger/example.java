@@ -1,0 +1,1 @@
+new LoggerActivator(null, "logger.properties");

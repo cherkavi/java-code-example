@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+<!--  объект, который будет запускаемым -->
+	<bean id="taskForRun" class="test.timer.PeriodExecuteTest" />
+
+<!--  Task, который будет запускаться -->
+	<bean id="schedulerTask"  class="org.springframework.scheduling.timer.MethodInvokingTimerTaskFactoryBean">
+		<property name="targetObject" ref="taskForRun" />
+		<property name="targetMethod" value="printOneString" />
+	</bean>
+	 
+<!--  объект для передачи в TimerFactory  -->	 
+	<bean id="timer_task"
+		class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="timerTask" ref="schedulerTask" />
+		<property name="delay" value="1000" />
+		<property name="period" value="3000" />
+	</bean>
+	 
+<!--  TimerFactory  -->	 
+	<bean class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+				<ref local="timer_task" />
+			</list>
+		</property>
+	</bean>
+ 
+</beans>

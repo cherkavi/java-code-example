@@ -1,0 +1,146 @@
+package untitled4;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+// класс, метод которого является защищенным
+class class_out_string
+{
+  // это значит, что данный метод не смогут вызвать два потока одновременно, будет происходить блокировка
+  //synchronized void print_string(String s)
+  void print_string(String s)
+  {
+    // это значит что блок является блокирующим, и блокировка в нем ставится именно на изменение "s"
+    synchronized (s){
+       System.out.println(s);
+    }
+  }
+}
+
+// класс, который является потомком Thread
+class temp_thread extends Thread{
+  volatile String message;
+  int delay_ms;
+  class_out_string thread_out_string=new class_out_string();
+  // constructor
+  temp_thread(String s, int delay_ms,class_out_string thread_out_string){
+     this.message=s;
+     this.delay_ms=delay_ms;
+     this.thread_out_string=thread_out_string;
+  }
+  // run Thread
+  public void run(){
+     try{
+        for(int i=0;i<5;i++){
+           this.thread_out_string.print_string(this.message);
+           sleep(delay_ms);
+        }
+     System.out.println("exit from thread");
+     }
+     catch(InterruptedException e){
+        System.out.println("Error in <class temp_thread> \n"+e);
+     }
+  }
+  public void set_message(String s){
+     this.message=s;
+  }
+}
+
+public class Frame1 extends JFrame {
+  JPanel contentPane;
+  BorderLayout borderLayout1 = new BorderLayout();
+  JButton jButton1 = new JButton();
+  // создаем класс в котором будет происходить синхронизация
+  class_out_string out_string=new class_out_string();
+  // создаем первый поток
+  temp_thread thread_1;
+  // создаем второй поток
+  temp_thread thread_2;
+  JButton jButton3 = new JButton();
+  JButton jButton4 = new JButton();
+  JToggleButton jToggleButton1 = new JToggleButton();
+  JTextField Edit_1 = new JTextField();
+
+  /**Construct the frame*/
+  public Frame1() {
+    enableEvents(AWTEvent.WINDOW_EVENT_MASK);
+    try {
+      jbInit();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  /**Component initialization*/
+  private void jbInit() throws Exception  {
+    //setIconImage(Toolkit.getDefaultToolkit().createImage(Frame1.class.getResource("[Your Icon]")));
+    contentPane = (JPanel) this.getContentPane();
+    jButton1.setMaximumSize(new Dimension(119, 50));
+    jButton1.setMinimumSize(new Dimension(119, 50));
+    jButton1.setText("Start two thread");
+    jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        jButton1_mouseClicked(e);
+      }
+    });
+    contentPane.setLayout(borderLayout1);
+    this.setSize(new Dimension(660, 274));
+    this.setTitle("Frame Title");
+    jButton3.setText("continue two thread");
+    jButton3.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        jButton3_actionPerformed(e);
+      }
+    });
+    jButton4.setText("Suspend");
+    jButton4.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        jButton4_actionPerformed(e);
+      }
+    });
+    jToggleButton1.setText("jToggleButton1");
+    Edit_1.setText("text from Edit");
+    contentPane.add(jButton3, BorderLayout.EAST);
+    contentPane.add(jButton4, BorderLayout.NORTH);
+    contentPane.add(jButton1,  BorderLayout.CENTER);
+    contentPane.add(jToggleButton1, BorderLayout.WEST);
+    contentPane.add(Edit_1, BorderLayout.SOUTH);
+  }
+  /**Overridden so we can exit when window is closed*/
+  protected void processWindowEvent(WindowEvent e) {
+    super.processWindowEvent(e);
+    if (e.getID() == WindowEvent.WINDOW_CLOSING) {
+      System.exit(0);
+    }
+  }
+
+
+
+  void jButton1_mouseClicked(MouseEvent e) {
+     // запускаем потоки
+     thread_1=new temp_thread("Thread 1",250,out_string);
+     //thread_1.setDaemon(true); // это значит что поток thread_1 нужно будет уничтожить в случае когда создавший его поток будет уничтожаться
+     thread_1.start();
+     System.out.println("Thread_1 - > started");
+     thread_2=new temp_thread("Thread 2",500,out_string);
+     thread_2.start();
+     System.out.println("Thread_2 - > started");
+  }
+
+
+  void jButton3_actionPerformed(ActionEvent e) {
+     // возобновляем работу потоков
+     thread_1.resume();
+     thread_2.resume();
+  }
+
+  void jButton4_actionPerformed(ActionEvent e) {
+     // приостанавливаем потоки
+     thread_1.suspend();
+     thread_2.suspend();
+     thread_1.set_message("1 new message: "+Edit_1.getText());
+     thread_2.set_message("2 new message: "+Edit_1.getText());
+
+  }
+}

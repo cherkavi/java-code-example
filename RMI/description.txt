@@ -1,0 +1,20 @@
+list_naming.java
+    файл, который выдает все запущенные сервисы на данном порту "java list_naming 2001"
+
+remote_interface.java
+    файл который описывает удаленный интерфейс
+
+remote_interfaceImpl.java
+    файл который реализует удаленный интерфейс на сервере 
+    (нужно пропустить этот файл через rmic: "%java_home%/bin/rmic remote_interfaceImpl" 
+     и получить класс-заглушку для клиента, который вызывает удаленный метод remote_interfaceImpl_Stub.class)
+
+server.java 
+    файл, который инициализирует на данном порту службу RMI "java server"
+    (ждет вызова клиента на порт и ожидает вызова службы по имени )
+
+client.java
+    файл клиента, который стучится на сервер "java client" 
+    (ему еще нужны два файла "remote_interfaceImpl_Stub.class" - заглушка для удаленного вызова
+                           и "remote_interface.class" - описатель класса удаленного вызова)
+

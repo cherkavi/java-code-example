@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="on_load_window()">
+	<script type="text/javascript">
+		function function_modal_insert_commit(){
+			var select_element=document.getElementById("modal_window_insert_select").childNodes.item(0);
+			parent.set_modal_window_insert_commit(true,select_element.options[select_element.selectedIndex].getAttribute("id_task"),select_element.options[select_element.selectedIndex].value);
+			//parent.set_modal_window_insert_commit(true,"",select_element.options[select_element.selectedIndex].value);
+			parent.modal_window_insert.hide();
+		}
+		function function_modal_insert_rollback(){
+			parent.set_modal_window_insert_commit(false,"","");
+			parent.modal_window_insert.hide();
+		}
+
+		function on_load_window(){
+			document.getElementById("modal_window_insert_select").appendChild(parent.get_select_element_pattern());			
+		}
+	</script>
+	<table>
+		<tr>
+			<table>
+				<tr>
+					<td><center>Pattern</center></td>
+				</tr>
+				<tr>
+					<td><span id="modal_window_insert_select"></span></td>
+				</tr>
+			</table>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" onclick="function_modal_insert_commit()" value="Insert">
+			</td>
+			<td>
+				<input type="button" onclick="function_modal_insert_rollback()" value="Cancel">
+			</td>
+		</tr>
+		
+	</table>
+</body>
+</html>

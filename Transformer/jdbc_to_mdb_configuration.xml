@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+ 		xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+       
+	<bean id="source_bean" class="tools.transformer.source_impl.jdbc.JdbcSource">
+		<property name="jdbcUrl">
+			<value>jdbc:mysql://127.0.0.1:3306/test</value>
+		</property>
+		<property name="jdbcLogin">
+			<value>root</value>
+		</property>
+		<property name="jdbcPassword">
+			<value>root</value>
+		</property>
+		<property name="jdbcDriverClass">
+			<value>org.gjt.mm.mysql.Driver</value>
+		</property>
+		<property name="pathToXmlQuery">
+			<value>sql_queries.xml</value>
+		</property>
+	</bean>
+
+	<bean id="destination_bean" class="tools.transformer.dest_impl.access.AccessDestination">
+		<property name="outputFileName">
+			<value>/tmp/temp/test.mdb</value>
+		</property>
+	</bean>
+
+	<bean id="transformer" class="tools.transformer.Transformer">
+		<property name="source" ref="source_bean" />
+		<property name="destination">
+			<ref bean="destination_bean" />
+		</property>
+
+	</bean>
+
+
+</beans>

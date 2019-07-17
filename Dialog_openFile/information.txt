@@ -1,0 +1,5 @@
+		JFileChooser dialog=new JFileChooser();
+		dialog.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		if(dialog.showDialog(this, "Каталог для загрузки")==JFileChooser.APPROVE_OPTION){
+			this.pathToDirectory.setText(dialog.getSelectedFile().getPath());
+		}

@@ -1,0 +1,40 @@
+NekoHTML:
+
+final DOMParser parser = new DOMParser();
+try {
+	parser.parse(new InputSource(urlIS));
+	document = parser.getDocument();
+} catch (SAXException e) {
+	e.printStackTrace();
+} catch (IOException e) {
+	e.printStackTrace();
+}
+TagSoup:
+
+final Parser parser = new Parser();
+SAX2DOM sax2dom = null;
+try {
+	sax2dom = new SAX2DOM();
+	parser.setContentHandler(sax2dom);
+	parser.setFeature(Parser.namespacesFeature, false);
+	parser.parse(new InputSource(urlIS));
+} catch (Exception e) {
+	e.printStackTrace();
+}
+document = sax2dom.getDOM();
+jTidy:
+
+final Tidy tidy = new Tidy();
+tidy.setQuiet(true);
+tidy.setShowWarnings(false);
+tidy.setForceOutput(true);
+document = tidy.parseDOM(urlIS, null);
+HtmlCleaner:
+
+final HtmlCleaner cleaner = new HtmlCleaner(urlIS);
+try {
+	cleaner.clean();
+	document = cleaner.createDOM();
+} catch (Exception e) {
+	e.printStackTrace();
+}

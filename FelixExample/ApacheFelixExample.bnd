@@ -1,0 +1,3 @@
+#ApacheFelixExample
+Private-Package: test
+Bundle-Activator: test.TestActivator

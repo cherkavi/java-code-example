@@ -1,0 +1,25 @@
+This tutorial shows how to use the ImageIO API to convert a BMP to a JPG image in Java. The ImageIO API provides methods to read the source image and to write the image in the new file format.
+
+To read the image, simply provide the ImageIO.read() method a File object for the source image. This will return a BufferedImage.
+view plaincopy to clipboardprint?
+
+   1. //Create file for the source  
+   2. File input = new File("c:/temp/image.bmp");  
+   3.   
+   4. //Read the file to a BufferedImage  
+   5. BufferedImage image = ImageIO.read(input);  
+
+//Create file for the source
+File input = new File("c:/temp/image.bmp");
+
+//Read the file to a BufferedImage
+BufferedImage image = ImageIO.read(input);
+
+Once you have the BufferedImage, you can write the image as a JPG. You will need to create a File object for the destination image. When calling the write() method, specify the type string as "jpg".
+view plaincopy to clipboardprint?
+
+   1. //Create a file for the output  
+   2. File output = new File("c:/temp/image.jpg");  
+   3.   
+   4. //Write the image to the destination as a JPG  
+   5. ImageIO.write(image, "jpg", output);  

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping 
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+<!--  table per class hierarchy --> 
+    <class name="database.Parent" table="pr" > 
+        <id name="id" type="integer" unsaved-value="0">
+            <generator  class="increment"/>
+        </id>
+        <discriminator column="descriminator" type="string"></discriminator>
+        <property name="name"/>
+    </class>
+
+    <subclass name="database.Boy" extends="database.Parent" discriminator-value="boy_like" >
+        <property name="boySkills"/>
+    </subclass>
+
+    <subclass name="database.Girl" extends="database.Parent" discriminator-value="girl_like" >
+        <property name="girlSkills"/>
+    </subclass>
+    <!-- 
+    
+create table pr (id integer not null, descriminator varchar(255) not null, name varchar(255), boySkills varchar(255), girlSkills varchar(255), primary key (id))
+SET AUTOCOMMIT FALSE
+INSERT INTO PR VALUES(1,'boy_like','Kolya','struglle',NULL)
+INSERT INTO PR VALUES(2,'girl_like','Olga',NULL,'nitting')
+    
+    
+     -->
+    
+</hibernate-mapping>

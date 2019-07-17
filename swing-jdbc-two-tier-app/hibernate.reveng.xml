@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table-filter match-name="asset" match-catalog="indirector"></table-filter>
+	<table-filter match-name="district" match-catalog="indirector"></table-filter>
+	<table-filter match-name="skill" match-catalog="indirector"></table-filter>
+	<table-filter match-name="skill_category"
+		match-catalog="indirector">
+	</table-filter>
+	<table-filter match-name="worker" match-catalog="indirector"></table-filter>
+	<table-filter match-name="worker2asset"
+		match-catalog="indirector">
+	</table-filter>
+	<table-filter match-name="worker2district"
+		match-catalog="indirector">
+	</table-filter>
+	<table-filter match-name="worker2skill"
+		match-catalog="indirector">
+	</table-filter>
+	<table catalog="indirector" name="asset">
+		<column name="id"></column>
+		<column name="name"></column>
+	</table>
+	<table catalog="indirector" name="worker2asset">
+		<column name="id_worker"></column>
+		<column name="id_asset"></column>
+	</table>
+	<table catalog="indirector" name="worker">
+		<column name="id"></column>
+		<column name="surname"></column>
+		<column name="name"></column>
+		<column name="fathername"></column>
+	</table>
+	<table catalog="indirector" name="skill_category">
+		<column name="id"></column>
+		<column name="name"></column>
+		<column name="parent_id"></column>
+	</table>
+	<table catalog="indirector" name="worker2skill">
+		<column name="id_worker"></column>
+		<column name="id_skill"></column>
+	</table>
+	<table catalog="indirector" name="worker2district">
+		<column name="id_worker"></column>
+		<column name="id_district"></column>
+	</table>
+	<table catalog="indirector" name="skill">
+		<column name="id"></column>
+		<column name="name"></column>
+		<column name="category_id"></column>
+	</table>
+	<table catalog="indirector" name="district">
+		<column name="id"></column>
+		<column name="name"></column>
+		<column name="parent_id"></column>
+	</table>
+</hibernate-reverse-engineering>

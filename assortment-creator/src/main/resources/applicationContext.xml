@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+    xmlns:xsi=    "http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns=        "http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jpa=    "http://www.springframework.org/schema/data/jpa"
+    xsi:schemaLocation="
+                http://www.springframework.org/schema/beans     
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                http://www.springframework.org/schema/context 
+                http://www.springframework.org/schema/context/spring-context-3.0.xsd
+				http://www.springframework.org/schema/data/jpa
+    			http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+                ">
+
+
+	<!-- Database Configuration -->
+	<import resource="HibernateContext.xml"/>
+
+	<!-- hibernate annotations : Auto scan the components -->
+	<context:component-scan base-package="com.cherkashyn.vitalii.accounting.domain" />
+	
+	<!--  finders and repositories  -->
+	<jpa:repositories base-package="com.cherkashyn.vitalii.accounting.service" />
+
+	<!-- service implementations : Auto scan the components -->
+	<context:component-scan base-package="com.cherkashyn.vitalii.accounting.service.finder" />
+	<context:component-scan base-package="com.cherkashyn.vitalii.accounting.service.repository" />
+ 
+	<!-- user interface : Auto scan the components -->
+	<context:component-scan base-package="com.cherkashyn.vitalii.barrette.gui" />
+	
+	<!-- FTP service for remote scan images  -->
+	<bean class="com.cherkashyn.vitalii.barrette.service.impl.Ftp2LocalService" scope="prototype">
+		<constructor-arg index="0" value="192.168.0.113" />
+		<constructor-arg index="1" value="2221" />
+		<constructor-arg index="2" value="testuser" />
+		<constructor-arg index="3" value="testuser" />
+		<constructor-arg index="4" value="/home/technik/temp/images" />
+		<constructor-arg index="5" value="true" />
+	</bean>
+
+	<!--   -->
+
+</beans>

@@ -1,0 +1,28 @@
+// INFO вызывает ошибку в отображении GridPanel.Header
+//panel.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);  
+
+
+// кнопки имеют только предопределенные имена ("yes","no","cancel" ), другие не выводятся 
+MessageBox.show(new MessageBoxConfig(){
+{
+	this.setTitle(constant.titleRemove());
+	this.setMsg(constant.messageRemove());
+	this.setWidth(300);
+	this.setButtons(new NameValuePair[]{new NameValuePair("yes", constant.buttonRemove()),
+ 					   new NameValuePair("no", constant.buttonCancel())});
+
+
+
+GridPanel
+// получать данные из Record нельзя в виде Object - глючит, можно только конкретные типы: String, Integer, Date
+/** оповестить слушателей о выделении записей */
+private void notifyData(Record record){
+	for(ITableDataSelected listener:this.listOfListener){
+		try{
+			String object=record.getAsString(columns[0]);
+			listener.selectedValue(object);
+		}catch(Exception ex){
+			System.err.println("Exception: "+ex.getMessage());
+		}
+	}
+}

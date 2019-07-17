@@ -1,0 +1,21 @@
+	private SimpleDateFormat sdf=new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+	private Random random=new Random();
+	
+	/** получить строку из случайных 16-ых чисел заданной длинны */
+	private String getRandomString(int length){
+		StringBuffer returnValue=new StringBuffer();
+		for(int counter=0;counter<length;counter++){
+			returnValue.append(Integer.toHexString(random.nextInt(16)));
+		}
+		return returnValue.toString();
+	}
+	
+	/** получить уникальное название файла для сохранения */
+	private String getTempFileName(){
+		return sdf.format(new Date())+this.getRandomString(5);
+	}
+	
+	private String getFullPathToTempFile(){
+		return this.tempDirectory+this.getTempFileName();
+	}
+

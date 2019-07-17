@@ -1,0 +1,59 @@
+Нормальный ход отправки
+
+      220 mail.ru ESMTP Fri, 22 Jun 2007 16:15:34 +0400
+to os:mail from:<technik7_job@mail.ru>
+      250 mx27.mail.ru Hello 77.122.140.235 [77.122.140.235]
+to os:rcpt to:<technik7_job@mail.ru>
+      250 OK
+to os:data
+      250 Accepted
+to os:hello from JAVA
+      354 Enter message, ending with "." on a line by itself
+to os:.
+      250 OK id=1I1i34-000JVx-00
+to os:rset
+      250 Reset OK
+to os:quit
+      221 mx27.mail.ru closing connection
+
+501 - error
+550 - error
+421 - warning
+
+------------------------
+Нормальный ход приема письма:
++OK
+user technik7_job
++OK Password required
+pass sokol7
++OK technik7_job@mail.ru maildrop has 1 messages (1024 octets)
+list
++OK 1 messages (1024 octets)
+1 433 // номер сообщения для чтения
+.
+retr 1
++OK 433 octets
+Return-path: <technik7_job@mail.ru>
+Received: from [77.122.140.235] (port=47046 helo=77.122.140.235)
+        by mx27.mail.ru with psmtp
+        id 1I1ihh-000MWR-00
+        for technik7_job@mail.ru; Fri, 22 Jun 2007 16:57:33 +0400
+Message-Id: <E1I1ihh-000MWR-00.technik7_job-mail-ru@mx27.mail.ru>
+From: technik7_job@mail.ru
+Bcc:
+Date: Fri, 22 Jun 2007 16:57:33 +0400
+
+hello from JAVA
+hello from Eclipse
+
+.
+
+dele 2
++OK message 2 deleted
+
+list
++OK 0 messages
+
+
+-ERR Unknown command
+-ERR Password supplied for "tech" is incorrect

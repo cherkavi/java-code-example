@@ -1,0 +1,1 @@
+update PAYMENT_CARD set pin_mailer = '<pinmailer>' where id = '3cae4940-72d1-4fb4-9866-1064f24a1770';

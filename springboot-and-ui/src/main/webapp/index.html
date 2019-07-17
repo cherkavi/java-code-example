@@ -1,0 +1,81 @@
+<html>
+<head>
+
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+		<!--  ajax waiter  -->
+		<link rel="stylesheet" type="text/css" href="hourglass.css">
+		<script src="hourglass.js"></script>
+
+		<!--  template libraries  -->
+		<script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v4.0.5.js"></script>
+
+	<script id="template-positive" type="text/template"> 
+		<table border="1">
+			{{#each data}}
+			<tr>
+				<td>{{label}}</td> <td>{{value}}</td>
+			</tr>
+			{{/each}}
+		</table>
+	</script>
+
+	<script id="template-error" type="text/template">
+		<div style="color:red">{{data.message}}</div>
+	</script>
+
+		<script>
+			/** template for positive response*/
+			var templatePositive=Handlebars.compile($("#template-positive").html());
+			/** template for negative response*/
+			var templateNegative=Handlebars.compile($("#template-error").html());
+
+			function updateView(data){
+				var html=templatePositive({"data":data});
+				$("#result").html(html);
+			}
+
+			function updateViewError(dataError){
+				var html=templateNegative({"data":dataError.responseJSON});
+				$("#result").html(html);
+			}
+		</script>
+
+		<script>
+			/**
+			* button controller
+			*/
+			function searchButtonClick(){
+				var url=$("#searchValue").val();
+				$.ajax({
+					url:"service/parser/analyze?url="+encodeURI(url),
+					type: 'GET',
+					success:function(data, result, options){
+						updateView(data);
+					},
+					error:function(data, result, options){
+						updateViewError(data);
+					}
+				});
+			}
+			
+			function fillExample(url){
+				$("#searchValue").val(url);
+				searchButtonClick();
+			}
+		</script>
+</head>
+
+<body>
+	<input type="text" id="searchValue" value="" size="40"/>
+	<input type="button" value="find" onclick="searchButtonClick()" />
+	<a href="javascript:fillExample('getbootstrap.com/examples/signin/')" >getbootstrap.com/examples/signin/</a>
+	&nbsp;&nbsp;
+	<a href="javascript:fillExample('w3c.org')" >w3c.org</a>
+	&nbsp;&nbsp;
+	<a href="javascript:fillExample('robokassa.ru')" >robokassa.ru</a>
+	<hr />	
+	<div id="result" ></div>
+	<div class="hourglass"></div>
+</body>
+</html>

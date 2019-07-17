@@ -1,0 +1,12 @@
+        ((JSpinner.NumberEditor )field_spinner.getEditor ()).getTextField().addFocusListener(new FocusAdapter() {
+        	public void focusGained(FocusEvent e) {
+        	if (e.getSource() instanceof JTextComponent) {
+        		final JTextComponent textComponent=((JTextComponent)e.getSource());
+				SwingUtilities.invokeLater(new Runnable(){
+					public void run() {
+						textComponent.selectAll();
+					}
+				});
+        	}
+        }
+        });

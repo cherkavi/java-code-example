@@ -1,0 +1,1 @@
+java -jar src/test/resources/trace-comparator.jar out.txt src/test/resources/small-traces.txt

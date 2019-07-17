@@ -1,0 +1,2 @@
+// this.fieldTextBlock.nextFocus();
+this.fieldTextBlock.transferFocus();

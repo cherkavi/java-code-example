@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<settings>
+		<jdbc_first>
+			<url>jdbc:mysql://localhost:3306/test</url>
+			<driver_class>org.gjt.mm.mysql.Driver</driver_class>
+			<login>root</login>
+			<password>root</password>
+		</jdbc_first>
+		<jdbc_second>
+			<url>jdbc:mysql://localhost:3306/test2</url>
+			<driver_class>org.gjt.mm.mysql.Driver</driver_class>
+			<login>root</login>
+			<password>root</password>
+		</jdbc_second>
+	</settings>
