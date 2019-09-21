@@ -1,1 +1,0 @@
-./microservices-log-parser/src/main/java/com/cherkashyn/vitalii/logparser/App.java
