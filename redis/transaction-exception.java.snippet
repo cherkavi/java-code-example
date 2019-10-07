@@ -1,0 +1,14 @@
+        jedis.set("a", "foo");
+        jedis.set("b", "bar");
+        jedis.set("c", "baz");
+        Transaction t = jedis.multi();
+
+        Response<String> r1 = t.set("b", "1");
+        Response<Long> r2 = t.incr("a");
+        Response<String> r3 = t.set("c", "100");
+
+        t.exec();
+        r1.get(); // OK
+        r2.get(); // throw exception JedisDataException
+        r3.get(); // OK 
+
