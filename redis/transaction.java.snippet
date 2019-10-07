@@ -1,0 +1,22 @@
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Pipeline;
+import redis.clients.jedis.Response;
+import redis.clients.jedis.Transaction;
+import redis.clients.jedis.exceptions.JedisDataException;
+
+
+        Transaction t = jedis.multi();
+
+        Response<Long> hsetResponse = t.hset(statusKey, "available", "true");
+        Response<Long> expireResponse = t.expire(statusKey, 1000);
+        Response<Long> saddResponse = t.sadd(availableKey,
+                String.valueOf(siteId));
+
+        t.exec();
+	// !!! IMPORTANT
+	// if something wrong with operation - exception will be thrown during Response.get() 
+
+        assertThat(hsetResponse.get(), is(1L));
+        assertThat(expireResponse.get(), is(1L));
+        assertThat(saddResponse.get(), is(1L));
+
