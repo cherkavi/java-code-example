@@ -1,0 +1,19 @@
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.Transaction;
+
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.util.Map;
+
+
+    public <T> T findById(long siteId, ZonedDateTime day) {
+        try (Jedis jedis = jedisPool.getResource()) {
+            Map<String, String> fields = jedis.hgetAll("my-own-key:"+siteId+":"+day);
+            if (fields == null || fields.isEmpty()) {
+                return null;
+            }
+            return convertToDestination(fields, T);
+        }
+    }
+
