@@ -8,7 +8,8 @@ public class DrillCollaboration {
     private static final String JDBC_DRIVER = "org.apache.drill.jdbc.Driver";
 
     private static final String CONNECTION_URL = "jdbc:drill:drillbit=ubsdpdesp000103.vantagedp.org:31010;auth=MAPRSASL";
-    private static final String QUERY = "select sessionId, isReprocessable from dfs.`/mapr/dp.prod.zurich/vantage/data/store/v6/BM67/2020/*/*/part*.parquet";
+    // private static final String QUERY = "select sessionId, isReprocessable from dfs.`/mapr/dp.prod.zurich/vantage/data/store/v6/BM67/2020/*/*/part*.parquet`";
+    private static final String QUERY = "select * from sys.version";
 
     private static Connection getConnection() throws ClassNotFoundException, SQLException {
         System.out.println("get class by name: "+JDBC_DRIVER);
