@@ -1,0 +1,15 @@
+    private void setStaticField(Class<?> clazz, String fieldName, String value){
+        // black magic due lack of PowerMock
+        try{
+            final Field field = clazz.getDeclaredField( fieldName );
+
+            Field modifiersField = Field.class.getDeclaredField("modifiers");
+            modifiersField.setAccessible(true);
+            modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+
+            field.setAccessible( true );
+            field.set( clazz, value );
+        }catch(Exception ex){
+        }
+    }
+
