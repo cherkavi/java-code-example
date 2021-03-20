@@ -1,0 +1,16 @@
+jar {
+    // A class which defines a static void premain(args: String, instrumentation: Instrumentation),
+    // function that will run before the Main() of the primary JAR:
+    attributes 'Premain-Class': 'tech.httptoolkit.javaagent.HttpProxyAgent'
+
+    // A class (can be the same) which defines a similar 'agentmain' function, that will
+    // run within the target JVM once the agent is attached:
+    attributes 'Agent-Class': 'tech.httptoolkit.javaagent.HttpProxyAgent'
+
+    // Can this agent do transformations, which receive class bytecode and transform it?
+    attributes 'Can-Retransform-Classes': 'true'
+
+    // Can this agent redefine classes entirely? This is an older API that is strictly more
+    // limited I think, but you might as well take all the powers you can get...
+    attributes 'Can-Redefine-Classes': 'true'
+}
