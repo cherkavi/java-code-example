@@ -1,3 +1,5 @@
+// set privat final static
+// change static final
     private void setStaticField(Class<?> clazz, String fieldName, String value){
         // black magic due lack of PowerMock
         try{
@@ -9,6 +11,8 @@
 
             field.setAccessible( true );
             field.set( clazz, value );
+            // the same: 
+            // field.set(null, value);            
         }catch(Exception ex){
         }
     }
