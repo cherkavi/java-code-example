@@ -7,7 +7,9 @@ public class DrillCollaboration {
     // private static final String JDBC_DRIVER = "com.mapr.drill.jdbc4.Driver";
     // private static final String JDBC_DRIVER = "com.mapr.drill.jdbc41.Driver";
     // private static final String JDBC_DRIVER = "oadd.org.apache.calcite.avatica.remote.Driver";
-    private static final String JDBC_DRIVER = "org.apache.drill.jdbc.Driver";
+    // private static final String JDBC_DRIVER = "org.apache.drill.jdbc.Driver";
+    private static final String JDBC_DRIVER = "com.mapr.drill.jdbc42.Driver";
+    
 
     // private static final String CONNECTION_URL = "jdbc:drill:drillbit=127.0.0.1:41010;auth=MAPRSASL";
     private static final String CONNECTION_URL = "jdbc:drill:drillbit=127.0.0.1:41010;auth=MAPRSASL";
