@@ -1,4 +1,4 @@
-
+// is executed for SIGTERM and SIGINT.
 public class ShutdownHook {
 	public static void main(String[] args){
 		System.out.println("begin");
