@@ -1,0 +1,88 @@
+import org.yaml.snakeyaml.Yaml;
+
+import javax.net.ssl.SSLContext;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Invocation.Builder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.util.Map;
+
+public class GenericYamlClientSimplified {
+
+    private String basePath;
+
+    private WebTarget baseTarget;
+
+    public GenericYamlClientSimplified(String basePath) {
+        this.basePath = basePath;
+        Client client = createClientBuilder(null).build();
+        baseTarget = client.target(basePath);
+    }
+
+    /**
+     * Creates the Client Builder Object for the Constructor
+     *
+     * @param sslContext ssl context, if not available use null
+     * @return a freshly created Client Builder object
+     */
+    private static ClientBuilder createClientBuilder(SSLContext sslContext) {
+        // adding sslcontext, if provided
+        ClientBuilder clientBuilder = ClientBuilder.newBuilder();
+        if (sslContext != null) {
+            clientBuilder.sslContext(sslContext);
+        }
+        clientBuilder.hostnameVerifier((hostname, session) -> true);
+        return clientBuilder;
+    }
+
+    /**
+     * Generic, synchronous HTTP GET request.
+     * The relative path to endpoint needs to be specified, as well as
+     * a class reference, that the json response will be mapped to.
+     *
+     * @return processed response of request
+     * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET">
+     * https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET</a>
+     * @see GenericYamlClientSimplified#createBuilder
+     */
+    public Map get() throws IOException {
+        getLogger().trace("Performing HTTP GET request to base path: " + this.basePath);
+        Response response = null;
+        String rawAnswer = null;
+        try {
+            response = baseTarget.request().get();
+            if(!response.hasEntity()){
+                throw new IOException("can't read data from remote url: "+this.basePath);
+            }
+            rawAnswer = response.readEntity(String.class);
+        } catch (RuntimeException re) {
+            throw new IOException("can't read information from remove url: " + this.basePath);
+        } finally {
+            if (response != null) {
+                response.close();
+            }
+        }
+        return (Map) new Yaml().load(rawAnswer);
+    }
+
+    /**
+     * Creating a generic builder with a relative request path from which any HTTP method can be called.
+     * The accepted response type is statically set to "application/json".
+     * Additional generic requirements like query parameters, headers, cache control
+     * or cookies can be added here.
+     *
+     * @param requestPath relative path to endpoint
+     * @return generic {@link Builder} instance, can be extended
+     * @see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">
+     * https://developer.mozilla.org/en-US/docs/Web/HTTP</a>
+     */
+    protected Builder createBuilder(String requestPath) {
+        return createWebTarget(requestPath).request();
+    }
+
+    protected WebTarget createWebTarget(String requestPath) {
+        return baseTarget.path(requestPath);
+    }
+}
