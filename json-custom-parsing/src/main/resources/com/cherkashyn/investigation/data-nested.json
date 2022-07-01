@@ -1,0 +1,24 @@
+{
+  "frames": {
+    "images_metadata": [
+      {
+        "bdc_time": 1024580674319,
+        "logger_time": 1639477599528,
+        "frameId": 0
+      },
+      {
+        "bdc_time": 1024751212370,
+        "logger_time": 1639477599699,
+        "frameId": 2
+      },
+      {
+        "bdc_time": 1024832072461,
+        "logger_time": 1639477599780,
+        "frameId": 3
+      }
+    ]
+  },
+  "frame_rate": 18,
+  "type": "QuadView",
+  "vin": "LJ04"
+ }
