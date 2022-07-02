@@ -21,6 +21,11 @@ public class JsonMappingNested {
 
     public static JsonMappingNested fromMap(HashMap<String, ?> source){
        // mapping map to object
+       // // With TypeReference
+       // List<MyClass> myObjects = mapper.readValue(jsonInput, new TypeReference<List<MyClass>>(){});
+       //
+       // // with TypeFactory
+       // List<MyClass> myObjects = mapper.readValue(jsonInput, mapper.getTypeFactory().constructCollectionType(List.class, MyClass.class));
        return new ObjectMapper().convertValue(source, FrameMetadata.class);
     }
 
