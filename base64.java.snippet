@@ -1,0 +1,8 @@
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
+try {
+            decodedPassword = new String(Base64.getDecoder().decode(password), StandardCharsets.ISO_8859_1);
+        } catch (IllegalArgumentException e) {
+            getLogger().warn("Invalid password encoding");
+}
