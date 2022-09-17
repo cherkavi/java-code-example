@@ -64,6 +64,8 @@ public class App {
 
 
 /**
+ * command line parser, read command line arguments
+ * http://jcommander.org/
  * object for reading from DB and sending to SMTP
  */
 class SendMessage {
