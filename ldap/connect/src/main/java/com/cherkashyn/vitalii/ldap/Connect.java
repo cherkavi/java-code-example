@@ -73,6 +73,7 @@ public class Connect {
         env.put(Context.SECURITY_AUTHENTICATION, "simple");
         env.put(Context.SECURITY_CREDENTIALS, userPassword);
         // env.put(Context.SECURITY_PRINCIPAL, "uid=admin,ou=system");
+	// "java.naming.security.principal","uid=vitalii.cherkashyn,ou=users,ou=rbac,dc=ubs,dc=com"
         env.putAll(properties);
         return env;
     }
