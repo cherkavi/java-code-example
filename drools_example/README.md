@@ -4,4 +4,5 @@
 ## similar rules engines
 * evrete.org
 * easy-rules
+* https://openl-tablets.org/
 
