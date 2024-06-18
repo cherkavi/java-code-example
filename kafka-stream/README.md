@@ -56,4 +56,41 @@ java -jar build/libs/creating-first-apache-kafka-streams-application-*.jar confi
   * [official kafka streams](https://kafka.apache.org/documentation/streams/)
     * [write application](https://kafka.apache.org/37/documentation/streams/tutorial)
     * [quarkus kafka stream](https://quarkus.io/guides/kafka-streams)
-  
+
+
+### snippet: branch vs parallel 
+```java
+    public StreamsBuilder buildTopology(StreamsBuilder builder) {
+
+        Serde<String> stringSerde = Serdes.String();
+
+        KStream<String, String> inputStream = builder.stream(this.inputTopic, Consumed.with(stringSerde, stringSerde));
+//        BranchedKStream<String, String> splitedStream = builder
+//                .stream(this.inputTopic,
+//                        Consumed.with(
+//                                stringSerde,
+//                                stringSerde))
+//                .split();
+
+        for (String eachKey : configLoader.getAllAccessibleKeys()) {
+            ObjectConfig eachConfig = configLoader.getConfig(eachKey);
+                    .to(eachConfig.outputTopic(), Produced.with(stringSerde, stringSerde));
+//            splitedStream.branch((k, jsonBody) -> ruleEvaluation(eachConfig.rule(), jsonBody),
+//                                           Branched.withConsumer(stream -> stream
+//                                                   .to(eachConfig.outputTopic(), Produced.with(stringSerde, stringSerde))
+//                                           )
+//                                );
+        }
+
+
+    private boolean ruleEvaluation(String rule, String jsonBody) {
+        try{
+            return ruleEvaluation(
+                    rule,
+                    new ObjectMapper().readValue(jsonBody, Map.class));
+        }catch(JsonProcessingException e) {
+            logger.error("Error during rule evaluation: " + rule + " for message: " + jsonBody, e);
+            return false;
+        }
+
+```
