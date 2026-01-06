@@ -24,15 +24,24 @@ pushd /home/soft/android_sdk
 # check with app/build.gradle `android { compileSdk 34
 ```
 
+### android vs gradle
+> Android Gradle Plugin 8.2.2 is not compatible with Gradle 9.x 
+```sh
+gradle wrapper --gradle-version 8.3 --distribution-type all
+./gradlew --version
+```
+
 ```sh
 rm -rf build .gradle app/build app/.gradle
 gradle --stop
 gradle --status
-gradle clean :app:assembleDebug --no-build-cache
-# gradle --stacktrace :app:installDebug
+./gradlew --stop
+./gradlew --status
+./gradlew clean :app:assembleDebug --no-build-cache
 
 # gradle wrapper --gradle-version 7.5 --distribution-type all
+ls -la app/build/outputs/apk/debug/app-debug.apk
 
-# install
+# install on android
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
