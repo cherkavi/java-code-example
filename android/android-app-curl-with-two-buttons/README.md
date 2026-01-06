@@ -31,17 +31,21 @@ gradle wrapper --gradle-version 8.3 --distribution-type all
 ./gradlew --version
 ```
 
+## build
 ```sh
 rm -rf build .gradle app/build app/.gradle
 gradle --stop
 gradle --status
 ./gradlew --stop
 ./gradlew --status
+
 ./gradlew clean :app:assembleDebug --no-build-cache
-
-# gradle wrapper --gradle-version 7.5 --distribution-type all
 ls -la app/build/outputs/apk/debug/app-debug.apk
+```
 
-# install on android
+## install application on physical android device
+```sh
+adb devices
+# if no devices: https://github.com/cherkavi/cheat-sheet/blob/master/android-cheat-sheet.md#adb
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
