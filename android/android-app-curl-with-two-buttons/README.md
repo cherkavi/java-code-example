@@ -39,6 +39,7 @@ gradle --status
 ./gradlew --stop
 ./gradlew --status
 
+# build/rebuild
 ./gradlew clean :app:assembleDebug --no-build-cache
 ls -la app/build/outputs/apk/debug/app-debug.apk
 ```
@@ -48,4 +49,17 @@ ls -la app/build/outputs/apk/debug/app-debug.apk
 adb devices
 # if no devices: https://github.com/cherkavi/cheat-sheet/blob/master/android-cheat-sheet.md#adb
 adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
+
+## [test application using http server](./http_test_server/server.py)
+
+### start server
+```sh
+python3 http_test_server/server.py
+```
+
+### test requests
+```sh
+curl -X POST http://localhost:8000/posts -H "Content-Type: application/json" -d '{"msg":"hello"}'
+curl -X POST http://localhost:8000/posts -d 'plain text body'
 ```

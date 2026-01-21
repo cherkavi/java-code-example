@@ -1,0 +1,27 @@
+# Variables
+@baseUrl = http://192.168.01.01:8080
+@authToken = your_token_here
+
+### Create a New Post
+POST {{baseUrl}}/posts
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+Custom-Header: MyValue
+
+{
+    "title": "First post",
+    "body": "this is first post",
+    "userId": 123
+}
+
+### Create another Post
+POST {{baseUrl}}/posts
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+Custom-Header: MyValue
+
+{
+    "title": "Second post",
+    "body": "second post",
+    "userId": 2222
+}
