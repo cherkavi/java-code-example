@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
 
     <properties>
-            <camel.version>2.13.1</camel.version>
+            <camel.version>3.1.0</camel.version>
     </properties>
 
     <dependencies>
